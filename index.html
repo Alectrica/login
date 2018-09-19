@@ -2191,6 +2191,144 @@
 </section>
 
 
+<section [class]="checkoutSuccess ? 'hide' : 'checkout-section'"
+  class="checkout-section"
+  amp-access="NOT loggedIn">
+  <h3 class="">Enter Shipping Address</h3>
+  <label for="shipAddressS">Address</label>
+  <input name="ship-address"
+    id="shipAddressS"
+    placeholder="123 Any Street"
+    autocomplete="shipping street-address">
+
+  <label for="shipCityS">City</label>
+  <input name="ship-city"
+    id="shipCityS"
+    placeholder="New York"
+    autocomplete="shipping locality">
+
+  <label for="shipStateS">State</label>
+  <input name="ship-state"
+    id="shipStateS"
+    placeholder="NY"
+    autocomplete="shipping region">
+
+  <label for="shipZipS">Zip</label>
+  <input name="ship-zip"
+    id="shipZipS"
+    placeholder="10011"
+    autocomplete="shipping postal-code">
+
+  <label for="shipCountryS">Country</label>
+  <input name="ship-country"
+    id="shipCountryS"
+    placeholder="USA"
+    autocomplete="shipping country">
+
+  <label for="shippingAddressCheck">Use Shipping as Billing Address</label>
+  <input type="checkbox"
+    checked
+    on="change:shippingAddress.toggleVisibility">
+</section>
+
+
+
+<section [class]="checkoutSuccess ? 'hide' : 'checkout-section'"
+  class="checkout-section"
+  amp-access="loggedIn"
+  amp-access-hide>
+  <h3 class="">Select Shipping Address</h3>
+  <amp-list width="auto"
+    height="96"
+    layout="fixed-height"
+    items="."
+    single-item
+    credentials="include"
+    src="/json/addresses.json">
+    <template type="amp-mustache">
+      <ul class="list-reset">
+        {{#addresses}}
+        <li>
+          {{^default}}
+          <input type="radio"
+            id="address{{id}}"
+            name="address"
+            value="{{id}}"
+            on="change:manualShippingAddress.hide">
+          <label for="address{{id}}">{{name}}, {{street}}, {{city}} </label>
+          {{/default}} {{#default}}
+          <input type="radio"
+            checked
+            id="defaultAddress{{id}}"
+            name="address"
+            value="{{id}}"
+            on="change:manualShippingAddress.hide">
+          <label for="defaultAddress{{id}}">{{name}}, {{street}}, {{city}} {{#default}}
+            <strong class="xs-hide">[DEFAULT]</strong>{{/default}}</label>
+          {{/default}} {{/addresses}}
+        </li>
+        {{#manual}}
+        <li>
+          <input type="radio"
+            id="ship-separate"
+            name="address"
+            value="{{id}}"
+            on="change:manualShippingAddress.toggleVisibility">
+          <label for="ship-separate">Enter new Shipping Address</label>
+        </li>
+        {{/manual}}
+      </ul>
+    </template>
+  </amp-list>
+
+  <section class="sub-section"
+    id="manualShippingAddress"
+    hidden>
+    <label for="manualShipAddressS">Address</label>
+    <input name="ship-address"
+      id="manualShipAddressS"
+      placeholder="123 Any Street"
+      autocomplete="shipping street-address">
+
+    <label for="manualShipCityS">City</label>
+    <input name="ship-city"
+      id="manualShipCityS"
+      placeholder="New York"
+      autocomplete="shipping locality">
+
+    <label for="manualShipStateS">State</label>
+    <input name="ship-state"
+      id="manualShipStateS"
+      placeholder="NY"
+      autocomplete="shipping region">
+
+    <label for="manualShipZipS">Zip</label>
+    <input name="ship-zip"
+      id="manualShipZipS"
+      placeholder="10011"
+      autocomplete="shipping postal-code">
+
+    <label for="manualShipCountryS">Country</label>
+    <input name="ship-country"
+      id="manualShipCountryS"
+      placeholder="USA"
+      autocomplete="shipping country">
+    <label for="saveNewAddress1">Save Address</label>
+    <input id="saveNewAddress1"
+      type="checkbox"
+      checked
+      on="change:shippingAddress.toggleVisibility">
+  </section>
+
+  <label for="shippingAddressCheck">Use Shipping as Billing Address</label>
+  <input id="shippingAddressCheck"
+    type="checkbox"
+    checked
+    on="change:shippingAddress.toggleVisibility">
+</section>
+
+
+
 
 
       </div>
