@@ -2044,19 +2044,6 @@
 
 
 
-      <div class="my2"
-        [class]="checkoutSuccess ? 'hide' : 'my2'">
-        <button amp-access="NOT loggedIn"
-          on="tap:amp-access.login-sign-in"
-          class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
-        <button amp-access="loggedIn"
-          tabindex="0"
-          on="tap:amp-access.login-sign-out"
-          class="ampstart-btn ml1 caps"
-          amp-access-hide>Termine la sesión</button>
-        <span amp-access="NOT loggedIn"
-	  class="inline-block ml1">...o continúe como invitado</span>
-      </div>
       <span amp-access="loggedIn">
 	<section [class]="checkoutSuccess ? 'hide' : 'checkout-section'"
 	  class= "checkout-section">
@@ -2112,90 +2099,19 @@
 	    </amp-list>
           </section>
         </span>
-
-
-<section [class]="checkoutSuccess ? 'hide' : 'checkout-section'"
-  class="checkout-section"
-  amp-access="NOT loggedIn">
-  <h3 class="">Ingrese la Dirección de la Instalación Eléctrica</h3>
-  <label for="shipAddressS">Dirección</label>
-  <input name="ship-address"
-    id="shipAddressS"
-    placeholder="Bilbao 123"
-    autocomplete="shipping street-address">
-
-  <label for="shipCityS">Comuna</label>
-  <input name="ship-city"
-    id="shipCityS"
-    placeholder="New York"
-    autocomplete="shipping locality">
-
-  <label for="shipStateS">Región</label>
-  <input name="ship-state"
-    id="shipStateS"
-    placeholder="NY"
-    autocomplete="shipping region">
-
-  <label for="shipZipS">Código Postal</label>
-  <input name="ship-zip"
-    id="shipZipS"
-    placeholder="10011"
-    autocomplete="shipping postal-code">
-
-  <label for="shipCountryS">País</label>
-  <input name="ship-country"
-    id="shipCountryS"
-    placeholder="USA"
-    autocomplete="shipping country">
-
-  <label for="shippingAddressCheck">Use esta dirección como dirección de facturación</label>
-  <input type="checkbox"
-    checked
-    on="change:shippingAddress.toggleVisibility">
-</section>
-
-<section [class]="checkoutSuccess ? 'hide' : 'checkout-section'"
-  class="checkout-section"
-  hidden
-  id="billingAddress">
-  <h3 class="">Ingresarla Dirección de Facturación</h3>
-  <label for="billingAddressS">Dirección</label>
-  <input name="billing-address"
-    id="billingAddressS"
-    placeholder="123 Any Street"
-    autocomplete="billing street-address">
-
-  <label for="billingCityS">Ciudad</label>
-  <input name="billing-city"
-    id="billingCityS"
-    placeholder="New York"
-    autocomplete="billing locality">
-
-  <label for="billingStateS">State</label>
-  <input name="billing-state"
-    id="billingStateS"
-    placeholder="NY"
-    autocomplete="billing region">
-
-  <label for="billingZipS">Zip</label>
-  <input name="billing-zip"
-    id="billingZipS"
-    placeholder="10011"
-    autocomplete="billing postal-code">
-
-  <label for="billingCountryS">País</label>
-  <input name="billing-country"
-    id="billingCountryS"
-    placeholder="USA"
-    autocomplete="billing country">
-</section>
-
-
-
-
-
-
-
+	<div class="my2"
+	  [class]="checkoutSuccess ? 'hide' : 'my2'">
+	  <button amp-access="NOT loggedIn"
+	    on="tap:amp-access.login-sign-in"
+	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
+	  <button amp-access="loggedIn"
+	    tabindex="0"
+	    on="tap:amp-access.login-sign-out"
+	    class="ampstart-btn ml1 caps"
+	    amp-access-hide>Termine la sesión</button>
+	  <span amp-access="NOT loggedIn"
+	    class="inline-block ml1">...o continúe como invitado</span>
+	</div>
       </div>
     </div>
   </body>
