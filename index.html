@@ -570,7 +570,76 @@
     }
 
 
-#abe-preview{background:#eee}.checkout-section,section .sub-section{display:flex;flex-wrap:wrap;margin:1rem;background:#ccc}.checkout-section{background:#fff;box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);padding:0 .5rem}.checkout-section>*,.sub-section>*{display:block;width:calc(50% - 1rem);padding:.25rem;margin:.5rem;align-self:center}.checkout-section>amp-list,.checkout-section>div,.checkout-section>form,.checkout-section>h3,.sub-section{width:100%}.checkout-section>button{width:auto}section>h3{font-size:18px;font-weight:500;text-transform:uppercase;padding:0;margin:1rem 0}.shopping-cart .item:first-child{margin-bottom:.5rem}.shopping-cart .item:last-child{margin-top:.5rem}.shopping-cart .item{display:flex;justify-content:space-between}.shopping-cart .name{width:60%}.shopping-cart .price,.shopping-cart .quantity{display:block;text-align:right;min-width:72px;margin-left:8px}.shopping-cart .summary .price,.shopping-cart .summary .quantity{margin:8px 0 0 8px}.checkout [role=listitem]{margin:0;margin-left:.5rem;padding:0}.checkout li{height:32px}.checkout [type=radio]{margin:1rem;padding:0}#pay-now-button{width:100%;max-width:400px;padding:.7em .8em}.hide{display:none}
+#abe-preview{background:#eee}
+
+.checkout-section,section .sub-section
+{display:flex;
+  flex-wrap:wrap;
+  margin:1rem;
+  background:#ccc}
+
+.checkout-section
+{background:#fff;
+  box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+  padding:0 .5rem}
+
+.checkout-section>*,.sub-section>*
+{display:block;
+  width:calc(50% - 1rem);
+  padding:.25rem;
+  margin:.5rem;
+  align-self:center}
+
+.checkout-section>amp-list,.checkout-section>div,.checkout-section>form,.checkout-section>h3,.sub-section
+{width:100%}
+
+.checkout-section>button
+{width:auto}
+
+section>h3{font-size:18px;
+  font-weight:500;
+  text-transform:uppercase;
+  padding:0;margin:1rem 0}
+
+.shopping-cart .item:first-child
+{margin-bottom:.5rem}
+
+.shopping-cart .item:last-child
+{margin-top:.5rem}
+
+.shopping-cart .item
+{display:flex;
+  justify-content:space-between}
+
+.shopping-cart .name
+{width:30%}
+
+.shopping-cart .price,
+.shopping-cart .quantity
+{display:block;
+  text-align:right;
+  min-width:72px;
+  margin-left:8px}
+
+.shopping-cart .summary .price,
+.shopping-cart .summary .quantity
+{margin:8px 0 0 8px}
+
+.checkout [role=listitem]
+{margin:0;
+  margin-left:.5rem;
+  padding:0}
+
+.checkout li{height:32px}
+
+.checkout [type=radio]
+{margin:1rem;
+  padding:0}
+
+#pay-now-button{width:100%;
+  max-width:400px;
+  padding:.7em .8em}
+.hide{display:none}
 
 
 
@@ -1997,24 +2066,6 @@
 
 	</amp-list>
 
-	<amp-analytics type="googleanalytics">
-	  <script type="application/json">{
-	    "vars": {
-	      "account": "UA-109124551-1"
-	    },
-	    "triggers": {
-	      "default pageview": {
-		"on": "visible",
-		"request": "pageview",
-		"vars": {
-		  "title": "Aléctrico Designer"
-		}
-	      }
-	    }
-	  }
-	  </script>
-	</amp-analytics>
-
 	<amp-install-serviceworker
 	  src="/sw.js"
 	  data-iframe-src="https://designer.com/sw.js"
@@ -2060,13 +2111,13 @@
 		<div class="shopping-cart">
 		  <div class="item header">
 		    <div class="name">
-		       <strong> Electrodoméstico </strong>
+		       <strong>Nombre</strong>
 		    </div>
 		    <div class="price">
-		       <strong>Potencia</strong>
+		       <strong>Pot</strong>
 		    </div>
 		    <div class="quantity">
-		       <strong>Circuito</strong>
+		       <strong>Cto</strong>
 		    </div>
 		  </div>
 		  {{#items}}
@@ -2119,6 +2170,28 @@
 	  <span amp-access="NOT loggedIn"
 	    class="inline-block ml1">...para ver los detalles</span>
 	</div>
+
+        <amp-analytics type="googleanalytics">
+          <script type="application/json">{
+            "vars": {
+              "account": "UA-109124551-1"
+            },
+            "triggers": {
+              "default pageview": {
+                "on": "visible",
+                "request": "pageview",
+                "vars": {
+                  "title": "Aléctrico Designer"
+                }
+              }
+            }
+          }
+          </script>
+        </amp-analytics>
+
+
+
+
       </div>
     </div>
   </body>
