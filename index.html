@@ -570,77 +570,84 @@
     }
 
 
-#abe-preview{background:#eee}
+    #abe-preview{background:#eee}
 
-.checkout-section,section .sub-section
-{display:flex;
-  flex-wrap:wrap;
-  margin:1rem;
-  background:#ccc}
+    .checkout-section,section .sub-section
+    {display:flex;
+      flex-wrap:wrap;
+      margin:1rem;
+      background:#ccc}
 
-.checkout-section
-{background:#fff;
-  box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
-  padding:0 .5rem}
+    .checkout-section
+    {background:#fff;
+      box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+      padding:0 .5rem}
 
-.checkout-section>*,.sub-section>*
-{display:block;
-  width:calc(50% - 1rem);
-  padding:.25rem;
-  margin:.5rem;
-  align-self:center}
+    .checkout-section>*,.sub-section>*
+    {display:block;
+      width:calc(50% - 1rem);
+      padding:.25rem;
+      margin:.5rem;
+      align-self:center}
 
-.checkout-section>amp-list,.checkout-section>div,.checkout-section>form,.checkout-section>h3,.sub-section
-{width:100%}
+    .checkout-section>amp-list,.checkout-section>div,.checkout-section>form,.checkout-section>h3,.sub-section
+    {width:100%}
 
-.checkout-section>button
-{width:auto}
+    .checkout-section>button
+    {width:auto}
 
-section>h3{font-size:18px;
-  font-weight:500;
-  text-transform:uppercase;
-  padding:0;margin:1rem 0}
+    section>h3{font-size:18px;
+      font-weight:500;
+      text-transform:uppercase;
+      padding:0;margin:1rem 0}
 
-.shopping-cart .item:first-child
-{margin-bottom:.5rem}
+    .shopping-cart .item:first-child
+    {margin-bottom:.5rem}
 
-.shopping-cart .item:last-child
-{margin-top:.5rem}
+    .shopping-cart .item:last-child
+    {margin-top:.5rem}
 
-.shopping-cart .item
-{display:flex;
-  justify-content:space-between}
+    .shopping-cart .item
+    {display:flex;
+      justify-content:space-between}
 
-.shopping-cart .name
-{width:30%}
+    .shopping-cart .name
+    {width:30%}
 
-.shopping-cart .price,
-.shopping-cart .quantity
-{display:block;
-  text-align:right;
-  min-width:72px;
-  margin-left:8px}
+    .shopping-cart .price,
+    .shopping-cart .quantity
+    {display:block;
+      text-align:right;
+      min-width:72px;
+      margin-left:8px}
 
-.shopping-cart .summary .price,
-.shopping-cart .summary .quantity
-{margin:8px 0 0 8px}
+    .shopping-cart .summary .price,
+    .shopping-cart .summary .quantity
+    {margin:8px 0 0 8px}
 
-.checkout [role=listitem]
-{margin:0;
-  margin-left:.5rem;
-  padding:0}
+    .checkout [role=listitem]
+    {margin:0;
+      margin-left:.5rem;
+      padding:0}
 
-.checkout li{height:32px}
+    .checkout li{height:32px}
 
-.checkout [type=radio]
-{margin:1rem;
-  padding:0}
+    .checkout [type=radio]
+    {margin:1rem;
+      padding:0}
 
-#pay-now-button{width:100%;
-  max-width:400px;
-  padding:.7em .8em}
-.hide{display:none}
+    #pay-now-button
+    {width:100%;
+      max-width:400px;
+      padding:.7em .8em}
 
+    .hide
+    {display:none}
+
+    .list-overflow
+    {background:#fff;
+      box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+      padding:0 .5rem}
 
 
     </style>
@@ -2107,6 +2114,13 @@ section>h3{font-size:18px;
 	      layout="fixed-height"
 	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 	      id="cart-list">
+              <div overflow = "" 
+                   class = "list-overflow">
+               VER MAS
+              </div>
+
+
+
 	      <template type="amp-mustache">
 		<div class="shopping-cart">
 		  <div class="item header">
