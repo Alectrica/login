@@ -2047,7 +2047,7 @@
       <span amp-access="loggedIn">
 	<section [class]="checkoutSuccess ? 'hide' : 'checkout-section'"
 	  class= "checkout-section">
-	  <h3 class="">Resumen de Circuitos</h3>
+	  <h3 class="">Resumen de Electromésticos</h3>
 	  <amp-list 
 	      width="auto"
 	      height="180"
@@ -2055,17 +2055,18 @@
 	      single-item
 	      layout="fixed-height"
 	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
-              [src] = "shoppingCart.src"
 	      id="cart-list">
 	      <template type="amp-mustache">
 		<div class="shopping-cart">
 		  <div class="item header">
-		    <div class="name"></div>
+		    <div class="name">
+		       <strong> Electrodoméstico </strong>
+		    </div>
 		    <div class="price">
 		       <strong>Potencia</strong>
 		    </div>
 		    <div class="quantity">
-		       <strong>Cantidad</strong>
+		       <strong>Circuito</strong>
 		    </div>
 		  </div>
 		  {{#items}}
@@ -2110,7 +2111,7 @@
 	    class="ampstart-btn ml1 caps"
 	    amp-access-hide>Termine la sesión</button>
 	  <span amp-access="NOT loggedIn"
-	    class="inline-block ml1">...o continúe como invitado</span>
+	    class="inline-block ml1">...para ver los detalles</span>
 	</div>
       </div>
     </div>
