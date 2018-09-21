@@ -2119,13 +2119,6 @@
 	      layout="fixed-height"
 	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 	      id="cart-list">
-              <div overflow = "" 
-                   class = "list-overflow">
-               VER MAS
-              </div>
-
-
-
 	      <template type="amp-mustache">
 		<div class="shopping-cart">
 		  <div class="item header">
@@ -2145,6 +2138,11 @@
 		     <div class="price">{{potencia}}W</div>
 		     <div class="quantity">{{circuito}}</div>
 		  </div>
+              <div overflow = "" 
+                   class = "list-overflow">
+               VER MAS
+              </div>
+
 		  {{/items}} {{#cargas_count}}
 		  <div class= "item summary">
 		     <div class="name"></div>
@@ -2168,13 +2166,6 @@
 		</div>
 	      </template>
 
-	      <div overflow = "" 
-		   class = "list-overflow">
-	       VER MAS
-	      </div>
-
-	      <div placeholder>Cargando la lista de electrodomésticos ...</div>
-	      <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
 	    </amp-list>
           </section>
         </span>
