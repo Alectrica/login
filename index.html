@@ -2111,6 +2111,7 @@
 	  class= "checkout-section">
 	  <h3 class="">Resumen de Electromésticos</h3>
 	  <amp-list 
+	      hidden
 	      credentials="include"
 	      width="auto"
 	      height="180"
@@ -2172,7 +2173,7 @@
 	<div class="my2"
 	  [class]="checkoutSuccess ? 'hide' : 'my2'">
 	  <button amp-access="NOT loggedIn"
-	    on="tap:amp-access.login-sign-in"
+	    on="tap:amp-access.login-sign-in,cart-list.show"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
 	  <button amp-access="loggedIn"
 	    tabindex="0"
