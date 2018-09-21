@@ -2112,10 +2112,12 @@
 	  id= "resumen"
 	  class= "checkout-section">
 	  <h3 class="">Resumen de Electromésticos</h3>
+
 	  <template amp-access-template
-	  type="amp-mustache">
+             type="amp-mustache">
 	    Presupuesto Id {{presupuesto_id}}
 	  </template>
+
 	  <amp-list 
 	      credentials="include"
 	      width="auto"
@@ -2144,10 +2146,6 @@
 		     <div class="price">{{potencia}}W</div>
 		     <div class="quantity">{{circuito}}</div>
 		  </div>
-		  <div overflow = "" 
-		     class = "list-overflow">
-		     VER MAS
-		  </div>
 
 		  {{/items}} {{#cargas_count}}
 		  <div class= "item summary">
@@ -2159,11 +2157,6 @@
 			<strong>{{.}}</strong>
 		     </div>
 		  </div>
-                  <div overflow = "" 
-                     class = "list-overflow">
-                     VER MAS
-                  </div>
-
 
 		  {{/cargas_count}}
 		  <div class="item summary">
@@ -2177,6 +2170,11 @@
 		  </div>
 		</div>
 	      </template>
+
+	      <div overflow = "" 
+		 class = "list-overflow">
+		 VER MAS
+	      </div>
 
 	    </amp-list>
           </section>
