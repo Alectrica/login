@@ -2192,13 +2192,13 @@
 	</div>
 
 	<div class="my2">
-	  <div amp-access="NOT subscriber" amp-access-hide>
+	  <div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
 	    <button amp-access="NOT subscriber" 
 	      amp-access-hide
 	      tabindex="0"
 	      on="tap:amp-access.login-sign-up"
 	      class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
-	    <span amp-access= "NOT subscriber">... para guardar su trabajo</span>
+	    <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
 	  </div>
 	</div
 
