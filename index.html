@@ -2036,7 +2036,6 @@
 	<amp-list class="items m1"
 	  width="auto"
 	  height="145"
-	  on = "refresh:AMP.setState( {carruselCargado: true })"
 	  layout="fixed-height"
 	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 
@@ -2178,8 +2177,7 @@
 	    </amp-list>
           </section>
 
-	<div class="hide"
-	  [class]="carruselCargado ?  'my2' : 'hide'">
+	<div class="my2"
 	  <button amp-access="NOT loggedIn"
 	    on="tap:amp-access.login-sign-in,resumen.show"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
@@ -2187,9 +2185,14 @@
 	    tabindex="0"
 	    on="tap:amp-access.login-sign-out"
 	    class="ampstart-btn ml1 caps"
-	    amp-access-hide>Termine la sesión</button>
+	    amp-access-hide>Cerrar Sesión</button>
 	  <span amp-access="NOT loggedIn"
 	    class="inline-block ml1">...para ver los detalles</span>
+	</div>
+
+	<div class= "my2"
+	  <button amp-access="NOT loggedIn"
+	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Registrar Email</button>
 	</div>
 
         <amp-analytics type="googleanalytics">
