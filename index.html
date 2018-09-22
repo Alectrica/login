@@ -707,10 +707,18 @@
        class="h3 center truncate caps">
         Aléctrico
      </h1>
+
+     <section amp-access="NOT loggedIn">
+        <template amp-access-template type="amp-mustache">
+          {{subscriber_name}}
+        </template>
+      </section>
+
+
+
      <section amp-access="loggedIn">
 	<template amp-access-template type="amp-mustache">
-	  Presupuesto Id {{presupuesto_id}}
-	  Usuario logado -{{user_name}}-
+	  -{{user_name}}-
 	  Suscriber {{subscriber}} {{subscriber_name}}
 	</template>
       </section>
@@ -2110,17 +2118,6 @@
 
 	</amp-selector>
         -->
-	<section amp-access="NOT loggedIn">
-          <template amp-access-template
-             type="amp-mustache">
-            Presupuesto Id {{presupuesto_id}}
-            Usuario logado es - {{user_name}} -
-	    Suscriber {{subscriber}} {{subscriber_name}}
-          </template>
-	</section>
-
-
-
 
 	<section amp-access="loggedIn" 
 	  id= "resumen" 
@@ -2128,13 +2125,6 @@
 	  amp-access-hide = ""
 	  >
 	  <h3 class="">Resumen de Electromésticos</h3>
-
-	  <template amp-access-template
-             type="amp-mustache">
-	    Presupuesto Id {{presupuesto_id}}
-	    Usuario logado -{{user_name}}-
-	    Suscriber {{subscriber}} {{subscriber_name}}
-	  </template>
 
 	  <amp-list 
 	      credentials="include"
