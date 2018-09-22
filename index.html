@@ -2187,12 +2187,17 @@
 	    on="tap:amp-access.login-sign-out"
 	    class="ampstart-btn ml1 caps"
 	    amp-access-hide>Cerrar Sesión</button>
-	  <span amp-access="NOT loggedIn"
+	  <span amp-access="NOT loggedIn AND subscriber"
 	    class="inline-block ml1">...para ver los detalles</span>
 	</div>
 
 	<div amp-access="NOT subscriber" amp-access-hide>
-	  <a on="tap:amp-access.sign-up">Cree una cuenta para guardar su trabajo!</a>
+	  <button amp-access="NOT subscriber" 
+	    amp-access-hide
+	    tabindex="0"
+	    on="tap:amp-access.login-sign-up"
+	    class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
+	  <span amp-access= "NOT subscriber">... para guardar su trabajo</span>
         </div>
 
         <amp-analytics type="googleanalytics">
