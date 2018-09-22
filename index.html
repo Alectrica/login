@@ -56,7 +56,7 @@
     "login": {
     "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(cart)",
     "sign-out": "https://shop-staging.alectrico.cl/amp/accesos/logout",
-    "sign_up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(cart)"
+    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(cart)"
     },
     "authorizationFallbackResponse": {
       "error": true,
@@ -2191,14 +2191,16 @@
 	    class="inline-block ml1">...para ver los detalles</span>
 	</div>
 
-	<div amp-access="NOT subscriber" amp-access-hide>
-	  <button amp-access="NOT subscriber" 
-	    amp-access-hide
-	    tabindex="0"
-	    on="tap:amp-access.login-sign-up"
-	    class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
-	  <span amp-access= "NOT subscriber">... para guardar su trabajo</span>
-        </div>
+	<div class="my2">
+	  <div amp-access="NOT subscriber" amp-access-hide>
+	    <button amp-access="NOT subscriber" 
+	      amp-access-hide
+	      tabindex="0"
+	      on="tap:amp-access.login-sign-up"
+	      class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
+	    <span amp-access= "NOT subscriber">... para guardar su trabajo</span>
+	  </div>
+	</div
 
         <amp-analytics type="googleanalytics">
           <script type="application/json">{
