@@ -2190,11 +2190,9 @@
 	    class="inline-block ml1">...para ver los detalles</span>
 	</div>
 
-	<div class= "my2">
-	  <p [text] = "resumen.presupuesto_id">Presupuesto Id</p>
-	  <button amp-access="NOT loggedIn"
-	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Registrar Email</button>
-	</div>
+	<div amp-access="NOT subscriber" amp-access-hide>
+	  <a on="tap:amp-access.login">Become a subscriber now!</a>
+        </div>
 
         <amp-analytics type="googleanalytics">
           <script type="application/json">{
