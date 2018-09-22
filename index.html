@@ -1793,7 +1793,7 @@
 	  method="POST"
 	  action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 	  target="_top"
-	  on = "submit-success:show-more-list.refresh,cart-list.refresh;submit-error:show-more-list.refresh,cart-list.refresh"
+	  on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh"
 	  class="flex flex-wrap m1">
 	  <div class="items-center flex">
 	    <label for="color">Grupo:</label>
@@ -2039,7 +2039,7 @@
 	  layout="fixed-height"
 	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 
-	  id="show-more-list">
+	  id="carrusel-list">
 	  <template type="amp-mustache">
 	  <!--
 	    <a class="text-decoration-none p1"
@@ -2054,7 +2054,7 @@
 	    <form method   = "POST"
 	      action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 	      target    = "_top"
-	      on = "submit-success:show-more-list.refresh,cart-list.refresh">
+	      on = "submit-success:carrusel-list.refresh,cart-list.refresh,AMP:setState( { carruselCargado: true} )">
 	      <amp-img width="170.31"
 		height="146.8"
 		layout="fixed"
@@ -2176,8 +2176,8 @@
 
 	    </amp-list>
           </section>
-	<div class="my2"
-	  [class]="checkoutSuccess ? 'hide' : 'my2'">
+	<div class="hide"
+	  [class]="carruselCargado ?  'my2' : 'hide'">
 	  <button amp-access="NOT loggedIn"
 	    on="tap:amp-access.login-sign-in,resumen.show"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
