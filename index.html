@@ -2103,6 +2103,14 @@
 
 	</amp-selector>
         -->
+          <template amp-access-template
+             type="amp-mustache">
+            Presupuesto Id {{presupuesto_id}}
+            Usuario logado es  {{user_name}}
+            {{subscriber}} Suscriber {{subscriber_name}}
+          </template>
+
+
 
 
 	<section amp-access="loggedIn" 
@@ -2116,7 +2124,7 @@
              type="amp-mustache">
 	    Presupuesto Id {{presupuesto_id}}
 	    Usuario logado es  {{user_name}}
-            {{subscriber}} Suscriber {{suscriber_name}}
+            {{subscriber}} Suscriber {{subscriber_name}}
 	  </template>
 
 	  <amp-list 
