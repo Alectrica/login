@@ -711,6 +711,7 @@
      <section amp-access="NOT loggedIn">
         <template amp-access-template type="amp-mustache">
 	  {{clientId}}
+	  {{suscriber_clientId}}
           {{subscriber_name}}
         </template>
      </section>
@@ -720,6 +721,7 @@
      <section amp-access="loggedIn">
 	<template amp-access-template type="amp-mustache">
 	  {{clientId}}
+	  {{user_clientId}}
 	  {{user_name}}
 	</template>
       </section>
