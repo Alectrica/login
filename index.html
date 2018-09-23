@@ -710,14 +710,16 @@
 
      <section amp-access="NOT loggedIn">
         <template amp-access-template type="amp-mustache">
+	  {{clientId}}
           {{subscriber_name}}
         </template>
-      </section>
+     </section>
 
 
 
      <section amp-access="loggedIn">
 	<template amp-access-template type="amp-mustache">
+	  {{clientId}}
 	  {{user_name}}
 	</template>
       </section>
