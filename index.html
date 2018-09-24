@@ -792,7 +792,6 @@
 	</amp-lightbox>
 
 	<div class="product-gallery">
-	   <div > 
 		<ul 
 		  hidden
 		  [hidden]="product.selectedColor != 'blue'">
@@ -2017,7 +2016,6 @@
 		<span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
 		<span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
 	      </p>
-	   </div> 
            <!-- fin de Galería de Productos -->
 
 	  <div class="items-center flex my1 ml1">
@@ -2036,7 +2034,7 @@
 	    data-amp-replace="CLIENT_ID">
 	  <div submit-success>
 	    <template type="amp-mustache">
-	       {{error}}
+	      {{error}}
 	    </template>
 	  </div>
 	  <div submit-error>
