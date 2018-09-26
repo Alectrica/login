@@ -2121,22 +2121,8 @@
 	  amp-access-hide = ""
 	  >
 	  <h3 class="">Resumen de Electromésticos</h3>
-        </section>
 
-          <div class="items-center flex my1 ml1">
-            <input amp-access="loggedIn" 
-              type="submit"
-              on= "tap:cart-list.refresh,carrusel-list.refresh"
-              class="ampstart-btn caps"
-              name="Refrescar"
-              value="Refrescar">
-          </div>
-
-
-
-	
-	  <amp-list amp-access="loggedIn"
-	      class= "checkout-section"
+	  <amp-list 
 	      credentials="include"
 	      width="auto"
 	      height="180"
@@ -2145,7 +2131,6 @@
 	      layout="fixed-height"
 	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 	      id="cart-list">
-	      <
 	      <template type="amp-mustache">
 		<div class="shopping-cart">
 		  <div class="item header">
@@ -2194,7 +2179,9 @@
 		 class = "list-overflow">
 		 VER MAS
 	      </div>
+
 	    </amp-list>
+          </section>
 
         <div class="my2">
 	  <button amp-access="NOT loggedIn"
@@ -2214,7 +2201,6 @@
 	    <button amp-access="NOT loggedIn" 
 	      amp-access-hide
 	      tabindex="0"
-	      on="tap:amp-access.login-sign-up"
 	      class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
 	    <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
 	  </div>
