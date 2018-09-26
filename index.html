@@ -2183,7 +2183,7 @@
           </section>
 
         <div class="my2">
-	  <button amp-access="NOT loggedIn"
+	  <button amp-access="NOT loggedIn AND  presupuesto_local"
 	    on="tap:amp-access.login-sign-in,resumen.show"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
 	  <button amp-access="loggedIn"
@@ -2231,8 +2231,8 @@
 	      on= "tap:cart-list.refresh,carrusel-list.refresh"
               amp-access-hide
               tabindex="0"
-              class="ampstart-btn ml1 caps" >Refrescar</button>
-            <span amp-access= "loggedIn">... para sincronizar con sus otros dispositivos</span>
+              class="ampstart-btn ml1 caps" >Sincronizar</button>
+            <span amp-access= "loggedIn">... con otro dispositivo</sp>
         </div>
       </div>
     </body>
