@@ -2118,8 +2118,7 @@
 	<section amp-access="loggedIn" 
 	  id= "resumen" 
 	  class= "checkout-section"
-	  amp-access-hide = ""
-	  >
+	  amp-access-hide = "" >
 	  <h3 class="">Resumen de Electromésticos</h3>
 
 	  <amp-list 
@@ -2229,6 +2228,7 @@
 
         <div class="my2">
             <button amp-access="loggedIn" 
+	      on= "tap:cart-list.refresh"
               amp-access-hide
               tabindex="0"
               class="ampstart-btn ml1 caps" >Refrescar</button>
