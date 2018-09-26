@@ -2116,7 +2116,6 @@
         -->
 
 	<section amp-access="loggedIn" 
-	  on= "show:cart-list.refresh"
 	  id= "resumen" 
 	  class= "checkout-section"
 	  amp-access-hide = ""
@@ -2124,6 +2123,18 @@
 	  <h3 class="">Resumen de Electromésticos</h3>
         </section>
 
+          <div class="items-center flex my1 ml1">
+            <input amp-access="loggedIn" 
+              type="submit"
+              on= "tap:cart-list.refresh"
+              class="ampstart-btn caps"
+              name="Refrescar"
+              value="Refrescar">
+          </div>
+
+
+
+	
 	  <amp-list amp-access="loggedIn"
 	      class= "checkout-section"
 	      credentials="include"
@@ -2134,6 +2145,7 @@
 	      layout="fixed-height"
 	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
 	      id="cart-list">
+	      <
 	      <template type="amp-mustache">
 		<div class="shopping-cart">
 		  <div class="item header">
