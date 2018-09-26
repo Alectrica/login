@@ -708,19 +708,18 @@
         Aléctrico
      </h1>
 
-     <!---
      <section amp-access="NOT loggedIn">
         <template amp-access-template type="amp-mustache">
-	  {{clientId}}
+	  {{presupuesto_dispositivo}}
 	  {{suscriber_clientId}}
           {{subscriber_name}}
         </template>
      </section>
-     -->
 
 
      <section amp-access="loggedIn">
 	<template amp-access-template type="amp-mustache">
+	  
 	  {{presupuesto_dispositivo}}
 	  {{user_name}}
 	</template>
@@ -2183,16 +2182,17 @@
           </section>
 
         <div class="my2">
-	  <button amp-access="NOT loggedIn AND  presupuesto_local"
+	  <button amp-access="NOT loggedIn AND presupuesto_local"
 	    on="tap:amp-access.login-sign-in,resumen.show"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
+	    <span amp-access="NOT loggedIn AND presupuesto_local"
+	                  class="inline-block ml1">...para ver el análisis de factibiidad</span>
+
 	  <button amp-access="loggedIn"
 	    tabindex="0"
 	    on="tap:amp-access.login-sign-out"
 	    class="ampstart-btn ml1 caps"
 	    amp-access-hide>Cerrar Sesión</button>
-	  <span amp-access="NOT loggedIn"
-	    class="inline-block ml1">...para ver los detalles</span>
 	</div>
 
 	<div class="my2">
