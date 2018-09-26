@@ -2191,7 +2191,7 @@
 	    on="tap:amp-access.login-sign-out"
 	    class="ampstart-btn ml1 caps"
 	    amp-access-hide>Cerrar Sesión</button>
-	  <span amp-access="NOT loggedIn AND subscriber"
+	  <span amp-access="NOT loggedIn"
 	    class="inline-block ml1">...para ver los detalles</span>
 	</div>
 
@@ -2232,7 +2232,7 @@
               amp-access-hide
               tabindex="0"
               class="ampstart-btn ml1 caps" >Refrescar</button>
-            <span amp-access= "NOT subscriber AND NOT loggedIn">... para sincronizar con sus otros dispositivos</span>
+            <span amp-access= "loggedIn">... para sincronizar con sus otros dispositivos</span>
         </div>
       </div>
     </body>
