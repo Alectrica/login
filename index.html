@@ -2116,13 +2116,15 @@
         -->
 
 	<section amp-access="loggedIn" 
+	  on= "show:cart-list.refresh"
 	  id= "resumen" 
 	  class= "checkout-section"
 	  amp-access-hide = ""
 	  >
 	  <h3 class="">Resumen de Electromésticos</h3>
-
-	  <amp-list 
+        </section>
+	
+	  <amp-list amp-access="loggedIn"
 	      credentials="include"
 	      width="auto"
 	      height="180"
@@ -2181,7 +2183,6 @@
 	      </div>
 
 	    </amp-list>
-          </section>
 
         <div class="my2">
 	  <button amp-access="NOT loggedIn"
@@ -2201,7 +2202,7 @@
 	    <button amp-access="NOT loggedIn" 
 	      amp-access-hide
 	      tabindex="0"
-	      on="tap:amp-access.login-sign-up,cart-list.refresh,carrusel-list.refresh"
+	      on="tap:amp-access.login-sign-up"
 	      class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
 	    <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
 	  </div>
