@@ -653,6 +653,86 @@
       right: 0;
     }
 
+    .stepper.vertical {
+      display: flex;
+      flex-direction: column;
+    }
+    .stepper.vertical .step-title {
+      padding: 8px;
+      font-size: 16px;
+      display: block;
+      border: none;
+      line-height: 24px;
+      text-align: left;
+      background-color: #fff;
+    }
+    .stepper.vertical .step-title:not([disabled]):active {
+      background-color: #ccc;
+    }
+    .stepper.vertical .step-title:not([disabled]) {
+      cursor: pointer;
+    }
+    .stepper.vertical .step-title.step-active {
+      background-color: #f2f2f2;
+      font-weight: 700;
+    }
+
+    .stepper.vertical .step-title i {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 8px;
+      background-color: #b60845;
+      border-radius: 100%;
+      color: white;
+      font-size: 14px;
+      font-style: normal;
+      transition: background 0.25s ease-in-out;
+    }
+    .stepper.vertical .step-title[disabled] .step-incomplete {
+      background-color: #ccc;
+    }
+    .stepper.vertical .step-title .step-incomplete:before {
+      content: attr(data-step-nr);
+      display: block;
+      text-align: center;
+      font-weight: 700;
+    }
+    .stepper.vertical .step-title .step-complete:before {
+      content: "✓";
+      display: block;
+      text-align: center;
+      font-weight: 700;
+    }
+    .stepper.vertical .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      margin-left: 36px;
+    }
+
+
+    .stepper.vertical .content > *:nth-child(n+2) {
+      margin-top: 1rem;
+    }
+    .stepper.vertical .content button {
+      color: #fff;
+      background: #b60845;
+      border: 1px solid #fff;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      padding: .5em .8em;
+    }
+    .stepper.vertical .content button[disabled] {
+      opacity: .5;
+      outline: 0;
+      cursor: default;
+    }
+
+
+
+
     </style>
   </head>
 
@@ -2231,7 +2311,7 @@
        </div>
 
        <section
-             [hidden] = "currentStep > 0"<
+           [hidden] = "currentStep > 0"<
         <div
           class="content">
             <span
