@@ -2199,6 +2199,9 @@
 
         <div class="my2">
 	  <button amp-access="NOT loggedIn AND presupuesto_dispositivo > 0"
+	    hidden
+	    [hidden] = "presupuesto.Iniciado? false : true"
+
 	    amp-access-hide
 	    on="tap:amp-access.login-sign-in,resumen.show,carrusel-list.show, cart-list.show"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
