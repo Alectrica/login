@@ -2042,7 +2042,8 @@
 	    </template>
 	  </div>
 	</form>
-	 
+	
+	<section class="checkout-section">	
 	<amp-list amp-access = "loggedIn OR presupuesto_local"
 	  amp-access-hide = ""
           class="items m1"
@@ -2088,6 +2089,7 @@
           <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
 
 	</amp-list>
+      </section>
 
 	<amp-install-serviceworker
 	  src="/sw.js"
@@ -2226,6 +2228,8 @@
           </script>
         </amp-analytics>
 
+        <span class="amp-access-loading">Autorizando ...</span>
+	<span class="amp-access-error">Ocurrió un error durante la Autorización</span>
 
 
         <!---
