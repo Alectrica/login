@@ -2294,6 +2294,10 @@
 	</div>
 
 
+
+
+
+
         <div
            class  = "stepper vertical"
            id     = "contacto">
@@ -2317,10 +2321,77 @@
                 role       = "button"
                 tabindex   = "0"
                 amp-access-hide = "">
-                user_name
+                Numero 0
             </span>            
         </div>
        </section>
+
+
+        <div
+           class  = "stepper vertical"
+           id     = "fecha">
+           <button
+              class   = "step-title step-active"
+              [class] = "currentStep == 1 ? 'step-title' : 'step-title step-active'"
+              on      = "tap:AMP.pushState({ currentStep: 2})">
+            <i 
+              class   = "step-incomplete"
+              [class] = "contactoSelected ? 'step-complete' : 'step-incomplete'"
+              data-step-nr = "2"> Dirección </i>
+          </button>
+       </div>
+
+
+
+
+       <section
+         [hidden] = "currentStep == 1">
+        <div
+          class="content">
+            <span
+                amp-access = "loggedIn"
+                role       = "button"
+                tabindex   = "0"
+                amp-access-hide = "">
+                Numero 1
+            </span>
+        </div>
+       </section>
+
+
+
+        <div
+           class  = "stepper vertical"
+           id     = "contacto">
+           <button
+              class   = "step-title step-active"
+              [class] = "currentStep > 0 ? 'step-title' : 'step-title step-active'"
+              on      = "tap:AMP.pushState({ currentStep: 1})">
+            <i 
+              class   = "step-incomplete"
+              [class] = "contactoSelected ? 'step-complete' : 'step-incomplete'"
+              data-step-nr = "1"> Contacto </i>
+          </button>
+       </div>
+
+
+
+
+       <section
+         [hidden] = "currentStep == 2">
+        <div
+          class="content">
+            <span
+                amp-access = "loggedIn"
+                role       = "button"
+                tabindex   = "0"
+                amp-access-hide = "">
+                Numero 2
+            </span>
+        </div>
+       </section>
+
+
 
 	<!--
 	<div class="my2">
