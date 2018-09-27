@@ -51,12 +51,12 @@
 
     <script id="amp-access" type="application/json">
     {
-    "authorization": "https://shop-staging.alectrico.cl/amp/accesos/autorizacion/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&clientId=CLIENT_ID(cart)",
+    "authorization": "https://shop-staging.alectrico.cl/amp/accesos/autorizacion/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&clientId=CLIENT_ID(uid)",
     "noPingback": "true",
     "login": {
-    "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(cart)",
+    "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
     "sign-out": "https://shop-staging.alectrico.cl/amp/accesos/logout",
-    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(cart)"
+    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)"
     },
     "authorizationFallbackResponse": {
       "error": true,
@@ -2029,7 +2029,7 @@
 	    [value] ="product[product.selectedColor].ids[product.selectedSlide]">
 	  <input name="clientId"
 	    type="hidden"
-	    value="CLIENT_ID(cart)"
+	    value="CLIENT_ID(uid)"
 	    data-amp-replace="CLIENT_ID">
 	  <div submit-success>
 	    <template type="amp-mustache">
@@ -2050,7 +2050,7 @@
 	  width="auto"
 	  height="145"
 	  layout="fixed-height"
-	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
+	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(client)"
 
 	  id="carrusel-list">
 	  <template type="amp-mustache">
@@ -2075,7 +2075,7 @@
 		src="{{img}}"></amp-img>
 	      <input name = "clientId" 
 		 type = "hidden" 
-		 value = "CLIENT_ID(cart)" 
+		 value = "CLIENT_ID(client)" 
 		 data-amp-replace = "CLIENT_ID">
 	      <button  type = "submit" > x
 	    </form>
@@ -2130,7 +2130,7 @@
 	      items="."
 	      single-item
 	      layout="fixed-height"
-	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(cart)"
+	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(client)"
 	      id="cart-list">
 	      <template type="amp-mustache">
 		<div class="shopping-cart">
