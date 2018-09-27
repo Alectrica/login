@@ -2192,7 +2192,7 @@
 	<div class="my2">
 	  <button 
 	    hidden
-	    [hidden] = "presupuesto.Iniciado? false : loggedIn"
+	    [hidden] = "presupuesto.Iniciado? false : true"
 	    on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: false}})"
 	    id="boton-login"
             class="ampstart-btn ampstart-btn-secondary ml1 caps">Login</button>
