@@ -1801,7 +1801,7 @@
 		method="POST"
 		action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show"
+		on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show,boton-login.show"
 		class="flex flex-wrap m1">
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
@@ -2187,6 +2187,7 @@
 
         <div class="my2">
 	  <button amp-access="NOT loggedIn AND presupuesto_dispositivo > 0"
+	    id="boton-login"
 	    on="tap:amp-access.login-sign-in,resumen.show,carrusel-list.show, cart-list.show"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
 	    <span amp-access="NOT loggedIn AND presupuesto_local"
