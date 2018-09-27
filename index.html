@@ -2050,7 +2050,7 @@
 	  width="auto"
 	  height="145"
 	  layout="fixed-height"
-	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(client)"
+	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
 
 	  id="carrusel-list">
 	  <template type="amp-mustache">
@@ -2075,7 +2075,7 @@
 		src="{{img}}"></amp-img>
 	      <input name = "clientId" 
 		 type = "hidden" 
-		 value = "CLIENT_ID(client)" 
+		 value = "CLIENT_ID(uid)" 
 		 data-amp-replace = "CLIENT_ID">
 	      <button  type = "submit" > x
 	    </form>
@@ -2130,7 +2130,7 @@
 	      items="."
 	      single-item
 	      layout="fixed-height"
-	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(client)"
+	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
 	      id="cart-list">
 	      <template type="amp-mustache">
 		<div class="shopping-cart">
