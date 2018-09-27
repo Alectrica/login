@@ -2191,7 +2191,7 @@
 
 	<div class="my2">
 	  <button 
-	    [hidden] = "NOT presupuesto.Iniciado"
+	    [hidden] = "presupuesto.Iniciado? false : true"
 	    id="boton-login"
             class="ampstart-btn ampstart-btn-secondary ml1 caps">Botón Login</button>
 	</div>
