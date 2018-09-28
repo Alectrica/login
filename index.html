@@ -56,8 +56,7 @@
     "login": {
     "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
     "sign-out": "https://shop-staging.alectrico.cl/amp/accesos/logout?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
-    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
-    "pong": "https://shop-staging.alectrico.cl/amp/accesos/autorizacion.json/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&clientId=CLIENT_ID(uid)"
+    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)"
     },
     "authorizationFallbackResponse": {
       "error": true,
@@ -1890,7 +1889,7 @@
 		method="POST"
 		action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: true}}),carrusel-list.refresh, cart-list.refresh,amp-access.login-pong"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: 1}}),carrusel-list.refresh, cart-list.refresh"
 		class="flex flex-wrap m1">
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
@@ -2292,18 +2291,16 @@
 	  </div>
 	</amp-list>
       </section>
-      <!---
       <div class="my2">
 	<button 
 	  hidden
-	  [hidden] = "presupuesto.Iniciado? false : true"
-	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: false}})"
+	  [hidden] = "presupuesto.Iniciado == 1 ? false : true"
+	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
 	  id="boton-login"
 	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Login</button>
 	<span
 	 [text] = "loggedIn">"loggedIn"</span>
       </div>
-      -->
       <div class="my2">
 	<button amp-access="NOT loggedIn AND presupuesto_local"
 	  amp-access-hide
