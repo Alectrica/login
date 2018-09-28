@@ -2366,18 +2366,15 @@
 	<div class='px2 mt4 md-mt3'>
 	  <div class='flex flex-wrap mxn2'>
 	    <div class='col-12 md-col-12 px2'>
-	      <!-- Start Input -->
 	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
 		<input class='block border-none p0 m0' id='verification-email' name='email' on='select:AMP.setState({ contactoSelected: true})' placeholder='email' required='' type='email'>
 		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='email'>Email</label>
-		<span validation-for='verification-email' visible-when-invalid='customError'>
-	    Email protegido con contraseña.
+		<span validation-for='verification-email' visible-when-invalid='customError'>Email protegido con contraseña.
 		  <button amp-access-hide='' amp-access='NOT loggedIn' class='ampstart-btn mx1 mt1 caps' on='tap:amp-access.login-sign-in' tabindex='0'>Usar</button>
 		</span>
 		<span validation-for='verification-email' visible-when-invalid='valueMissing'></span>
 		<span validation-for='verification-email' visible-when-invalid='typeMismatch'></span>
 	      </div>
-	      <!-- End Input -->
 	    </div>
 	    <div class='col-12 md-col-12 px2'>
 	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
@@ -2387,7 +2384,6 @@
 	      </div>
 	    </div>
 	    <div class='col-12 md-col-12 px2'>
-	      <!-- Start Input -->
 	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
 		<input class='block border-none p0 m0' id='verification-fono' name='fono' pattern='(\+56|56|)\W*(2|9)\W*[0-9]{8}' placeholder='Fono' required='' type='text' value=''>
 		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='fono'>Fono</label>
@@ -2395,31 +2391,38 @@
 		<span validation-for='verification-fono' visible-when-invalid='typeMismatch'></span>
 		<span validation-for='verification-fono' visible-when-invalid='patternMismatch'>Debe tener 9 dígitos y puede ingresar el código de país. Ejemplos: 987654321,+56987654321, 227654321, +56227654321</span>
 	      </div>
-	      <!-- End Input -->
 	    </div>
 	  </div>
 	</div>
+
 	<div class='flex flex-wrap mxn2'>
-
-	  <button [disabled]='!contactoSelected' type='submit'>Registrar
-	</button>
+	  <button [disabled]='!contactoSelected' type='submit'>Registrar</button>
 	</div>
-	<div submit-success=''>
 
+	<div submit-success=''>
 	  <template type='amp-mustache'>
 	  Correcto!
 	  </template>
 	</div>
+
 	<div submit-error=''>
 	  <template type='amp-mustache'>
+
 	    {{#verifyErrors}}
 	    <p>{{name}} {{message}}</p>
 	    {{/verifyErrors}}
+
 	    {{^verifyErrors}}
-	    <p>Ocurrió un error de servidor. Intente nuevamente</p>
+	    <p>Ocurrió un error de servidor. Intente nuevamente.</p>
 	    {{/verifyErrors}}
+	    
+	    {{#error}}
+	    <p>{{message}}</p>
+	    {{/error}}
+
 	  </template>
 	</div>
+
       </form>
       <button [disabled]='!contactoSelected' [hidden]='!contactoSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>continuar
       </button>
