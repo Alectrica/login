@@ -774,46 +774,39 @@
      </a>
      -->
 
-   <!--
-    <amp-img srcset="/img/logo_flash.png" 
-      width="424" 
-      height="88" 
-      alt="logo flash">
-    </amp-img>
-    -->
-    <amp-img srcset="/safari-pinned-tab.svg" 
-      width="24" 
-      height="24" 
-      alt="logo flash">
-    </amp-img>
-
-     <h1 id="abe-preview-header-title" 
-       class="h3 center truncate caps">
+     <!--
+      <amp-img srcset="/img/logo_flash.png" 
+	width="424" 
+	height="88" 
+	alt="logo flash">
+      </amp-img>
+      -->
+      <amp-img srcset="/safari-pinned-tab.svg" 
+        width="24" 
+        height="24" 
+        alt="logo flash">
+      </amp-img>
+      <h1 id="abe-preview-header-title" 
+        class="h3 center truncate caps">
         Aléctrico
-     </h1>
-
-     <section amp-access="NOT loggedIn">
+      </h1>
+      <section amp-access="NOT loggedIn">
         <template amp-access-template type="amp-mustache">
-	  
-	  {{presupuesto_dispositivo}}
+         {{presupuesto_dispositivo}}
         </template>
-     </section>
-
-
-     <section amp-access="loggedIn">
-	<template amp-access-template type="amp-mustache">
-	  
-	  {{presupuesto_dispositivo}}
-	  {{user_name}}
-	</template>
       </section>
+      <section amp-access="loggedIn">
+        <template amp-access-template type="amp-mustache">
+          {{presupuesto_dispositivo}}
+          {{user_name}}
+        </template>
+      </section>
+    </div>
 
-   </div>
-
-   <div id="abe-preview">
-     <div class="ampstart-card m1">
-       <div class="header">
-	  <a id="sample-menu" on="tap:drawermenu.toggle">
+    <div id="abe-preview">
+      <div class="ampstart-card m1">
+        <div class="header">
+ 	  <a id="sample-menu" on="tap:drawermenu.toggle">
 	    <amp-img srcset="/img/ic_menu_white_1x_web_24dp.png 1x, /img/ic_menu_white_2x_web_24dp.png 2x" 
 	      width="24" 
 	      height="24" 
@@ -1640,7 +1633,15 @@
 		</amp-image-lightbox>
 	      </div>
 
-		      
+		     
+	      <amp-state id="presupuesto">
+	        <script type="application/json">
+                  {
+		    "Iniciado" : 0
+		  }
+                </script>
+	      </amp-state> 
+
 	      <amp-state id="product">
 		<script type="application/json">
 		  {
@@ -1878,8 +1879,7 @@
 	      </amp-state>
 
 	      <p class="price-description"> Seleccionado:
-		<span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span>
-	      </p>
+		<span [text]="product[product.selectedColor].nombres[product.selectedSlide]">Ampolleta LED.</span> </p>
 
 	      <!--
                 on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show,boton-login.show"
@@ -2130,58 +2130,58 @@
 	  </div>
 	</form>
 	
-	<section class="checkout-section">	
-	<amp-list amp-access = "loggedIn OR presupuesto_local"
-	  amp-access-hide = ""
-          class="items m1"
-	  width="auto"
-	  height="145"
-	  layout="fixed-height"
-	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
+        <section class="checkout-section">	
+	  <amp-list amp-access = "loggedIn OR presupuesto_local"
+	    amp-access-hide = ""
+	    class="items m1"
+	    width="auto"
+	    height="145"
+	    layout="fixed-height"
+	    src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
 
-	  id="carrusel-list">
-	  <template type="amp-mustache">
-	  <!--
-	    <a class="text-decoration-none p1"
-	      href="#">
-	      <amp-img width="70.31"
-		height="46.8"
-		layout="fixed"
-		alt="{{cantidad}}"
-		src="{{img}}"></amp-img>
-	    </a>
-	   -->
-	    <form method   = "POST"
-	      action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
-	      target    = "_top"
-	      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-	      <amp-img width="170.31"
-		height="146.8"
-		layout="fixed"
-		alt="{{cantidad}}"
-		src="{{img}}"></amp-img>
-	      <input name = "clientId" 
-		 type = "hidden" 
-		 value = "CLIENT_ID(uid)" 
-		 data-amp-replace = "CLIENT_ID">
-	      <button  type = "submit" > x
-	    </form>
-	  </template>
+	    id="carrusel-list">
+	    <template type="amp-mustache">
+	    <!--
+	      <a class="text-decoration-none p1"
+		href="#">
+		<amp-img width="70.31"
+		  height="46.8"
+		  layout="fixed"
+		  alt="{{cantidad}}"
+		  src="{{img}}"></amp-img>
+	      </a>
+	     -->
+	      <form method   = "POST"
+		action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+		target    = "_top"
+		on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+		<amp-img width="170.31"
+		  height="146.8"
+		  layout="fixed"
+		  alt="{{cantidad}}"
+		  src="{{img}}"></amp-img>
+		<input name = "clientId" 
+		   type = "hidden" 
+		   value = "CLIENT_ID(uid)" 
+		   data-amp-replace = "CLIENT_ID">
+		<button  type = "submit" > x
+	      </form>
+	    </template>
 
-	  <div overflow = "" 
-	    class = "list-overflow">
-	   VER MAS
-	  </div>
-          <div placeholder>Cargando la lista de electrodomésticos ...</div>
-          <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
-	</amp-list>
-      </section>
+	    <div overflow = "" 
+	      class = "list-overflow">
+	     VER MAS
+	    </div>
+	    <div placeholder>Cargando la lista de electrodomésticos ...</div>
+	    <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
+	  </amp-list>
+        </section>
 
-      <amp-install-serviceworker
-        src="/sw.js"
-        data-iframe-src="https://designer.com/sw.js"
-        layout="nodisplay">
-      </amp-install-serviceworker>
+	<amp-install-serviceworker
+	  src="/sw.js"
+	  data-iframe-src="https://designer.com/sw.js"
+	  layout="nodisplay">
+	</amp-install-serviceworker>
 
         <!--
 
@@ -2291,6 +2291,8 @@
 	  </div>
 	</amp-list>
       </section>
+
+      <!-- lol -->
       <div class="my2">
 	<button 
 	  hidden
@@ -2299,6 +2301,7 @@
 	  id="boton-login"
 	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Login</button>
       </div>
+
       <div class="my2">
 	<button amp-access="NOT loggedIn AND presupuesto_local"
 	  amp-access-hide
