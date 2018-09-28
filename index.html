@@ -1613,11 +1613,6 @@
 		  </div>
 		</amp-image-lightbox>
 
-
-
-
-
-		  
 		<amp-image-lightbox id="gallery-lightbox"
 		  layout="nodisplay">
 		  <div on="tap:gallery-lightbox.close"
@@ -2294,13 +2289,16 @@
 
       <!-- lol -->
       <div class="my2">
-	<button 
-	  hidden
-	  [hidden] = "presupuesto.Iniciado == 1 ? false : true"
-	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
-	  id="boton-login"
-	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Login</button>
-	  <span> -- para ver la opinión de Aléctrico sobre sus circuitos </span>
+	<span>
+	  <button 
+	    hidden
+	    [hidden] = "presupuesto.Iniciado == 1 ? false : true"
+	    on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
+	    id="boton-login"
+	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Login
+	  </button>
+          <p> -- para ver la opinión de Aléctrico sobre sus circuitos </p>
+	</span>
       </div>
 
       <div class="my2">
