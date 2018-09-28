@@ -869,7 +869,7 @@
 
         <p id="product-description"
           class="m1">
-	  Si su instalación eléctrica fue diseñada para un consumo eléctrico insuficiente tal vez sea la hora de ampliarla.
+	  La calidad de una reparación eléctrica depende de la realización de un levantamiento eléctrico previo que debe ser realizado por un Instalador Eléctrico Autorizado.
        </p>
 
         <p id="product-description"
@@ -2323,7 +2323,9 @@
       </div>
 
 
-      <div class='stepper vertical'>
+      <div class='stepper vertical'
+	hidden
+	>
 	<button [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
 	  class='step-title step-active' 
 	  on='tap:AMP.pushState({ currentStep: 0})'>
