@@ -2297,7 +2297,8 @@
 	    id="boton-login"
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Login
 	  </button>
-          <p> -- para ver la opinión de Aléctrico sobre sus circuitos </p>
+          <p hidden
+	   [hidden] = "presupuesto.Iniciado == ! ? false : true" > -- para ver la opinión de Aléctrico sobre sus circuitos </p>
 	</span>
       </div>
 
