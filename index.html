@@ -530,24 +530,6 @@
       outline: #fff;
     }
 
-    .tabContent {
-        line-height: 1.5rem;
-        display: none;
-        width: 100%;
-        order: 1;  
-    }
-
-    .tabButton[selected]::after {
-      content: '';
-      display: block;
-      height: 4px;
-      background: linear-gradient(90deg,#94103e 0,#db004d);
-    }
-
-    .tabButton[selected]+.tabContent {
-        display: block;
-    }
-
     .items, amp-list.items > div {
       justify-content: flex-start;
     }
@@ -645,6 +627,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .stepper.vertical .step-title {
       padding: 8px;
       font-size: 16px;
@@ -654,12 +637,15 @@
       text-align: left;
       background-color: #fff;
     }
+
     .stepper.vertical .step-title:not([disabled]):active {
       background-color: #ccc;
     }
+
     .stepper.vertical .step-title:not([disabled]) {
       cursor: pointer;
     }
+
     .stepper.vertical .step-title.step-active {
       background-color: #f2f2f2;
       font-weight: 700;
@@ -2198,6 +2184,28 @@
       </amp-install-serviceworker>
 
         <!--
+
+    .tabContent {
+        line-height: 1.5rem;
+        display: none;
+        width: 100%;
+        order: 1;
+    }
+
+    .tabButton[selected]::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(90deg,#94103e 0,#db004d);
+    }
+
+    .tabButton[selected]+.tabContent {
+        display: block;
+    }
+
+
+
+
 	<amp-selector role="tablist"
 	  layout="container"
 	  class="ampTabContainer ampstart-headerbar-nav"
