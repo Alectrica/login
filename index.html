@@ -2195,20 +2195,19 @@
 	  </template>
 
 	  <div overflow = "" 
-	       class = "list-overflow">
+	    class = "list-overflow">
 	   VER MAS
 	  </div>
           <div placeholder>Cargando la lista de electrodomésticos ...</div>
           <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
-
 	</amp-list>
       </section>
 
-	<amp-install-serviceworker
-	  src="/sw.js"
-	  data-iframe-src="https://designer.com/sw.js"
-	  layout="nodisplay">
-	</amp-install-serviceworker>
+      <amp-install-serviceworker
+        src="/sw.js"
+        data-iframe-src="https://designer.com/sw.js"
+        layout="nodisplay">
+      </amp-install-serviceworker>
 
         <!--
 	<amp-selector role="tablist"
@@ -2230,540 +2229,535 @@
 	</amp-selector>
         -->
 
-	<section amp-access="loggedIn AND presupuesto_local" 
-	  id= "resumen" 
-	  class= "checkout-section"
-	  amp-access-hide = "" >
-	  <h3 class="">Resumen de Electromésticos</h3>
+      <section amp-access="loggedIn AND presupuesto_local" 
+        id= "resumen" 
+        class= "checkout-section"
+        amp-access-hide = "" >
+        <h3 class="">Resumen de Electromésticos</h3>
 
-	  <amp-list 
-	      credentials="include"
-	      width="auto"
-	      height="180"
-	      items="."
-	      single-item
-	      layout="fixed-height"
-	      src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
-	      id="cart-list">
-	      <template type="amp-mustache">
-		<div class="shopping-cart">
-		  <div class="item header">
-		    <div class="name">
-		       <strong>Nombre</strong>
-		    </div>
-		    <div class="price">
-		       <strong>Pot</strong>
-		    </div>
-		    <div class="quantity">
-		       <strong>Cto</strong>
-		    </div>
-		  </div>
-		  {{#items}}
-		  <div class="item">
-		     <div class="name">{{nombre}}</div>
-		     <div class="price">{{potencia}}W</div>
-		     <div class="quantity">{{circuito}}</div>
-		  </div>
-
-		  {{/items}} {{#cargas_count}}
-		  <div class= "item summary">
-		     <div class="name"></div>
-		     <div class="price">
-			<strong>Total:</strong>
-		     </div>
-		     <div class="quantity">
-			<strong>{{.}}</strong>
-		     </div>
-		  </div>
-
-		  {{/cargas_count}}
-		  <div class="item summary">
-		    <div class="name"></div>
-		    <div class="price">
-		       <strong>Sum:</strong>
-		    </div>
-		    <div class="quantity">
-		      <strong>{{total}}</strong>
-		    </div>
-		  </div>
-		  {{presupuesto_local}}
-		  {{usuario_name}}
+        <amp-list 
+	  credentials="include"
+	  width="auto"
+	  height="180"
+	  items="."
+	  single-item
+	  layout="fixed-height"
+	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
+	  id="cart-list">
+	  <template type="amp-mustache">
+	    <div class="shopping-cart">
+	      <div class="item header">
+		<div class="name">
+		   <strong>Nombre</strong>
 		</div>
-	      </template>
-
-	      <div overflow = "" 
-		 class = "list-overflow">
-		 VER MAS
+		<div class="price">
+		   <strong>Pot</strong>
+		</div>
+		<div class="quantity">
+		   <strong>Cto</strong>
+		</div>
+	      </div>
+	      {{#items}}
+	      <div class="item">
+		 <div class="name">{{nombre}}</div>
+		 <div class="price">{{potencia}}W</div>
+		 <div class="quantity">{{circuito}}</div>
 	      </div>
 
-	    </amp-list>
-          </section>
-
-	<div class="my2">
-	  <button 
-	    hidden
-	    [hidden] = "presupuesto.Iniciado? false : true"
-	    on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: false}})"
-	    id="boton-login"
-            class="ampstart-btn ampstart-btn-secondary ml1 caps">Login</button>
-	  <span
-	   [text] = "loggedIn">"loggedIn"</span>
-	</div>
-
-        <div class="my2">
-	  <button amp-access="NOT loggedIn AND presupuesto_local"
-	    amp-access-hide
-	    on="tap:amp-access.login-sign-in,resumen.show,carrusel-list.show, cart-list.show"
-	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
-	    <span amp-access="NOT loggedIn AND presupuesto_local"
-	                  class="inline-block ml1">...para ver el análisis de factibiidad</span>
-
-	  <button amp-access="loggedIn"
-	    tabindex="0"
-	    on="tap:amp-access.login-sign-out"
-	    class="ampstart-btn ml1 caps"
-	    amp-access-hide>Cerrar Sesión</button>
-	</div>
-
-
-<div class='stepper vertical'>
-  <button [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
-    class='step-title step-active' 
-    on='tap:AMP.pushState({ currentStep: 0})'>
-    <i [class]="contactoSelected ? 'step-complete' : 'step-incomplete'" 
-      class='step-incomplete' 
-      data-step-nr='1'></i>
-      Contacto
-    </button>
-  <section [hidden]='currentStep > 0'>
-    <div class='content'>
-      <span amp-access-hide='' 
-	amp-access='loggedIn'
-	role='button' 
-	tabindex='0'>
-	<button 
-	  [hidden]='contactoSelected' 
-	  class='ampstart-btn mx1 mt1 caps' 
-	  on='tap:amp-access.login-sign-out'>Desbloquear
-	</button>
-	<hr>
-	<p>Aléctrico guardará en sus servidores sus datos de contacto y de su proyecto eléctrico por el tiempo que sea necesario para la ejecución de la obra. En cualquier momento puede cerrar su cuenta, solicitándolo a Aléctrico.</p>
-	<p>Proporcionamos acceso SSL, procesamos las sesiones de usuario con la gema Devise y no entregamos esos datos a nadie. Los datos de proyecto eléctrico podrían estar con acceso público porque es una de las maneras que usamos para darnos a conocer a otros clientes potenciales.</p>
-	<hr>
-	<p>¿Ud. acepta estas condiciones de servicio de Aléctrico?</p>
-
-	<amp-selector 
-	  class='poll' 
-	  name='animal-poll' 
-	  on='select:AMP.setState({contactoSelected: true})'>
-	    <div option='cat'>Acepto</div>
-	</amp-selector>
-      </span>
-
-      <form [hidden]='contactoSelected' action-xhr='https://shop-staging.alectrico.cl/amp/accesos/create' amp-access='NOT loggedIn' class='' custom-validation-reporting='show-first-on-submit' method='post' on='submit-success:AMP.setState({contactoSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/accesos/verify'>
-	<input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
-	<p>Ingrese sus datos de contacto</p>
-	<div class='px2 mt4 md-mt3'>
-	  <div class='flex flex-wrap mxn2'>
-	    <div class='col-12 md-col-12 px2'>
-	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
-		<input class='block border-none p0 m0' id='verification-email' name='email' on='select:AMP.setState({ contactoSelected: true})' placeholder='email' required='' type='email'>
-		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='email'>Email</label>
-		<span validation-for='verification-email' visible-when-invalid='customError'>Email protegido con contraseña.
-		  <button amp-access-hide='' amp-access='NOT loggedIn' class='ampstart-btn mx1 mt1 caps' on='tap:amp-access.login-sign-in' tabindex='0'>Usar</button>
-		</span>
-		<span validation-for='verification-email' visible-when-invalid='valueMissing'></span>
-		<span validation-for='verification-email' visible-when-invalid='typeMismatch'></span>
+	      {{/items}} {{#cargas_count}}
+	      <div class= "item summary">
+		 <div class="name"></div>
+		 <div class="price">
+		    <strong>Total:</strong>
+		 </div>
+		 <div class="quantity">
+		    <strong>{{.}}</strong>
+		 </div>
 	      </div>
+
+	      {{/cargas_count}}
+	      <div class="item summary">
+		<div class="name"></div>
+		<div class="price">
+		   <strong>Sum:</strong>
+		</div>
+		<div class="quantity">
+		  <strong>{{total}}</strong>
+		</div>
+	      </div>
+	      {{presupuesto_local}}
+	      {{usuario_name}}
 	    </div>
-	    <div class='col-12 md-col-12 px2'>
-	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
-		<input class='block border-none p0 m0' id='name' name='name' placeholder='Nombre' required type='text' value=''>
-		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='name'>Nombre</label>
-		<span validation-for='name' visible-when-invalid='valueMissing'></span>
-	      </div>
-	    </div>
-	    <div class='col-12 md-col-12 px2'>
-	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
-		<input class='block border-none p0 m0' id='verification-fono' name='fono' pattern='(\+56|56|)\W*(2|9)\W*[0-9]{8}' placeholder='Fono' required='' type='text' value=''>
-		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='fono'>Fono</label>
-		<span validation-for='verification-fono' visible-when-invalid='valueMissing'></span>
-		<span validation-for='verification-fono' visible-when-invalid='typeMismatch'></span>
-		<span validation-for='verification-fono' visible-when-invalid='patternMismatch'>Debe tener 9 dígitos y puede ingresar el código de país. Ejemplos: 987654321,+56987654321, 227654321, +56227654321</span>
-	      </div>
-	    </div>
+	  </template>
+	  <div overflow = "" 
+	     class = "list-overflow">
+	     VER MAS
 	  </div>
-	</div>
+	</amp-list>
+      </section>
 
-	<div class='flex flex-wrap mxn2'>
-	  <button [disabled]='!contactoSelected' type='submit'>Registrar</button>
-	</div>
+      <div class="my2">
+	<button 
+	  hidden
+	  [hidden] = "presupuesto.Iniciado? false : true"
+	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: false}})"
+	  id="boton-login"
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Login</button>
+	<span
+	 [text] = "loggedIn">"loggedIn"</span>
+      </div>
 
-	<div submit-success=''>
-	  <template type='amp-mustache'>
-	  Correcto!
-	  </template>
-	</div>
+      <div class="my2">
+	<button amp-access="NOT loggedIn AND presupuesto_local"
+	  amp-access-hide
+	  on="tap:amp-access.login-sign-in,resumen.show,carrusel-list.show, cart-list.show"
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
+	  <span amp-access="NOT loggedIn AND presupuesto_local"
+			class="inline-block ml1">...para ver el análisis de factibiidad</span>
 
-	<div submit-error=''>
-	  <template type='amp-mustache'>
+	<button amp-access="loggedIn"
+	  tabindex="0"
+	  on="tap:amp-access.login-sign-out"
+	  class="ampstart-btn ml1 caps"
+	  amp-access-hide>Cerrar Sesión</button>
+      </div>
 
-	    {{#verifyErrors}}
-	    <p>{{name}} {{message}}</p>
-	    {{/verifyErrors}}
 
-	    {{^verifyErrors}}
-	    <p>Ocurrió un error de servidor. Intente nuevamente.</p>
-	    {{/verifyErrors}}
-	    
-	    {{#error}}
-	    <p>{{message}}</p>
-	    {{/error}}
+      <div class='stepper vertical'>
+	<button [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
+	  class='step-title step-active' 
+	  on='tap:AMP.pushState({ currentStep: 0})'>
+	  <i [class]="contactoSelected ? 'step-complete' : 'step-incomplete'" 
+	    class='step-incomplete' 
+	    data-step-nr='1'></i>
+	    Contacto
+	  </button>
+	<section [hidden]='currentStep > 0'>
+	  <div class='content'>
+	    <span amp-access-hide='' 
+	      amp-access='loggedIn'
+	      role='button' 
+	      tabindex='0'>
+	      <button 
+		[hidden]='contactoSelected' 
+		class='ampstart-btn mx1 mt1 caps' 
+		on='tap:amp-access.login-sign-out'>Desbloquear
+	      </button>
+	      <hr>
+	      <p>Aléctrico guardará en sus servidores sus datos de contacto y de su proyecto eléctrico por el tiempo que sea necesario para la ejecución de la obra. En cualquier momento puede cerrar su cuenta, solicitándolo a Aléctrico.</p>
+	      <p>Proporcionamos acceso SSL, procesamos las sesiones de usuario con la gema Devise y no entregamos esos datos a nadie. Los datos de proyecto eléctrico podrían estar con acceso público porque es una de las maneras que usamos para darnos a conocer a otros clientes potenciales.</p>
+	      <hr>
+	      <p>¿Ud. acepta estas condiciones de servicio de Aléctrico?</p>
 
-	  </template>
-	</div>
+	      <amp-selector 
+		class='poll' 
+		name='animal-poll' 
+		on='select:AMP.setState({contactoSelected: true})'>
+		  <div option='cat'>Acepto</div>
+	      </amp-selector>
+	    </span>
 
-      </form>
-      <button [disabled]='!contactoSelected' [hidden]='!contactoSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>continuar
-      </button>
-    </div>
-  </section>
-  <!-------------------- section inicio ------------------------------------>
-
-  <button [class]="currentStep != 1 ? 'step-title' : 'step-title step-active'" [disabled]='!contactoSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 1})'>
-    <i [class]="problemaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='2'></i> Descripción del Problema
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep !=1' hidden=''>
-    <div class='content'>
-      <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
-	<input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
-	<input name='etapa' type='hidden' value='problema'>
-	<div class='px2 mt4 md-mt3'>
-	  <div class='flex flex-wrap mxn2'>
-
-	    <div class='col-12 md-col-12 px2'>
-	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
-		<textarea class='block border-none p0 m0' cols='40' id='descripcion' name='descripcion' on='tap:AMP.setState({ problemaSelected: true})' placeholder='Describa lo que necesita' required role='' rows='5' tabindex=''></textarea>
-		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='descripcion'>Problema</label>
-		<span validation-for='descripcion' visible-when-invalid='valueMissing'></span>
+	    <form [hidden]='contactoSelected' action-xhr='https://shop-staging.alectrico.cl/amp/accesos/create' amp-access='NOT loggedIn' class='' custom-validation-reporting='show-first-on-submit' method='post' on='submit-success:AMP.setState({contactoSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/accesos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <p>Ingrese sus datos de contacto</p>
+	      <div class='px2 mt4 md-mt3'>
+		<div class='flex flex-wrap mxn2'>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='verification-email' name='email' on='select:AMP.setState({ contactoSelected: true})' placeholder='email' required='' type='email'>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='email'>Email</label>
+		      <span validation-for='verification-email' visible-when-invalid='customError'>Email protegido con contraseña.
+			<button amp-access-hide='' amp-access='NOT loggedIn' class='ampstart-btn mx1 mt1 caps' on='tap:amp-access.login-sign-in' tabindex='0'>Usar</button>
+		      </span>
+		      <span validation-for='verification-email' visible-when-invalid='valueMissing'></span>
+		      <span validation-for='verification-email' visible-when-invalid='typeMismatch'></span>
+		    </div>
+		  </div>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='name' name='name' placeholder='Nombre' required type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='name'>Nombre</label>
+		      <span validation-for='name' visible-when-invalid='valueMissing'></span>
+		    </div>
+		  </div>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='verification-fono' name='fono' pattern='(\+56|56|)\W*(2|9)\W*[0-9]{8}' placeholder='Fono' required='' type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='fono'>Fono</label>
+		      <span validation-for='verification-fono' visible-when-invalid='valueMissing'></span>
+		      <span validation-for='verification-fono' visible-when-invalid='typeMismatch'></span>
+		      <span validation-for='verification-fono' visible-when-invalid='patternMismatch'>Debe tener 9 dígitos y puede ingresar el código de país. Ejemplos: 987654321,+56987654321, 227654321, +56227654321</span>
+		    </div>
+		  </div>
+		</div>
 	      </div>
-	    </div>
 
-	    <div class='col-12 md-col-12 px2'>
 	      <div class='flex flex-wrap mxn2'>
-		<button [disabled]='!problemaSelected' type='submit'>Registrar
-		</button>
+		<button [disabled]='!contactoSelected' type='submit'>Registrar</button>
 	      </div>
-	    </div>
-          </div>
-        </div>
-	<div submit-success=''>
-	  <template type='amp-mustache'>
-	    Correcto!
-	  </template>
-	</div>
-	<div submit-error=''>
-	  <template type='amp-mustache'>
-	    {{#verifyErrors}}
-	    <p>{{name}} {{message}}</p>
-	    {{/verifyErrors}}
-	    {{^verifyErrors}}
-	    <p>Ocurrió un error de servidor. Intente nuevamente</p>
-	    {{/verifyErrors}}
-	  </template>
-	</div>
-      </form>
-    </div>
-  </section>
-  <!-- --- --- --->
-  <button [class]="currentStep != 2 ? 'step-title' : 'step-title step-active'" [disabled]='!problemaSelected' class='step-active step-title' disabled='' on='tap:AMP.pushState({ currentStep: 2})'>
-    <i [class]="tipo_trabajoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='3'></i>
-    Tipo de Trabajo
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep != 2' hidden=''>
-    <div class='content'>
-      <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-first-on-submit' id='tipo_trabajo' method='post' on='submit-success:AMP.setState({tipo_trabajoSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/accesos/verify'>
-	<input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
-	<input name='etapa' type='hidden' value='tipo_trabajo'>
-	<div class='ampstart-input inline-block relative m0 p0 mb3'>
-	  <p>¿Qué tipo de trabajos necesita?</p>
-	  <amp-selector [selected]='atencion.selectedServicio' class='poll' name='tipo_trabajo-poll' on='select:AMP.setState({ atencion: {selectedServicio: event.targetOption}}),tipo_trabajo.submit'>
-	    <div option='ampliación'>Ampliación</div>
-	    <div option='reparación'>Reparación</div>
-	    <div option='normalización'>Normalización</div>
-	    <div option='certificación'>Certificación</div>
-	    <div option='instalación'>Instalación de lámparas y/o Enchufes</div>
-	  </amp-selector>
-	</div>
-	<div submit-success=''>
-	  <template type='amp-mustache'>
-	  Correcto!
-	  </template>
-	</div>
-	<div submit-error=''>
-	  <template type='amp-mustache'>
-	    {{#verifyErrors}}
-	    <p>{{name}} {{message}}</p>
-	    {{/verifyErrors}}
-	    {{^verifyErrors}}
-	    <p>Ocurrió un error de servidor. Intente nuevamente</p>
-	    {{/verifyErrors}}
-	  </template>
-	</div>
-      </form>
-    </div>
-  </section>
-  <!-- -->
-  <button [class]="currentStep != 3 ? 'step-title' : 'step-title step-active'" [disabled]='!tipo_trabajoSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 3})'>
-    <i [class]="direccionSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='4'></i>Dirección
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep !=3' hidden=''>
-    <div class='content'>
-      <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({direccionSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
-	<input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
-	<input name='etapa' type='hidden' value='direccion'>
-	<div class='px2 mt4 md-mt3'>
-	  <div class='flex flex-wrap mxn2'>
-	    <div class='col-12 md-col-12 px2'>
+
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		Correcto!
+		</template>
+	      </div>
+
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente.</p>
+		  {{/verifyErrors}}
+		  
+		  {{#error}}
+		  <p>{{message}}</p>
+		  {{/error}}
+
+		</template>
+	      </div>
+
+	    </form>
+	    <button [disabled]='!contactoSelected' [hidden]='!contactoSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>continuar
+	    </button>
+	  </div>
+	</section>
+	<!--- ----- --->
+
+	<button [class]="currentStep != 1 ? 'step-title' : 'step-title step-active'" [disabled]='!contactoSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 1})'>
+	  <i [class]="problemaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='2'></i> Descripción del Problema
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep !=1' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='problema'>
+	      <div class='px2 mt4 md-mt3'>
+		<div class='flex flex-wrap mxn2'>
+
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <textarea class='block border-none p0 m0' cols='40' id='descripcion' name='descripcion' on='tap:AMP.setState({ problemaSelected: true})' placeholder='Describa lo que necesita' required role='' rows='5' tabindex=''></textarea>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='descripcion'>Problema</label>
+		      <span validation-for='descripcion' visible-when-invalid='valueMissing'></span>
+		    </div>
+		  </div>
+
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='flex flex-wrap mxn2'>
+		      <button [disabled]='!problemaSelected' type='submit'>Registrar
+		      </button>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		  Correcto!
+		</template>
+	      </div>
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
+	      </div>
+	    </form>
+	  </div>
+	</section>
+	<!-- --- --- --->
+	<button [class]="currentStep != 2 ? 'step-title' : 'step-title step-active'" [disabled]='!problemaSelected' class='step-active step-title' disabled='' on='tap:AMP.pushState({ currentStep: 2})'>
+	  <i [class]="tipo_trabajoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='3'></i>
+	  Tipo de Trabajo
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 2' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-first-on-submit' id='tipo_trabajo' method='post' on='submit-success:AMP.setState({tipo_trabajoSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/accesos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='tipo_trabajo'>
 	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
-		<input class='block border-none p0 m0' id='direccion' name='direccion' on='select:AMP.setState({ direccionSelected: true})' placeholder='Dirección' required type='text' value=''>
-		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='name'>Dirección</label>
-		<span validation-for='direccion' visible-when-invalid='valueMissing'></span>
+		<p>¿Qué tipo de trabajos necesita?</p>
+		<amp-selector [selected]='atencion.selectedServicio' class='poll' name='tipo_trabajo-poll' on='select:AMP.setState({ atencion: {selectedServicio: event.targetOption}}),tipo_trabajo.submit'>
+		  <div option='ampliación'>Ampliación</div>
+		  <div option='reparación'>Reparación</div>
+		  <div option='normalización'>Normalización</div>
+		  <div option='certificación'>Certificación</div>
+		  <div option='instalación'>Instalación de lámparas y/o Enchufes</div>
+		</amp-selector>
+	      </div>
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		Correcto!
+		</template>
+	      </div>
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
+	      </div>
+	    </form>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 3 ? 'step-title' : 'step-title step-active'" [disabled]='!tipo_trabajoSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 3})'>
+	  <i [class]="direccionSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='4'></i>Dirección
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep !=3' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({direccionSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='direccion'>
+	      <div class='px2 mt4 md-mt3'>
+		<div class='flex flex-wrap mxn2'>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='direccion' name='direccion' on='select:AMP.setState({ direccionSelected: true})' placeholder='Dirección' required type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='name'>Dirección</label>
+		      <span validation-for='direccion' visible-when-invalid='valueMissing'></span>
+		    </div>
+		    <!-- Start Input -->
+		    <div class='ampstart-input inline-block relative m0 p0 mb3'>
+		      <input class='block border-none p0 m0' id='comuna' name='comuna' on='select:AMP.setState({ direccionSelected: true})' placeholder='Comuna' required type='text' value=''>
+		      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='comuna'>Comuna</label>
+		      <span validation-for='comuna' visible-when-invalid='valueMissing'></span>
+		    </div>
+		  </div>
+		  <div class='col-12 md-col-12 px2'>
+		    <div class='flex flex-wrap mxn2'>
+		      <button [disabled]='!direccionSelected' type='submit'>
+		      Registrar
+		      </button>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      <div submit-success=''>
+		<template type='amp-mustache'>
+		Correcto!
+		</template>
+	      </div>
+	      <div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
+	      </div>
+	    </form>
+	  </div>
+	</section>
+	<!--- -->
+	<form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' id='data' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	  <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	  <input name='etapa' type='hidden' value='visita'>
+	</form>
+	<button [class]="currentStep != 4 ? 'step-title' : 'step-title step-active'" [disabled]='!direccionSelected' class='step-title step-active' disabled='' on='tap:AMP.pushState({ currentStep: 4})'>
+	  <i [class]="semanaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='5'></i>Día de la semana
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep !=4' hidden=''>
+	  <div class='content'>
+	    <p>¿Qué día de la semana le resulta más conveniente para una visita eléctrica?</p>
+	    <amp-selector class='poll' name='semana-poll' on='select:AMP.setState({semanaSelected: true}),data.submit'>
+	      <div option='lunes'>lunes</div>
+	      <div option='martes'>martes</div>
+	      <div option='miércoles'>miércoles</div>
+	      <div option='jueves'>jueves</div>
+	      <div option='viernes'>viernes</div>
+	      <div option='sábado'>sábado</div>
+	      <div option='domingo'>domingo</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep !=5 ? 'step-title' : 'step-title step-active'" [disabled]='!semanaSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 5})'>
+	  <i [class]="horaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='6'></i>Hora del día
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 5' hidden=''>
+	  <div class='content'>
+	    <p>¿Qué horario del día le resulta más conveniente para una visita eléctrica?</p>
+	    <amp-selector class='poll' name='hora-poll' on='select:AMP.setState({horaSelected: true}),data.submit'>
+	      <div option='mañana'>En la mañana</div>
+	      <div option='tarde'>En la tarde</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
+	  <i [class]="destinoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='7'></i>
+	  Destino de la Propiedad
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 6' hidden=''>
+	  <div class='content'>
+	    <p></p>
+	    <amp-selector class='poll' name='destino-poll' on='select:AMP.setState({ destinoSelected: true}),data.submit'>
+	      <div option='vivienda'>La propiedad está destinada a ser usada como vivienda</div>
+	      <div option='local'>La propiedad está destinada a ser usada como local comercial</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 7 ? 'step-title' : 'step-title step-active'" [disabled]='!destinoSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 7})'>
+	  <i [class]="reunionSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='8'></i>Lugar de Reunión de Personas
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 7' hidden=''>
+	  <div class='content'>
+	    <p>¿En la propiedad se observa la permanencia de 25 personas por más de 15 minutos?</p>
+	    <amp-selector class='poll' name='reunion-poll' on='select:AMP.setState({ reunionSelected: true}),data.submit'>
+	      <div option='reunión_sí'>Sí</div>
+	      <div option='reunión_no'>No</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!--- -->
+	<button [class]="currentStep != 8 ?  'step-title' : 'step-title step-active'" [disabled]='!reunionSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 8})'>
+	  <i [class]="croquisSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='9'></i>Planos Eléctricos
+	</button>
+	<!--- -->
+	<section [hidden]='currentStep != 8' hidden=''>
+	  <div class='content'>
+	    <p>¿Posee los planos de la Instalación Eléctrica?</p>
+	    <amp-selector class='poll' name='croquis-poll' on='select:AMP.setState({ croquisSelected: true}),data.submit'>
+	      <div option='croquis_sí'>Sí</div>
+	      <div option='croquis_no'>No</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 9 ?  'step-title' : 'step-title step-active'" [disabled]='!croquisSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 9})'>
+	  <i [class]="titularidadSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='10'></i>Titularidad
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 9' hidden=''>
+	  <div class='content'>
+	    <p>¿Ud. es el actual dueño o dueña de la propiedad?</p>
+	    <amp-selector class='poll' name='titularidad-poll' on='select:AMP.setState({ titularidadSelected: true}),data.submit'>
+	      <div option='titularidad_sí'>Sí</div>
+	      <div option='titularidad_no'>No</div>
+	    </amp-selector>
+	  </div>
+	</section>
+	<!-- -->
+	<button [class]="currentStep != 10 ?  'step-title' : 'step-title step-active'" [disabled]='!titularidadSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 10})'>
+	  <i [class]="rolSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='11'></i>ROL y RUT
+	</button>
+	<!-- -->
+	<section [hidden]='currentStep != 10' hidden=''>
+	  <div class='content'>
+	    <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({rolSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
+	      <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
+	      <input name='etapa' type='hidden' value='rol'>
+	      <div class='px2 mt4 md-mt3'>
+	      <div class='flex flex-wrap mxn2'>
+	      <div class='col-12 md-col-12 px2'>
+	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
+	      <input class='block border-none p0 m0' id='rol' name='rol' pattern='(\d{1}|\d{2}|\d{3}|\d{4}|\d{5})-(\d{1}|\d{2}|\d{3}|\d{4}|\d{5})' placeholder='ROL' required type='text' value=''>
+	      <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='rol'>ROL</label>
+	      <span validation-for='rol' visible-when-invalid='valueMissing'></span>
+	      <span validation-for='rol' visible-when-invalid='patternMismatch'>Ingrese el ROL con un guión intermedio: xxxxx-xxxxx</span>
 	      </div>
 	      <!-- Start Input -->
 	      <div class='ampstart-input inline-block relative m0 p0 mb3'>
-		<input class='block border-none p0 m0' id='comuna' name='comuna' on='select:AMP.setState({ direccionSelected: true})' placeholder='Comuna' required type='text' value=''>
-		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='comuna'>Comuna</label>
-		<span validation-for='comuna' visible-when-invalid='valueMissing'></span>
-	      </div>
-	    </div>
-	    <div class='col-12 md-col-12 px2'>
-	      <div class='flex flex-wrap mxn2'>
-	        <button [disabled]='!direccionSelected' type='submit'>
-	        Registrar
-	        </button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	<div submit-success=''>
-	  <template type='amp-mustache'>
-	  Correcto!
-	  </template>
-        </div>
-        <div submit-error=''>
-	  <template type='amp-mustache'>
-	    {{#verifyErrors}}
-	    <p>{{name}} {{message}}</p>
-	    {{/verifyErrors}}
-	    {{^verifyErrors}}
-	    <p>Ocurrió un error de servidor. Intente nuevamente</p>
-	    {{/verifyErrors}}
-	  </template>
-	</div>
-      </form>
-    </div>
-  </section>
-  <!--- -->
-  <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' id='data' method='post' on='submit-success:AMP.setState({problemaSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
-    <input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
-    <input name='etapa' type='hidden' value='visita'>
-  </form>
-  <button [class]="currentStep != 4 ? 'step-title' : 'step-title step-active'" [disabled]='!direccionSelected' class='step-title step-active' disabled='' on='tap:AMP.pushState({ currentStep: 4})'>
-    <i [class]="semanaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='5'></i>Día de la semana
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep !=4' hidden=''>
-    <div class='content'>
-      <p>¿Qué día de la semana le resulta más conveniente para una visita eléctrica?</p>
-      <amp-selector class='poll' name='semana-poll' on='select:AMP.setState({semanaSelected: true}),data.submit'>
-	<div option='lunes'>lunes</div>
-	<div option='martes'>martes</div>
-	<div option='miércoles'>miércoles</div>
-	<div option='jueves'>jueves</div>
-	<div option='viernes'>viernes</div>
-	<div option='sábado'>sábado</div>
-	<div option='domingo'>domingo</div>
-      </amp-selector>
-    </div>
-  </section>
-  <!-- -->
-  <button [class]="currentStep !=5 ? 'step-title' : 'step-title step-active'" [disabled]='!semanaSelected' class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 5})'>
-    <i [class]="horaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='6'></i>Hora del día
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep != 5' hidden=''>
-    <div class='content'>
-      <p>¿Qué horario del día le resulta más conveniente para una visita eléctrica?</p>
-      <amp-selector class='poll' name='hora-poll' on='select:AMP.setState({horaSelected: true}),data.submit'>
-	<div option='mañana'>En la mañana</div>
-	<div option='tarde'>En la tarde</div>
-      </amp-selector>
-    </div>
-  </section>
-  <!-- -->
-  <button [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
-    <i [class]="destinoSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='7'></i>
-    Destino de la Propiedad
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep != 6' hidden=''>
-    <div class='content'>
-      <p></p>
-      <amp-selector class='poll' name='destino-poll' on='select:AMP.setState({ destinoSelected: true}),data.submit'>
-	<div option='vivienda'>La propiedad está destinada a ser usada como vivienda</div>
-	<div option='local'>La propiedad está destinada a ser usada como local comercial</div>
-      </amp-selector>
-    </div>
-  </section>
-  <!-- -->
-  <button [class]="currentStep != 7 ? 'step-title' : 'step-title step-active'" [disabled]='!destinoSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 7})'>
-    <i [class]="reunionSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='8'></i>Lugar de Reunión de Personas
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep != 7' hidden=''>
-    <div class='content'>
-      <p>¿En la propiedad se observa la permanencia de 25 personas por más de 15 minutos?</p>
-      <amp-selector class='poll' name='reunion-poll' on='select:AMP.setState({ reunionSelected: true}),data.submit'>
-	<div option='reunión_sí'>Sí</div>
-	<div option='reunión_no'>No</div>
-      </amp-selector>
-    </div>
-  </section>
-  <!--- -->
-  <button [class]="currentStep != 8 ?  'step-title' : 'step-title step-active'" [disabled]='!reunionSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 8})'>
-    <i [class]="croquisSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='9'></i>Planos Eléctricos
-  </button>
-  <!--- -->
-  <section [hidden]='currentStep != 8' hidden=''>
-    <div class='content'>
-      <p>¿Posee los planos de la Instalación Eléctrica?</p>
-      <amp-selector class='poll' name='croquis-poll' on='select:AMP.setState({ croquisSelected: true}),data.submit'>
-	<div option='croquis_sí'>Sí</div>
-	<div option='croquis_no'>No</div>
-      </amp-selector>
-    </div>
-  </section>
-  <!-- -->
-  <button [class]="currentStep != 9 ?  'step-title' : 'step-title step-active'" [disabled]='!croquisSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 9})'>
-    <i [class]="titularidadSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='10'></i>Titularidad
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep != 9' hidden=''>
-    <div class='content'>
-      <p>¿Ud. es el actual dueño o dueña de la propiedad?</p>
-      <amp-selector class='poll' name='titularidad-poll' on='select:AMP.setState({ titularidadSelected: true}),data.submit'>
-	<div option='titularidad_sí'>Sí</div>
-	<div option='titularidad_no'>No</div>
-      </amp-selector>
-    </div>
-  </section>
-  <!-- -->
-  <button [class]="currentStep != 10 ?  'step-title' : 'step-title step-active'" [disabled]='!titularidadSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 10})'>
-    <i [class]="rolSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='11'></i>ROL y RUT
-  </button>
-  <!-- -->
-  <section [hidden]='currentStep != 10' hidden=''>
-    <div class='content'>
-      <form action-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/create' class='' custom-validation-reporting='show-all-on-submit' method='post' on='submit-success:AMP.setState({rolSelected: true})' target='_top' verify-xhr='https://shop-staging.alectrico.cl/amp/presupuestos/verify'>
-	<input data-amp-replace='CLIENT_ID' name='clientId' type='hidden' value='CLIENT_ID(uid)'>
-	<input name='etapa' type='hidden' value='rol'>
-	<div class='px2 mt4 md-mt3'>
-	<div class='flex flex-wrap mxn2'>
-	<div class='col-12 md-col-12 px2'>
-	<div class='ampstart-input inline-block relative m0 p0 mb3'>
-	<input class='block border-none p0 m0' id='rol' name='rol' pattern='(\d{1}|\d{2}|\d{3}|\d{4}|\d{5})-(\d{1}|\d{2}|\d{3}|\d{4}|\d{5})' placeholder='ROL' required type='text' value=''>
-	<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='rol'>ROL</label>
-	<span validation-for='rol' visible-when-invalid='valueMissing'></span>
-	<span validation-for='rol' visible-when-invalid='patternMismatch'>Ingrese el ROL con un guión intermedio: xxxxx-xxxxx</span>
-	</div>
-	<!-- Start Input -->
-	<div class='ampstart-input inline-block relative m0 p0 mb3'>
-	  <input class='block border-none p0 m0' id='rut' name='rut' pattern='(\d{1}|\d{2})\.\d{3}\.\d{3}-(k|\d{1})' placeholder='RUT' required type='text' value=''>
-	  <label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='rut'>RUT</label>
-	  <span validation-for='rut' visible-when-invalid='valueMissing'></span>
-	  <span validation-for='rut' visible-when-invalid='patternMismatch'>Ingrese el RUT con puntos y guión: xx.xxx.xxx-v</span>
-	  </div>
-	    </div>
-	      <div class='col-12 md-col-12 px2'>
-		<div class='flex flex-wrap mxn2'>
-		  <button [disabled]='!rolSelected' type='submit'>
-		  Registrar
-		  </button>
+		<input class='block border-none p0 m0' id='rut' name='rut' pattern='(\d{1}|\d{2})\.\d{3}\.\d{3}-(k|\d{1})' placeholder='RUT' required type='text' value=''>
+		<label aria-hidden='true' class='absolute top-0 right-0 bottom-0 left-0' for='rut'>RUT</label>
+		<span validation-for='rut' visible-when-invalid='valueMissing'></span>
+		<span validation-for='rut' visible-when-invalid='patternMismatch'>Ingrese el RUT con puntos y guión: xx.xxx.xxx-v</span>
 		</div>
+		  </div>
+		    <div class='col-12 md-col-12 px2'>
+		      <div class='flex flex-wrap mxn2'>
+			<button [disabled]='!rolSelected' type='submit'>
+			Registrar
+			</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div submit-success=''>
+		  <template type='amp-mustache'>
+		  Correcto!
+		  </template>
+		</div>
+		<div submit-error=''>
+		<template type='amp-mustache'>
+		  {{#verifyErrors}}
+		  <p>{{name}} {{message}}</p>
+		  {{/verifyErrors}}
+		  {{^verifyErrors}}
+		  <p>Ocurrió un error de servidor. Intente nuevamente</p>
+		  {{/verifyErrors}}
+		</template>
 	      </div>
+	    </form>
+	    <button [disabled]='!rolSelected' [hidden]='!rolSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>
+	    continuar
+	    </button>
 	    </div>
-	  </div>
-	  <div submit-success=''>
-	    <template type='amp-mustache'>
-	    Correcto!
-	    </template>
-	  </div>
-	  <div submit-error=''>
-	  <template type='amp-mustache'>
-	    {{#verifyErrors}}
-	    <p>{{name}} {{message}}</p>
-	    {{/verifyErrors}}
-	    {{^verifyErrors}}
-	    <p>Ocurrió un error de servidor. Intente nuevamente</p>
-	    {{/verifyErrors}}
-	  </template>
-	</div>
-      </form>
-      <button [disabled]='!rolSelected' [hidden]='!rolSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>
-      continuar
-      </button>
+	</section>
       </div>
-  </section>
-</div>
-<!--googleon: all-->
+      <!--googleon: all-->
 
 
 
-	<!--
-	<div class="my2">
-	  <div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
-	    <button amp-access="NOT loggedIn" 
-	      amp-access-hide
-	      tabindex="0"
-	      class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
-	    <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
-	  </div>
+      <div class="my2">
+	<div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
+	  <button amp-access="NOT loggedIn" 
+	    amp-access-hide
+	    tabindex="0"
+	    class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
+	  <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
 	</div>
-	-->
-
-        <amp-analytics type="googleanalytics">
-          <script type="application/json">{
-            "vars": {
-              "account": "UA-109124551-1"
-            },
-            "triggers": {
-              "default pageview": {
-                "on": "visible",
-                "request": "pageview",
-                "vars": {
-                  "title": "Aléctrico Designer"
-                }
-              }
-            }
-          }
-          </script>
-        </amp-analytics>
-
-
-        <!---
-        <div class="my2">
-            <button amp-access="loggedIn" 
-	      on= "tap:cart-list.refresh,carrusel-list.refresh"
-              amp-access-hide
-              tabindex="0"
-              class="ampstart-btn ml1 caps" >Sincronizar</button>
-            <span amp-access= "loggedIn">... desde otro dispositivo</sp>
-        </div>
-	-->
       </div>
-    </body>
+
+      <amp-analytics type="googleanalytics">
+	<script type="application/json">{
+	  "vars": {
+	    "account": "UA-109124551-1"
+	  },
+	  "triggers": {
+	    "default pageview": {
+	      "on": "visible",
+	      "request": "pageview",
+	      "vars": {
+		"title": "Aléctrico Designer"
+	      }
+	    }
+	  }
+	}
+	</script>
+      </amp-analytics>
+
+
+      <div class="my2">
+	  <button amp-access="loggedIn" 
+	    on= "tap:cart-list.refresh,carrusel-list.refresh"
+	    amp-access-hide
+	    tabindex="0"
+	    class="ampstart-btn ml1 caps" >Sincronizar</button>
+	  <span amp-access= "loggedIn">... desde otro dispositivo</span>
+      </div>
+    </div>
+
+  </body>
 </html>
