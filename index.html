@@ -731,6 +731,36 @@
     }
 
 
+    /* Survey styling */
+    amp-selector.poll [option][selected] {
+      outline: none;
+    }
+    amp-selector.poll [option] {
+      display: flex;
+      align-items: center;
+    }
+    amp-selector.poll [option]:before {
+      transition: background 0.25s ease-in-out;
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin: 8px;
+      border-radius: 100%;
+      border: solid 1px #b60845;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    amp-selector.poll [option][selected]:before {
+      text-align: center;
+      content: "✓";
+      color: white;
+      background: #b60845;
+    }
+    amp-selector.poll [option][selected]:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+
 
 
     </style>
