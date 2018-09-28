@@ -2127,6 +2127,7 @@
 	
         <section class="checkout-section">	
 	  <amp-list amp-access = "loggedIn OR presupuesto_local"
+	    template = "carrusel-list-template"
 	    amp-access-hide = ""
 	    class="items m1"
 	    width="auto"
@@ -2135,41 +2136,40 @@
 	    src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
 
 	    id="carrusel-list">
-	    <template type="amp-mustache">
-	    <!--
-	      <a class="text-decoration-none p1"
-		href="#">
-		<amp-img width="70.31" 170.31
-		  height="46.8" 146.8
-		  layout="fixed"
-		  alt="{{cantidad}}"
-		  src="{{img}}"></amp-img>
-	      </a>
-	     -->
-	      <form method   = "POST"
-		action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
-		target    = "_top"
-		on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-		<amp-img width="70.31"
-		  height="46.8"
-		  layout="fixed"
-		  alt="{{cantidad}}"
-		  src="{{img}}"></amp-img>
-		<input name = "clientId" 
-		   type = "hidden" 
-		   value = "CLIENT_ID(uid)" 
-		   data-amp-replace = "CLIENT_ID">
-		<button  type = "submit" > x
-	      </form>
-	    </template>
+            <div overflow = ""  class = "list-overflow">VER MÁS </div>
+            <div placeholder>Cargando la lista de electrodomésticos ...</div>
+            <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
+          </amp-list>
 
-	    <div overflow = "" 
-	      class = "list-overflow">
-	     VER MAS
-	    </div>
-	    <div placeholder>Cargando la lista de electrodomésticos ...</div>
-	    <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
-	  </amp-list>
+	  <template 
+	  id = "carrusel-list-template"
+	  type="amp-mustache">
+	  <!--
+	    <a class="text-decoration-none p1"
+	      href="#">
+	      <amp-img width="70.31" 170.31
+		height="46.8" 146.8
+		layout="fixed"
+		alt="{{cantidad}}"
+		src="{{img}}"></amp-img>
+	    </a>
+	   -->
+	    <form method   = "POST"
+	      action-xhr = "https://api-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+	      target    = "_top"
+	      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+	      <amp-img width="70.31"
+		height="46.8"
+		layout="fixed"
+		alt="{{cantidad}}"
+		src="{{img}}"></amp-img>
+	      <input name = "clientId" 
+		 type = "hidden" 
+		 value = "CLIENT_ID(uid)" 
+		 data-amp-replace = "CLIENT_ID">
+	      <button  type = "submit" > x
+	    </form>
+	  </template>
         </section>
 
 	<amp-install-serviceworker
@@ -2227,6 +2227,7 @@
         <h3 class="">Resumen de Electromésticos</h3>
 
         <amp-list 
+          template="cart-list-template"
 	  credentials="include"
 	  width="auto"
 	  height="180"
@@ -2235,56 +2236,54 @@
 	  layout="fixed-height"
 	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
 	  id="cart-list">
-	  <template type="amp-mustache">
-	    <div class="shopping-cart">
-	      <div class="item header">
-		<div class="name">
-		   <strong>Nombre</strong>
-		</div>
-		<div class="price">
-		   <strong>Pot</strong>
-		</div>
-		<div class="quantity">
-		   <strong>Cto</strong>
-		</div>
-	      </div>
-	      {{#items}}
-	      <div class="item">
-		 <div class="name">{{nombre}}</div>
-		 <div class="price">{{potencia}}W</div>
-		 <div class="quantity">{{circuito}}</div>
-	      </div>
+          <div overflow = "" class = "list-overflow">VER MÁS</div>
+        </amp-list>
 
-	      {{/items}} {{#cargas_count}}
-	      <div class= "item summary">
-		 <div class="name"></div>
-		 <div class="price">
-		    <strong>Total:</strong>
-		 </div>
-		 <div class="quantity">
-		    <strong>{{.}}</strong>
-		 </div>
+	<template type="amp-mustache">
+	  <div class="shopping-cart">
+	    <div class="item header">
+	      <div class="name">
+		 <strong>Nombre</strong>
 	      </div>
-
-	      {{/cargas_count}}
-	      <div class="item summary">
-		<div class="name"></div>
-		<div class="price">
-		   <strong>Sum:</strong>
-		</div>
-		<div class="quantity">
-		  <strong>{{total}}</strong>
-		</div>
+	      <div class="price">
+		 <strong>Pot</strong>
 	      </div>
-	      {{presupuesto_local}}
-	      {{usuario_name}}
+	      <div class="quantity">
+		 <strong>Cto</strong>
+	      </div>
 	    </div>
-	  </template>
-	  <div overflow = "" 
-	     class = "list-overflow">
-	     VER MAS
+	    {{#items}}
+	    <div class="item">
+	       <div class="name">{{nombre}}</div>
+	       <div class="price">{{potencia}}W</div>
+	       <div class="quantity">{{circuito}}</div>
+	    </div>
+
+	    {{/items}} {{#cargas_count}}
+	    <div class= "item summary">
+	       <div class="name"></div>
+	       <div class="price">
+		  <strong>Total:</strong>
+	       </div>
+	       <div class="quantity">
+		  <strong>{{.}}</strong>
+	       </div>
+	    </div>
+
+	    {{/cargas_count}}
+	    <div class="item summary">
+	      <div class="name"></div>
+	      <div class="price">
+		 <strong>Sum:</strong>
+	      </div>
+	      <div class="quantity">
+		<strong>{{total}}</strong>
+	      </div>
+	    </div>
+	    {{presupuesto_local}}
+	    {{usuario_name}}
 	  </div>
-	</amp-list>
+	</template>
       </section>
 
       <!-- lol -->
@@ -2329,7 +2328,7 @@
 	<button amp-access="NOT loggedIn AND presupuesto_local"
 	  amp-access-hide
 	  on="tap:amp-access.login-sign-in,resumen.show,carrusel-list.show, cart-list.show"
-	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Iniciar sesión</button>
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
 	<!--
 	  <span amp-access="NOT loggedIn AND presupuesto_local"
 			class="inline-block ml1">...para ver el análisis de factibilidad</span>
