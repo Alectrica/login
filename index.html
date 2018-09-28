@@ -2294,11 +2294,11 @@
 	  [hidden] = "presupuesto.Iniciado == 1 ? false : true"
 	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
 	  id="boton-login"
-	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Login
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie Sesión
 	</button>
 	<span 
           hidden
-          [hidden] = "presupuesto.Iniciado == 1 ? false : true">... para ver el detalle de sus circuitos
+          [hidden] = "presupuesto.Iniciado == 1 ? false : true">... para ver los detalles
         </span>
         <span 
           hidden
@@ -2329,7 +2329,7 @@
 	<button amp-access="NOT loggedIn AND presupuesto_local"
 	  amp-access-hide
 	  on="tap:amp-access.login-sign-in,resumen.show,carrusel-list.show, cart-list.show"
-	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Inicie sesión</button>
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Iniciar sesión</button>
 	<!--
 	  <span amp-access="NOT loggedIn AND presupuesto_local"
 			class="inline-block ml1">...para ver el análisis de factibilidad</span>
