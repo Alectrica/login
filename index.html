@@ -2298,9 +2298,21 @@
 	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Login
 	  </button>
           <p hidden
-	   [hidden] = "presupuesto.Iniciado == ! ? false : true" > -- para ver la opinión de Aléctrico sobre sus circuitos </p>
+	   [hidden] = "presupuesto.Iniciado == ! ? false : true" > -- para ver cómo va todo. </p>
 	</span>
       </div>
+
+
+      <div class="my2">
+        <div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
+          <button amp-access="NOT loggedIn" 
+            amp-access-hide
+            tabindex="0"
+            class="ampstart-btn ml1 caps" >Cree una Cuenta</button>
+          <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
+        </div>
+      </div>
+
 
       <div class="my2">
 	<button amp-access="NOT loggedIn AND presupuesto_local"
@@ -2718,7 +2730,7 @@
       <!--googleon: all-->
 
 
-
+      <!--
       <div class="my2">
 	<div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
 	  <button amp-access="NOT loggedIn" 
@@ -2728,6 +2740,7 @@
 	  <span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo</span>
 	</div>
       </div>
+      -->
 
       <amp-analytics type="googleanalytics">
 	<script type="application/json">{
