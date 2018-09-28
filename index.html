@@ -2289,16 +2289,16 @@
 
       <!-- lol -->
       <div class="my2">
-	<span>
-	  <button 
-	    hidden
-	    [hidden] = "presupuesto.Iniciado == 1 ? false : true"
-	    on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
-	    id="boton-login"
-	    class="ampstart-btn ampstart-btn-secondary ml1 caps">Login
-	  </button>
-          <p hidden
-	   [hidden] = "presupuesto.Iniciado == 1 ? false : true" > -- para ver cómo va todo. </p>
+        <button 
+	  hidden
+	  [hidden] = "presupuesto.Iniciado == 1 ? false : true"
+	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
+	  id="boton-login"
+	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Login
+	</button>
+	<span 
+          hidden
+          [hidden] = "presupuesto.Iniciado == 1 ? false : true">... para guardar su trabajo</span>
 	</span>
       </div>
 
