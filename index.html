@@ -1889,7 +1889,7 @@
 		method="POST"
 		action-xhr="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: 1}}),carrusel-list.refresh, cart-list.refresh"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh"
 		class="flex flex-wrap m1">
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
@@ -2298,8 +2298,6 @@
 	  on="tap:amp-access.login-sign-in,AMP.setState({presupuesto: {Iniciado: 2}})"
 	  id="boton-login"
 	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Login</button>
-	<span
-	 [text] = "loggedIn">"loggedIn"</span>
       </div>
       <div class="my2">
 	<button amp-access="NOT loggedIn AND presupuesto_local"
