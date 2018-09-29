@@ -2128,13 +2128,13 @@
         <section class="checkout-section">	
 	  <amp-list amp-access = "loggedIn OR presupuesto_local"
 	    template = "carrusel-list-template"
+	    credentials="include"
 	    amp-access-hide = ""
 	    class="items m1"
 	    width="auto"
 	    height="145"
 	    layout="fixed-height"
-	    src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
-
+	    src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
 	    id="carrusel-list">
             <div overflow = ""  class = "list-overflow">VER MÁS </div>
             <div placeholder>Cargando la lista de electrodomésticos ...</div>
@@ -2224,7 +2224,6 @@
         id= "resumen" 
         class= "checkout-section"
         amp-access-hide = "" >
-        <h3 class="">Resumen de Electromésticos</h3>
 
         <amp-list 
           template="cart-list-template"
@@ -2234,13 +2233,14 @@
 	  items="."
 	  single-item
 	  layout="fixed-height"
-	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)"
+	  src="https://api-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
 	  id="cart-list">
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
 
 	<template type="amp-mustache"
 	  id = "cart-list-template">
+          <h3 class="">Resumen de Electromésticos</h3>
 	  <div class="shopping-cart">
 	    <div class="item header">
 	      <div class="name">
