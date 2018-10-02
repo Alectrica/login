@@ -2168,11 +2168,12 @@
               <button  type = "submit" > x
               </button>
             </form>
-             {{/items}}
+
+            {{#current_user}}
 	    <div class = "shopping-cart" >
-              {{current_user}}
-              {{usuario_name}}
+              {{.}}
             </div>
+            {{/current_user}}
 	  </template>
         </section>
 
