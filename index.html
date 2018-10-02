@@ -2133,6 +2133,7 @@
 	    class="items m1"
 	    width="auto"
 	    height="145"
+      
 	    layout="fixed-height"
 	    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get/?clientId=CLIENT_ID(uid)&_=RANDOM"
 	    id="carrusel-list">
@@ -2144,6 +2145,7 @@
 	  <template 
 	  id = "carrusel-list-template"
 	  type="amp-mustache">
+            {{#items}}
 	    <a class="text-decoration-none p1"
 	      href="#">
 	      <amp-img width="70.31"
@@ -2153,7 +2155,7 @@
 		src="{{img}}">
 	      </amp-img>
 	    </a>
-
+            {{/items}}
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
