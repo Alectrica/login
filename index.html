@@ -2133,6 +2133,7 @@
 	    class="items m1"
 	    width="auto"
 	    height="145"
+            items="."
             single-item
 	    layout="fixed-height"
 	    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get/?clientId=CLIENT_ID(uid)&_=RANDOM"
@@ -2169,7 +2170,8 @@
             </form>
              {{/items}}
 	    <div class = "shopping-cart" >
-              {{current_user}}
+              {{presupuesto_local}}
+              {{usuario_name}}
             </div>
 	  </template>
         </section>
