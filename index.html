@@ -2155,9 +2155,7 @@
 		alt="{{cantidad}}"
 		src="{{img}}">
 	      </amp-img>
-	    </a>
-
-            <form method   = "POST"
+	    </a><form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
               on = "submit-success:carrusel-list.refresh,cart-list.refresh">
@@ -2168,6 +2166,7 @@
               <button  type = "submit" > x
               </button>
             </form> {{/items}}
+
 	    <div class = "shopping-cart" >
               {{presupuesto_local}}
               {{usuario_name}}
