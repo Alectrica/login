@@ -2160,6 +2160,11 @@
 		alt="{{cantidad}}"
 		src="{{img}}">
 	      </amp-img>
+	      <fig-caption>
+	      {{nombre}}
+	      {{potencia}}
+	      {{circuito}}
+	      </fig-caption>
             {{/items}}
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
