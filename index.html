@@ -2133,7 +2133,6 @@
 	    class="items m1"
 	    width="auto"
 	    height="145"
-	    single-item
 	    layout="fixed-height"
 	    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get/?clientId=CLIENT_ID(uid)&_=RANDOM"
 	    id="carrusel-list">
@@ -2221,60 +2220,6 @@
 
 	</amp-selector>
         -->
-
-      <section amp-access="loggedIn AND presupuesto_local" 
-        id= "resumen_1" 
-        class= "checkout-section"
-        amp-access-hide = "" >
-
-          <template 
-          id = "resumen_1-list-template"
-          type="amp-mustache">
-            <a class="text-decoration-none p1"
-              href="#">
-
-              <amp-img width="70.31"
-                height="46.8"
-                layout="fixed"
-                alt="{{cantidad}}"
-                src="{{img}}">
-              </amp-img>
-            </a>
-            <div class = "shopping-cart" >
-              {{presupuesto_local}}
-              {{usuario_name}}
-            </div>
-
-            <form method   = "POST"
-              action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
-              target    = "_top"
-              on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-              <input name = "clientId" 
-                 type = "hidden" 
-                 value = "CLIENT_ID(uid)" 
-                 data-amp-replace = "CLIENT_ID">
-              <button  type = "submit" > x
-              </button>
-            </form>
-          </template>
-
-
-        <amp-list 
-          template="resumen_1-list-template"
-          credentials="include"
-          width="auto"
-          height="180"
-          items="."
-          single-item
-          layout="fixed-height"
-          src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
-          id="cart-list">
-          <div overflow = "" class = "list-overflow">VER MÁS</div>
-        </amp-list>
-
-
-      </section>
-
 
       <section amp-access="loggedIn AND presupuesto_local" 
         id= "resumen" 
