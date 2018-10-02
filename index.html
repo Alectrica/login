@@ -2154,8 +2154,10 @@
 		src="{{img}}">
 	      </amp-img>
 	    </a>
-            {{presupuesto_local}}
-            {{usuario_name}}
+	    <div class = "shopping-cart" >
+              {{presupuesto_local}}
+              {{usuario_name}}
+            </div>
 
 	    <form method   = "POST"
 	      action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
