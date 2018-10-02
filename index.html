@@ -2159,8 +2159,11 @@
 	  id = "carrusel-list-template"
 	  type="amp-mustache">
             {{#items}}
+<!--
 	    <a class="text-decoration-none p1"
 	      href="#">
+            </a>
+-->
 	      <amp-img width="70.31"
                 on="tap:gallery-lightbox"
 		role = "button"
@@ -2171,8 +2174,7 @@
 		alt="{{cantidad}}"
 		src="{{img}}">
 	      </amp-img>
-             </a>
-
+<!--
 	    <form method   = "POST"
 		action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		target    = "_top"
@@ -2182,7 +2184,9 @@
 		   value = "CLIENT_ID(uid)" 
 		   data-amp-replace = "CLIENT_ID">
 	       <button  type = "submit" > x </button>
+
 	    </form>
+-->
             {{/items}}
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
