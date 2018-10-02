@@ -2146,24 +2146,17 @@
 	  <template 
 	  id = "carrusel-list-template"
 	  type="amp-mustache">
-            {{#items}}
-	    <a class="text-decoration-none p1"
-	      href="#">
-	      <amp-img width="70.31"
+            {{#items}}<a class="text-decoration-none p1"
+	      href="#"><amp-img width="70.31"
 		height="46.8"
 		layout="fixed"
 		alt="{{cantidad}}"
 		src="{{img}}">
-	      </amp-img>
-	    </a>
-
-            <form method   = "POST"
+	      </amp-img></a><form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
               on = "submit-success:carrusel-list.refresh,cart-list.refresh">
-            </form>
-
-            {{/items}}
+            </form>{{/items}}
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
