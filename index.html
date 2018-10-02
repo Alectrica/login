@@ -2148,7 +2148,9 @@
 	  type="amp-mustache">
             {{#items}}
 	    <a class="text-decoration-none p1"
+
 	      href="#">
+	    </a>
 	      <amp-img width="70.31"
                 on="tap:gallery-lightbox"
 
@@ -2157,7 +2159,6 @@
 		alt="{{cantidad}}"
 		src="{{img}}">
 	      </amp-img>
-	    </a>
             {{/items}}
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
