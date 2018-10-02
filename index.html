@@ -2157,14 +2157,16 @@
 		tabindex = 0
 		height="46.8"
 		layout="fixed"
+		aria-describedby = "caption"
 		alt="{{cantidad}}"
 		src="{{img}}">
 	      </amp-img>
-	      <figcaption>
-	      {{nombre}}
-	      {{potencia}}
-	      {{circuito}}
-	      </figcaption>
+
+	      <div id="caption">
+		{{nombre}}
+		{{potencia}}
+		{{circuito}}
+	      </div>
             {{/items}}
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
