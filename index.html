@@ -2165,10 +2165,17 @@
 	      <div id="caption"
 		hidden
 		>
-		<button>borrar<button>
-		{{nombre}}
-		{{potencia}}
-		{{circuito}}
+		  <form method   = "POST"
+		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+		    target    = "_top"
+		    on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+		    <input name = "clientId" 
+		       type = "hidden" 
+		       value = "CLIENT_ID(uid)" 
+		       data-amp-replace = "CLIENT_ID">
+		    <button  type = "submit" > x
+		    </button>
+		  </form>
 	      </div>
             {{/items}}
             <form method   = "POST"
