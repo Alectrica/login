@@ -1619,7 +1619,7 @@
 		  <div on="tap:gallery-lightbox.close"
 		    role="button"
 		    tabindex="0">
-		    <button class="ampstart-btn caps m2 close-gallery-button"
+		    <button class="ampstart-btn caps m2"
 		      on="tap:gallery-lightbox.close"
 		      role="button"
 		      tabindex="0">
@@ -1630,6 +1630,7 @@
 		  <div on="tap:carrusel-list.refresh"
 		    role="button"
 		    tabindex="0"  >
+
 		    <form method   = "POST"
 		      action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			target    = "_top"
@@ -1638,15 +1639,16 @@
 			   type = "hidden" 
 			   value = "CLIENT_ID(uid)" 
 			   data-amp-replace = "CLIENT_ID">
+
 		       <input 
-		       
-		       name = "id" 
-		       [value] = "id" > 
+                           name = "id" 
+		           [value] = "id" > 
 		   
 		       <button 
 			  class="ampstart-btn caps m2"
 			  type = "submit" > Borrar
 		       </button>
+
 		    </form>
 		  </div>
 
