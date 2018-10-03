@@ -1627,7 +1627,7 @@
 		    </button>
                      -->
             <form method   = "POST"
-                action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+                action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/" + id + "/dropFromCircuito.json"
                 target    = "_top"
                 on = "submit-success:carrusel-list.refresh,cart-list.refresh">
                <input name = "clientId" 
@@ -2169,7 +2169,7 @@
             </a>
 -->
 	      <amp-img width="70.31"
-	      on="tap:gallery-lightbox,AMP.setState({ id:  {{id}}} )"
+	      on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
 		role = "button"
 		tabindex = 0
 		height="46.8"
