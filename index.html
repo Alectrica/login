@@ -1625,9 +1625,11 @@
 		      tabindex="0">
 		      Cerrar
 		    </button>
+		                  action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{id}/dropFromCircuito.json"
+
                      -->
             <form method   = "POST"
-	      action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{id}/dropFromCircuito.json"
+	      action-xhr = "{{id}}"
                 target    = "_top"
                 on = "submit-success:carrusel-list.refresh,cart-list.refresh">
                <input name = "clientId" 
