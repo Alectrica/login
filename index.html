@@ -1624,8 +1624,8 @@
 		   id = "zoom"
 		   class = "clearfix border" >
 		     <div 
-		       class = "left border" >
-		       <div on="tap:carrusel-list.refresh"
+		       class = "left" >
+		       <div
 			  role="button"
 			  tabindex="0"  >
 			  <form method   = "POST"
@@ -1637,11 +1637,9 @@
 				 value = "CLIENT_ID(uid)" 
 				 data-amp-replace = "CLIENT_ID">
 			     <input 
+                             hidden
 			     name = "id" 
 			     [value] = "id" > 
-                             <input 
-                             name = "potencia"
-                             [value] = "potencia">			 
 			     <button 
 				class="ampstart-btn caps m2 borrar-gallery-button"
 				type = "submit" > Borrar
@@ -1650,7 +1648,7 @@
                         </div>
                      </div>
 		     <div
-		       class = "right border" >
+		       class = "right" >
 			<div on="tap:gallery-lightbox.close"
 			  role="button"
 			  tabindex="0">
