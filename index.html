@@ -1622,21 +1622,32 @@
 		  layout="nodisplay">
                   <div
 		   id = "zoom"
-		   class = "clearfix border"
-		    >
+		   class = "clearfix border" >
 		     <div 
 		       class = "left border" >
-                        <div on="tap:gallery-lightbox.close"
-                          role="button"
-                          tabindex="0">
-                          <button class="ampstart-btn caps m2 borrar-gallery-button"
-                            on="tap:gallery-lightbox.close"
-                            role="button"
-                            tabindex="0">
-                            Borrar
-                          </button>
+		       <div on="tap:carrusel-list.refresh"
+			  role="button"
+			  tabindex="0"  >
+			  <form method   = "POST"
+			    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
+			      target    = "_top"
+			      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+			     <input name = "clientId" 
+				 type = "hidden" 
+				 value = "CLIENT_ID(uid)" 
+				 data-amp-replace = "CLIENT_ID">
+			     <input 
+			     hidden
+			     name = "id" 
+			     [value] = "id" > 
+			 
+			     <button 
+				class="ampstart-btn caps m2 close-gallery-button"
+				type = "submit" > Borrar
+			     </button>
+			  </form>
                         </div>
-                       </div>
+                     </div>
 		     <div
 		       class = "right border" >
 			<div on="tap:gallery-lightbox.close"
