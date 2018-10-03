@@ -1627,9 +1627,9 @@
 		       class = "left" >
 		       <div
 			  role="button"
-			  tabindex="1" 
-                          z-index = "1001" >
+			  tabindex="0" >
 			  <form method   = "POST"
+                            z-index = "10001"
 			    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			      target    = "_top"
 			      on = "submit-success:carrusel-list.refresh,cart-list.refresh">
