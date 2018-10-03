@@ -1619,7 +1619,8 @@
 		  </div>
 		</amp-image-lightbox>
 
-		<amp-image-lightbox id="gallery-lightbox"
+		<amp-image-lightbox 
+		  id="gallery-lightbox"
 		  layout="nodisplay">
                  <!--
                   <div
@@ -1666,6 +1667,7 @@
                     <div class = "right close-gallery-button" >
 
 		      <button class="ampstart-btn caps m2"
+			on="tap:gallery-lightbox.close"
 			role="button"
 			tabindex="0">
 			Cerrar
@@ -2228,6 +2230,11 @@
 		alt="{{cantidad}}"
 		src="{{img}}">
 	      </amp-img>
+	      <div
+		id = "caption">
+	        {{nombre}}{{potencia}}{{circuito}}
+	      </div>
+
 <!--
 	    <form method   = "POST"
 		action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
