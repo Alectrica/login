@@ -1627,7 +1627,9 @@
 		    </button>
                      -->
 		  </div>
-		  <div on="tap:carrusel-list.refresh">
+		  <div on="tap:carrusel-list.refresh"
+		    role="button"
+		    tabindex="0"  >
 		    <form method   = "POST"
 		      action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			target    = "_top"
@@ -1636,7 +1638,9 @@
 			   type = "hidden" 
 			   value = "CLIENT_ID(uid)" 
 			   data-amp-replace = "CLIENT_ID">
-		       <input name = "id" 
+		       <input 
+		       hidden
+		       name = "id" 
 		       [value] = "id" > 
 		   
 		       <button 
