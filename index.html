@@ -2332,7 +2332,7 @@
 
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
-          {{#cargas}}
+          {{#items}}
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
                 role = "button"
@@ -2343,7 +2343,7 @@
                 alt="{{cantidad}}"
                 src="{{img}}">
               </amp-img>
-          {{/cargas}}
+          {{/items}}
           {{presupuesto_dispositivo}}
           {{user_name}}
         </template>
