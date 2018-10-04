@@ -2331,7 +2331,8 @@
       </section>
 
       <section amp-access="loggedIn">
-        <template amp-access-template type="amp-mustache">
+        <template amp-access-template type="amp-mustache"
+           id = "access-list-template">
           {{#items}}
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
@@ -2357,7 +2358,7 @@
         amp-access-hide = "" >
 
         <amp-list 
-          template="cart-list-template"
+          template="access-list-template"
 	  credentials="include"
 	  width="auto"
 	  height="180"
