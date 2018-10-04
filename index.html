@@ -2333,7 +2333,16 @@
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
           {{#cargas}}
-          {{id}}
+             <amp-img width="70.31"
+              on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
+                role = "button"
+                tabindex = 0
+                height="46.8"
+                layout="fixed"
+                aria-describedby = "caption"
+                alt="{{cantidad}}"
+                src="{{img}}">
+              </amp-img>
           {{/cargas}}
           {{presupuesto_dispositivo}}
           {{user_name}}
