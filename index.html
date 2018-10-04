@@ -2323,7 +2323,23 @@
 	</amp-selector>
         -->
 
-      <section amp-access="loggedIn AND presupuesto_local" 
+
+      <section amp-access="NOT loggedIn">
+        <template amp-access-template type="amp-mustache">
+         {{presupuesto_dispositivo}}
+        </template>
+      </section>
+
+      <section amp-access="loggedIn">
+        <template amp-access-template type="amp-mustache">
+          {{presupuesto_dispositivo}}
+          {{user_name}}
+        </template>
+      </section>
+
+
+
+      <section amp-access="loggedIn" 
         id= "resumen" 
         class= "checkout-section"
         amp-access-hide = "" >
