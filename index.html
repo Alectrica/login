@@ -2230,14 +2230,11 @@
 		alt="{{cantidad}}"
 		src="{{img}}">
 	      </amp-img>
+
 	      <div
 		id = "caption"
 		hidden>
 		{{nombre}}. Potencia: {{potencia}} W. Circuito: {{circuito}}.
-
-                <button
-		  on = "tap:carrusel-list.refresh,cart-list.refresh">
-		</button>
 
 		<form method   = "POST"
 		    class = "close-gallery-button"
@@ -2266,7 +2263,11 @@
               </button>
             </form>
 -->
-	    Current_user
+
+	  <button
+	    on = "tap:carrusel-list.refresh,cart-list.refresh">
+	  </button>
+            Current_user
             {{current_user}}
 	    Usuario_name
 	    {{usuario_name}}
