@@ -2332,6 +2332,9 @@
 
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
+          {{#cargas}}
+          {{id}}
+          {{/cargas}}
           {{presupuesto_dispositivo}}
           {{user_name}}
         </template>
