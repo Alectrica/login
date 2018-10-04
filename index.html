@@ -2235,6 +2235,10 @@
 		hidden>
 		{{nombre}}. Potencia: {{potencia}} W. Circuito: {{circuito}}.
 
+                <button
+		  on = "tap:carrusel-list.refresh,cart-list.refresh">
+		</button>
+
 		<form method   = "POST"
 		    class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
