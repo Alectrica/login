@@ -804,7 +804,7 @@
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
           {{presupuesto_dispositivo}}
-          {{current_user}}
+          {{user_name}}
         </template>
       </section>
     </div>
@@ -2346,7 +2346,7 @@
 	   {{presupuesto_dispositivo}}
 	   <br/>
            El dueño del presupuesto en el disposito es:
-	   {{current_user}}
+	   {{user_name}}
 	   <br/>
            El usuario logado en el backend es: {{current_user}}
 	   <hr/>
@@ -2388,6 +2388,21 @@
           El usuario logado en el backend es {{current_user}}
           <br/>
           El usuario dueño del presupuesto en el dispositivo es {{usuario_name}}
+
+          {{#items}}
+             <amp-img width="70.31"
+              on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
+                role = "button"
+                tabindex = 0
+                height="46.8"
+                layout="fixed"
+                aria-describedby = "caption"
+                alt="{{cantidad}}"
+                src="{{img}}">
+              </amp-img>
+          {{/items}}
+
+
 
       </template>
 
