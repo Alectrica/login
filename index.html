@@ -2216,6 +2216,7 @@
 	  id = "carrusel-list-template"
 	  type="amp-mustache">
 	    Carrusel-list.  Electrodomésticos en este dispositivo
+	    {{time_stamp}}
 	    <hr/>
             {{#items}}
 <!--
@@ -2381,7 +2382,9 @@
 
       <template type="amp-mustache"
           id = "cart-list-prueba-template">
+
 	  <hr/>
+	  {{time_stamp}}
           Cart-list permanente: aparece aún cuando no hay nadie logado
           <br/>
 	  El presupuesto local es {{presupuesto_local}}
@@ -2424,15 +2427,18 @@
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
 
+	
 	<template type="amp-mustache"
 	  id = "cart-list-template">
+	  <hr/>
+	  {{time_stamp}}
 	  Cart-list Solo aparece cuando está logado y contiene los electrodomésticos de ese usuario
 	  <br/>
           {{presupuesto_local}}
 	  <br/>
           Current_user {{current_user}}
 	  <br/>
-          Usuario_name {{usuario_name}}
+          Dueño del presupuesto {{dueño}}
 
 	  <hr/>
 	  <div class="shopping-cart">
