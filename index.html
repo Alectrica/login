@@ -2381,6 +2381,7 @@
 
       <template type="amp-mustache"
           id = "cart-list-prueba-template">
+	  <hr/>
           Cart-list permanente: aparece aún cuando no hay nadie logado
           <br/>
           {{presupuesto_local}}
@@ -2388,7 +2389,7 @@
           El usuario logado en el backend es {{current_user}}
           <br/>
           El usuario dueño del presupuesto en el dispositivo es {{usuario_name}}
-
+          <hr/>
           {{#items}}
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
@@ -2401,9 +2402,7 @@
                 src="{{img}}">
               </amp-img>
           {{/items}}
-
-
-
+          <hr/>
       </template>
 
 
