@@ -2333,6 +2333,10 @@
         </template>
       </section>
 
+      <section >
+
+      </section>
+
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache"
            id = "access-list-template">
@@ -2358,6 +2362,16 @@
         </template>
       </section>
 
+
+      <section>
+        <amp-list
+	 template="cart-list-template"
+	 credentials = "include"
+	 items = "."
+	 single-item
+         src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM" >
+	</amp-list>
+      </section>
 
       <section amp-access="loggedIn" 
         id= "resumen" 
