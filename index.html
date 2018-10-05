@@ -2205,7 +2205,9 @@
 	    layout="fixed-height"
 	    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get/?clientId=CLIENT_ID(uid)&_=RANDOM"
 	    id="carrusel-list">
+	    <div>
 	    <h1 >Electrodomésticos en este dispositivo.</h1>
+            </div>
             <div overflow = ""  class = "list-overflow">VER MÁS </div>
             <div placeholder>Cargando la lista de electrodomésticos ...</div>
             <div fallback>Ocurrió un error con el servidor. Reintente en unos minutos.</div>
@@ -2333,6 +2335,8 @@
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache"
            id = "access-list-template">
+	   Lista de electrodomésticos inicial del usuario logado
+	   {{current_user}}
           {{#items}}
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
@@ -2351,14 +2355,13 @@
       </section>
 
 
-      <!--
       <section amp-access="loggedIn" 
         id= "resumen" 
         class= "checkout-section"
         amp-access-hide = "" >
 
         <amp-list 
-          template="access-list-template"
+          template="cart-list-template"
 	  credentials="include"
 	  width="auto"
 	  height="180"
@@ -2370,9 +2373,13 @@
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
 
+
+
+
+
 	<template type="amp-mustache"
 	  id = "cart-list-template">
-          <h3 class="">Resumen de Electromésticos</h3>
+          <h3 class="">Resumen Vivo de Electromésticos</h3>
 	  <div class="shopping-cart">
 	    <div class="item header">
 	      <div class="name">
@@ -2444,7 +2451,6 @@
 	<span amp-access= "NOT subscriber AND NOT loggedIn">... para guardar su trabajo
 	</span>
       </div>
-      -->
       <!---
       <div class="my2">
         <div amp-access="NOT subscriber AND NOT loggedIn" amp-access-hide>
