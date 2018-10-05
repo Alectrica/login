@@ -2216,6 +2216,7 @@
 	  id = "carrusel-list-template"
 	  type="amp-mustache">
 	    Carrusel-list.  Electrodomésticos en este dispositivo
+	    <hr/>
             {{#items}}
 <!--
 	    <a class="text-decoration-none p1"
@@ -2336,6 +2337,7 @@
         <template amp-access-template type="amp-mustache"
            id = "access-list-template">
 	   Lista de electrodomésticos inicial del usuario logado
+	   <hr/>
 	   {{current_user}}
           {{#items}}
              <amp-img width="70.31"
@@ -2376,6 +2378,7 @@
 	<template type="amp-mustache"
 	  id = "cart-list-template">
 	  Cart-list Solo aparece cuando está logado y contiene los electrodomésticos de ese usuario
+	  <hr/>
 	  <div class="shopping-cart">
 	    <div class="item header">
 	      <div class="name">
