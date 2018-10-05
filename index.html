@@ -2376,14 +2376,15 @@
 	 height = "180"
 	 width = "auto"
 	 layout = "fixed-height"
-         src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM" >
+         src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	 >
 	</amp-list>
       </section>
 
       <template type="amp-mustache"
           id = "cart-list-prueba-template">
 	  <hr/>
-          Cart-list permanente: aparece aún cuando no hay nadie logado. Muestra la lista de electrodomésticos que están en el dispositivo.
+          Cart-list permanente: aparece aún cuando no hay nadie logado
           <br/>
 	  El presupuesto local es {{presupuesto_local}}
           <br/>
