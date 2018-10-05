@@ -803,8 +803,8 @@
       </section>
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
-          {{presupuesto_dispositivo}}
-          {{user_name}}
+          El presupuesto es {{presupuesto_dispositivo}}
+	  El dueño del presupuesto es: {{dueño}}
         </template>
       </section>
     </div>
@@ -2273,7 +2273,7 @@
 	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-prueba.refresh"> Refrescar
 	  </button>
             Usuario logado en el backend es {{current_user}}
-	    Dueño del presupuesto es {{usuario_name}}
+	    Dueño del presupuesto es {{dueño}}
 	  </template>
         </section>
 
