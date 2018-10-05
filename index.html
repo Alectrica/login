@@ -2337,6 +2337,10 @@
         <template amp-access-template type="amp-mustache"
            id = "access-list-template">
 	   Lista de electrodomésticos inicial del usuario logado
+	   <br/>
+	   {{presupuesto_dispositivo}}
+	   <br/>
+	   {{user_name}}
 	   <hr/>
 	   {{current_user}}
           {{#items}}
@@ -2351,8 +2355,6 @@
                 src="{{img}}">
               </amp-img>
           {{/items}}
-          {{presupuesto_dispositivo}}
-          {{user_name}}
         </template>
       </section>
 
