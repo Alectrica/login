@@ -2380,6 +2380,13 @@
 	<template type="amp-mustache"
 	  id = "cart-list-template">
 	  Cart-list Solo aparece cuando está logado y contiene los electrodomésticos de ese usuario
+	  <br/>
+          {{presupuesto_local}}
+	  <br/>
+          Current_user {{current_user}}
+	  <br/>
+          Usuario_name {{usuario_name}}
+
 	  <hr/>
 	  <div class="shopping-cart">
 	    <div class="item header">
@@ -2421,9 +2428,6 @@
 		<strong>{{total}}</strong>
 	      </div>
 	    </div>
-	    {{presupuesto_local}}
-	    Current_user {{current_user}}
-	    Usuario_name {{usuario_name}}
 	  </div>
 	</template>
       </section>
