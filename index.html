@@ -2365,7 +2365,7 @@
 
       <section>
         <amp-list
-	 template="cart-list-template"
+	 template="cart-list-prueba-template"
 	 credentials = "include"
 	 items = "."
 	 single-item
@@ -2375,6 +2375,19 @@
          src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM" >
 	</amp-list>
       </section>
+
+      <template type="amp-mustache"
+          id = "cart-list-prueba-template">
+          Cart-list permanente: aparece aún cuando no está logado y contiene los electrodomésticos de ese usuario
+          <br/>
+          {{presupuesto_local}}
+          <br/>
+          Current_user {{current_user}}
+          <br/>
+          Usuario_name {{usuario_name}}
+
+      </template>
+
 
       <section amp-access="loggedIn" 
         id= "resumen" 
