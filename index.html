@@ -1952,7 +1952,7 @@
 		method="POST"
 		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-prueba.refresh"
 		class="flex flex-wrap m1">
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
@@ -2369,6 +2369,7 @@
       <section>
         <amp-list
 	 template="cart-list-prueba-template"
+	 id = "cart-list-prueba"
 	 credentials = "include"
 	 items = "."
 	 single-item
