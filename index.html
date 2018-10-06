@@ -2272,8 +2272,6 @@
 	  <button
 	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueño.refresh"> Refrescar
 	  </button>
-	    <hr/>
-	    Estado de autorizacion es {{autorizacion}}
             <br/>
             Usuario logado en el backend es {{current_user}}
 	    <br/>
@@ -2348,8 +2346,6 @@
 	   {{time_stamp}}
 	   Lista de electrodomésticos inicial del usuario logado
 	   <br/>
-	   Estado de autorizacion es {{autorizacion}}
-	   <br/>
            El id de presupuesto en el dispositivo es:
 	   {{presupuesto_dispositivo}}
 	   <br/>
@@ -2395,7 +2391,7 @@
 	  {{time_stamp}}
           Parte por verificar si hay un usario logado y luego encuentra el presupuesto
 	  <br/>
-	  El presupuesto local es {{presupuesto_local}}
+	  El presupuesto local es {{presupuesto}}
           <br/>
           El usuario logado en el backend es {{current_user}}
           <br/>
@@ -2442,9 +2438,7 @@
 	  {{time_stamp}}
 	  Cart-list Solo aparece cuando está logado y contiene los electrodomésticos de ese usuario
 	  <br/>
-	  Estado de autorizacion es {{autorizacion}}
-	  <br/>
-          {{presupuesto_local}}
+          {{presupuesto}}
 	  <br/>
           Current_user {{current_user}}
 	  <br/>
