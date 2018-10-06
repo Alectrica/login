@@ -2376,7 +2376,7 @@
       <section>
         <amp-list
 	 template="cart-list-prueba-template"
-	 id = "cart-list-prueba"
+	 id = "cart-list-dueño"
 	 credentials = "include"
 	 items = "."
 	 single-item
@@ -2389,19 +2389,17 @@
       </section>
 
       <template type="amp-mustache"
-          id = "cart-list-prueba-template">
+      id = "cart-list-dueño-template">
 
 	  <hr/>
 	  {{time_stamp}}
-          Cart-list permanente: aparece aún cuando no hay nadie logado
-          <br/>
-	  Estado de autorizacion es {{autorizacion}}
+          Parte por verificar si hay un usario logado y luego encuentra el presupuesto
 	  <br/>
 	  El presupuesto local es {{presupuesto_local}}
           <br/>
           El usuario logado en el backend es {{current_user}}
           <br/>
-          El usuario dueño del presupuesto en el dispositivo es {{usuario_name}}
+          El usuario dueño del presupuesto en el dispositivo es {{dueño}}
           <br/>
           {{#items}}
              <amp-img width="70.31"
