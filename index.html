@@ -1676,7 +1676,7 @@
 		      <form method   = "POST"
 			action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			  target    = "_top"
-			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,cart-list-prueba.refresh">
+			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,cart-list-dueño.refresh">
 			 <input name = "clientId" 
 			     type = "hidden" 
 			     value = "CLIENT_ID(uid)" 
@@ -1952,7 +1952,7 @@
 		method="POST"
 		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-prueba.refresh"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-dueño.refresh"
 		class="flex flex-wrap m1">
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
@@ -2270,7 +2270,7 @@
           <hr/>
 
 	  <button
-	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-prueba.refresh"> Refrescar
+	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueño.refresh"> Refrescar
 	  </button>
 	    <hr/>
 	    Estado de autorizacion es {{autorizacion}}
@@ -2375,7 +2375,7 @@
 
       <section>
         <amp-list
-	 template="cart-list-prueba-template"
+	 template="cart-list-dueño-template"
 	 id = "cart-list-dueño"
 	 credentials = "include"
 	 items = "."
