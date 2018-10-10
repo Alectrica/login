@@ -2418,6 +2418,37 @@
         class= "checkout-section"
         amp-access-hide = "" >
 
+
+
+
+      <section amp-access="loggedIn" 
+        id= "resumen" 
+        class= "checkout-section"
+        amp-access-hide = "" >
+        <amp-list 
+          template="cart-list-template"
+          credentials="include"
+          width="auto"
+          height="180"
+          items="."
+          single-item
+          layout="fixed-height"
+          src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+          id="cart-list">
+          <div overflow = "" class = "list-overflow">VER MÁS</div>
+        </amp-list>
+
+        <template type="amp-mustache"
+          id = "cart-list-template">
+          <hr/>
+          {{time_stamp}}
+          Secundario
+        </template>
+
+       </section>
+
+
+
         <amp-list 
           template="cart-list-template"
 	  credentials="include"
