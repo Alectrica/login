@@ -1676,7 +1676,7 @@
 		      <form method   = "POST"
 			action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			  target    = "_top"
-			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,cart-list-dueño.refresh">
+			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,cart-list-dueno.refresh">
 			 <input name = "clientId" 
 			     type = "hidden" 
 			     value = "CLIENT_ID(uid)" 
@@ -1952,7 +1952,7 @@
 		method="POST"
 		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-dueño.refresh"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-dueno.refresh"
 		class="flex flex-wrap m1">
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
@@ -2271,7 +2271,7 @@
 -->
           <hr/>
 	  <button
-	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueño.refresh"> Refrescar
+	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueno.refresh"> Refrescar
 	  </button>
 	 </template>
         </section>
@@ -2369,8 +2369,8 @@
         <amp-list
 	 amp-access = "loggedIn"
 	 amp-access-hide = ""
-	 template="cart-list-dueño-template"
-	 id = "cart-list-dueño"
+	 template="cart-list-dueno-template"
+	 id = "cart-list-dueno"
 	 credentials = "include"
 	 items = "."
 	 single-item
@@ -2383,11 +2383,15 @@
       </section>
 
       <template type="amp-mustache"
-      id = "cart-list-dueño-template">
+      id = "cart-list-dueno-template">
 
 	  <hr/>
 	  {{time_stamp}}
-	  cart-list-dueño  loggedIn y amp-access-hide 
+	  cart-list-dueno  loggedIn y amp-access-hide 
+	  tiene una versión atrasada de los datos, mostrando
+	  un current_user que ya no lo es: Tal vez es un problema de cache.
+	  Pero ya tomé las medidas para evitarlo colocando RANDOM en el http.
+	  Veré si responde a un código de refresh
 	  <br/>
 	  El presupuesto del usuario es {{presupuesto}}
           <br/>
