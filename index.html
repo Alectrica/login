@@ -2426,7 +2426,7 @@
         class= "checkout-section"
         amp-access-hide = "" >
         <amp-list 
-          template="cart-list-template"
+          template="cart-list-secundario-template"
           credentials="include"
           width="auto"
           height="180"
@@ -2434,12 +2434,12 @@
           single-item
           layout="fixed-height"
           src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/get.json?clientId=CLIENT_ID(uid)&_=RANDOM"
-          id="cart-list">
+          id="cart-list-secundario">
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
 
         <template type="amp-mustache"
-          id = "cart-list-template">
+          id = "cart-list-secundario-template">
           <hr/>
           {{time_stamp}}
           Secundario
