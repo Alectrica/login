@@ -21,6 +21,14 @@
     <meta content='https://designer.alectrico.cl/' property='og:url'>
     <meta content='Aléctrico Designer' property='og:site_name'>
 
+
+    <script id="dueno" type='application/ld+json'>
+
+    { 
+      "invisible" : false
+    }
+    </script>
+
     <script id='visita_a_domicilio_markup' type='application/ld+json'>
     {
     "@context" : "http://schema.org",
@@ -2368,7 +2376,7 @@
       <section>
         <amp-list
          hidden
-         [hidden] = "NOT dueno_visible"
+         [hidden] = "dueno.invisible"
 	 amp-access = "loggedIn"
 	 template="cart-list-dueno-template"
 	 id = "cart-list-dueno"
@@ -3007,7 +3015,7 @@
 
       <div class="my2">
 	  <button amp-access="loggedIn" 
-	    on= "tap:cart-list.refresh,carrusel-list.refresh,AMP.setState({ dueno_visible: true })"
+	    on= "tap:cart-list.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false} })"
 	    amp-access-hide
 	    tabindex="0"
 	    class="ampstart-btn ml1 caps" >Sincronizar</button>
