@@ -2367,6 +2367,8 @@
 
       <section>
         <amp-list
+         hidden
+         [hidden] = "dueno_visible"
 	 amp-access = "loggedIn"
 	 template="cart-list-dueno-template"
 	 id = "cart-list-dueno"
@@ -2422,7 +2424,7 @@
 
 
       <section amp-access="loggedIn" 
-        id= "resumen" 
+        id= "secundario" 
         class= "checkout-section"
         amp-access-hide = "" >
         <amp-list 
