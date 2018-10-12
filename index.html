@@ -23,13 +23,14 @@
 
 
 
-    <script id="inicial" type='application/ld+json'>
+    <script id="inicial" type='application/ld-json'>
     { 
      "invisible" : false
     }
     </script>
 
     <script id="dueno" type='application/ld+json'>
+
     { 
       "invisible" : true
     }
@@ -2590,7 +2591,7 @@
 
 	<button amp-access="loggedIn"
 	  tabindex="0"
-	  on="tap:amp-access.login-sign-out,AMP.setState({ presupuesto: { Iniciado: 0 }  }  )"
+	  on="tap:amp-access.login-sign-out,AMP.setState({ presupuesto: { Iniciado: 0 } dueno: { invisible: true }  }  )"
 	  class="ampstart-btn ml1 caps"
 	  amp-access-hide>Cierre la Sesión</button>
       </div>
