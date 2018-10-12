@@ -2204,8 +2204,8 @@
 	  <div class="items-center flex my1 ml1">
 	    <input type="submit"
 	      class="ampstart-btn caps"
-	      name="Agregar al Circuito"
-	      value="Agregar al Circuito">
+	      name="Agregar"
+	      value="Agregar">
 	  </div>
 	  <input type="hidden"
 	    name="carga_id"
@@ -2226,8 +2226,10 @@
 	    </template>
 	  </div>
 	</form>
-	
-        <section class="checkout-section">	
+	<!--
+	checkout-section
+	-->
+        <section>	
 	  <amp-list 
 	    template = "carrusel-list-template"
 	    credentials="include"
@@ -2251,11 +2253,13 @@
 	  <template 
 	  id = "carrusel-list-template"
 	  type="amp-mustache">
+	    <!--
 	    Electrodomésticos en este dispositivo
 	    <br/>
 	    Presupuesto en este dispositivo es {{presupuesto_local}}
 	    {{time_stamp}}
 	    <hr/>
+	    -->
             {{#items}}
 <!--
 	    <a class="text-decoration-none p1"
