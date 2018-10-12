@@ -2453,6 +2453,7 @@
 
 	  <hr/>
 	  {{time_stamp}}
+	  <!--
 	  cart-list-dueno  loggedIn y amp-access-hide - no debe ser mostrado al inicio- porque tiene una versión atrasada de los datos, mostrando
 	  un current_user que ya no lo es. Responde a un código de
 	  refresh. Debe intercambiarse con otro cart-list que usa una fuente de autorización. La que a la inversa de esta. No cambia ni se refresca.
@@ -2463,6 +2464,7 @@
           <br/>
           El usuario dueño del presupuesto en el dispositivo es {{dueño}}
           <br/>
+	  -->
           {{#items}}
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
