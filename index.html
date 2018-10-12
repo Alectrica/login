@@ -2404,6 +2404,15 @@
 	   <br/>
            El usuario logado en el backend es: {{current_user}}
 	   -->
+	  <div class="my2">
+	      <button amp-access="loggedIn" 
+		on= "tap:cart-list.refresh,cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+		amp-access-hide
+		tabindex="0"
+		class="ampstart-btn ml1 caps" >Sincronizar</button>
+	      <span amp-access= "loggedIn">... desde otro dispositivo</span>
+	  </div>
+
           {{#items}}
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
@@ -2425,6 +2434,7 @@
 
       <section>
 
+       <!---
         <div class="my2">
             <button amp-access="loggedIn" 
               on= "tap:cart-list.refresh,cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
@@ -2433,10 +2443,7 @@
               class="ampstart-btn ml1 caps" >Sincronizar</button>
             <span amp-access= "loggedIn">... desde otro dispositivo</span>
         </div>
-
-
-
-
+        --->
 
         <amp-list
          hidden
