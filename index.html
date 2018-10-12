@@ -776,6 +776,11 @@
   </head>
 
   <body>
+    <amp-state
+       id = "remoto"
+       src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM">
+     </amp-state>
+
     <amp-sidebar id="drawermenu" layout="nodisplay">
       <!--
       <a href="https://servicios.alectrico.cl" class="caps text-decoration-none block p1">Servicios</a>
@@ -2421,6 +2426,7 @@
 	 height = "180"
 	 width = "auto"
 	 layout = "fixed-height"
+	 [state] = "remoto"
          src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/cart.json?clientId=CLIENT_ID(uid)&_=RANDOM"
 	 >
 	</amp-list>
