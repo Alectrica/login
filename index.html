@@ -833,12 +833,12 @@
       </h1>
       <section amp-access="NOT loggedIn">
         <template amp-access-template type="amp-mustache">
-         {{presupuesto_local}}
+         {{presupuesto_local}}-local
         </template>
       </section>
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
-	  {{presupuesto_local}} --¬|a-- {{presupuesto_remoto}}
+	  {{presupuesto_local}}-local | remoto-{{presupuesto_remoto}}
         </template>
       </section>
     </div>
@@ -2368,8 +2368,10 @@
       <section amp-access="NOT loggedIn"
 	amp-access-hide >
         <template amp-access-template type="amp-mustache">
+	<!--
 	 No hay ninguna sesión abierta. Los electrodomésticos del dispositivo están agrupados en un presupuesto con id: {{presupuesto_local}}.
          <hr/>
+	 -->
         </template>
       </section>
 
