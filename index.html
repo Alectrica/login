@@ -85,8 +85,7 @@
     "login": {
     "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
     "sign-out": "https://shop-staging.alectrico.cl/amp/accesos/logout?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
-    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
-    "sinc-in": "https://shop-staging.alectrico.cl/amp/accesos/sinc_in.json/?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&clientId=CLIENT_ID(uid)"
+    "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)"
     },
     "authorizationFallbackResponse": {
       "error": true,
@@ -2408,9 +2407,23 @@
            El usuario logado en el backend es: {{current_user}}
 	   -->
           {{#items}}
+
+
+          <form id="sync"
+                method="POST"
+                action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
+                target="_top"
+                on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-dueno.refresh"
+                class="flex flex-wrap m1">
+                <div class="items-center flex">
+                  <label for="color">Grupo:</label>
+                  <amp-selector name="color">
+                </div>
+           </form>
+
 	    <div class="my2">
 		<button amp-access="loggedIn" 
-		  on= "tap:amp-access.login-sinc-in,cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+		  on= "tap:cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
 		  amp-access-hide
 		  tabindex="0"
 		  class="ampstart-btn ml1 caps" >Sincronizar</button>
