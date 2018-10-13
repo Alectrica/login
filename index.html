@@ -86,6 +86,7 @@
     "sign-in": "https://shop-staging.alectrico.cl/users/sign_in/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
     "sign-out": "https://shop-staging.alectrico.cl/amp/accesos/logout?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)",
     "sign-up":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)"
+    "sinc-in":  "https://shop-staging.alectrico.cl/users/sign_up/?rid=READER_ID&return=RETURN_URL&amp=true&clientId=CLIENT_ID(uid)"
     },
     "authorizationFallbackResponse": {
       "error": true,
@@ -2409,7 +2410,7 @@
           {{#items}}
 	    <div class="my2">
 		<button amp-access="loggedIn" 
-		  on= "tap:cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+		  on= "tap:amp-access.login-in-sinc-in,cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
 		  amp-access-hide
 		  tabindex="0"
 		  class="ampstart-btn ml1 caps" >Sincronizar</button>
@@ -2631,7 +2632,7 @@
       <div class="my2">
 	<button amp-access="NOT loggedIn AND presupuesto_local"
 	  amp-access-hide
-	  on="tap:amp-access.login-sign-in, carrusel-list.refresh"
+	  on="tap:amp-access.login-sinc-in, carrusel-list.refresh"
 	  class="ampstart-btn ampstart-btn-secondary ml1 caps">Iniciar sesión</button>
 	<!--
 	  <span amp-access="NOT loggedIn AND presupuesto_local"
