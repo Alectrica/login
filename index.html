@@ -837,8 +837,7 @@
       </section>
       <section amp-access="loggedIn">
         <template amp-access-template type="amp-mustache">
-          El presupuesto es {{presupuesto_dispositivo}}
-	  El dueño del presupuesto es: {{dueño}}
+	  {{presupuesto_local}} ¬|a-- {{presupuesto_dispositivo}}
         </template>
       </section>
     </div>
@@ -2308,11 +2307,11 @@
               <button  type = "submit" > x
               </button>
             </form>
--->
           <hr/>
 	  <button
 	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueno.refresh"> Refrescar
 	  </button>
+	  -->
 	 </template>
         </section>
 
