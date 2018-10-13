@@ -2419,16 +2419,16 @@
                   <label for="color">Grupo:</label>
                   <amp-selector name="color">
                 </div>
-           </form>
-
-	    <div class="my2">
-		<button amp-access="loggedIn" 
-		  on= "tap:cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
-		  amp-access-hide
-		  tabindex="0"
-		  class="ampstart-btn ml1 caps" >Sincronizar</button>
-		<span amp-access= "loggedIn">... desde otro dispositivo</span>
-	    </div>
+		<div class="my2">
+		    <button amp-access="loggedIn" 
+		      on= "tap:cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+		      amp-access-hide
+		      tabindex="0"
+		      type = "submit"
+		      class="ampstart-btn ml1 caps" >Sincronizar</button>
+		    <span amp-access= "loggedIn">... desde otro dispositivo</span>
+		</div>
+             </form>
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
                 role = "button"
