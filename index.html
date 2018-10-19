@@ -2415,6 +2415,12 @@
                 target="_top"
                 on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-dueno.refresh"
                 class="flex flex-wrap m1">
+
+		 <input type="hidden"
+		    name  = "syncFromRemote"
+		    value = true
+		    [value] = true>
+
                 <div class="items-center flex">
                   <label for="color">Grupo:</label>
                   <amp-selector name="color">
@@ -2429,6 +2435,7 @@
 		    <span amp-access= "loggedIn">... desde otro dispositivo</span>
 		</div>
              </form>
+
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
                 role = "button"
