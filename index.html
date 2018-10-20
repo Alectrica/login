@@ -1711,7 +1711,7 @@
 		      <form method   = "POST"
 			action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			  target    = "_top"
-			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,cart-list-dueno.refresh">
+			  on = "submit-success:carrusel-list.refresh,cart-list-dueno.refresh">
 			 <input name = "clientId" 
 			     type = "hidden" 
 			     value = "CLIENT_ID(uid)" 
@@ -1987,7 +1987,7 @@
 		method="POST"
 		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list.refresh,cart-list-dueno.refresh"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh"
 		class="flex flex-wrap m1">
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
@@ -2287,7 +2287,7 @@
 		    class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		    target    = "_top"
-		    on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+		    on = "submit-success:carrusel-list.refresh">
 		   <input name = "clientId" 
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
