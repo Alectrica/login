@@ -2406,7 +2406,7 @@
 	   <br/>
            El usuario logado en el backend es: {{current_user}}
 	   -->
-          {{#items}}
+          {{#presupuesto}}
              <form id="sync"
                 method="POST"
                 action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
@@ -2430,7 +2430,7 @@
 		</div>
 
              </form>
-         {{/items}}
+         {{/presupuesto}}
 	 {{#items}}
              <amp-img width="70.31"
               on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
