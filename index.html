@@ -2407,6 +2407,7 @@
            El usuario logado en el backend es: {{current_user}}
 	   -->
 	   {{#presupuesto_remoto}}
+	    {{presupuesto_remoto}}
              <form id="sync"
                 method="POST"
                 action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
