@@ -2415,10 +2415,6 @@
            El usuario logado en el backend es: {{current_user}}
 	   -->
 	   {{#presupuesto_remoto}}
-	   <div  class= "checkout-section">
-             <p>Ya hay electrodomésticos inscritos en otro de sus dispositivos.</p>
-	     <p>Si presiona IMPORTAR, esos electrodomésticos pasarán a estar disponibles solamente aquí.</p>
-	   </div>
              <form id="sync"
                 method="POST"
                 action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
