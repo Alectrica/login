@@ -2432,7 +2432,7 @@
 		    value='CLIENT_ID(uid)'>
 
 		<div class="my2">
-		    <button amp-access="loggedIn and inicial.invisible" 
+		    <button amp-access="loggedIn and not inicial.invisible" 
 		      on= "tap:cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
 		      amp-access-hide
 		      tabindex="0"
