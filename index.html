@@ -2416,7 +2416,7 @@
 	   -->
 	   {{#presupuesto_remoto}}
              <form id="sync"
-	       [hidden] = "presupuesto.iniciado > 0"
+	       [hidden] = "inicial.invisible"
                 method="POST"
                 action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
                 target="_top"
@@ -2434,7 +2434,7 @@
 
 		<div class="my2">
 		    <button amp-access="loggedIn" 
-		      on= "tap:cart-list-dueno.refresh,carrusel-list.refresh,AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } })"
+		      on= "AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } }),tap:cart-list-dueno.refresh,carrusel-list.refresh"
 		      amp-access-hide
 		      tabindex="0"
 		      type = "submit"
