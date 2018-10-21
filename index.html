@@ -2261,6 +2261,10 @@
 	    {{time_stamp}}
 	    <hr/>
 	    -->
+	    {{^items}}
+	    No hay electrdomésticos en este dispositivo. Presione Agregar para agregar electrodomésticos a circuitos.
+	    {{/items}}
+	    
             {{#items}}
 <!--
 	    <a class="text-decoration-none p1"
@@ -2407,7 +2411,8 @@
            El usuario logado en el backend es: {{current_user}}
 	   -->
 	   {{#presupuesto_remoto}}
-	    Ya hay electrodomésticos inscritos en otro de sus dispositivos. Si presiona Importar, esos electrodomésticos pasarán a estar disponibles solamente aquí.
+	   <small>Ya hay electrodomésticos inscritos en otro de sus dispositivos.</small>
+	   <small> Si presiona Importar, esos electrodomésticos pasarán a estar disponibles solamente aquí.</small>
 	    {{presupuesto_remoto}}
              <form id="sync"
                 method="POST"
@@ -2431,7 +2436,7 @@
 		      amp-access-hide
 		      tabindex="0"
 		      type = "submit"
-		      class="ampstart-btn ml1 caps" >Sincronizar</button>
+		      class="ampstart-btn ml1 caps" >Importar</button>
 		    <span amp-access= "loggedIn">... desde otro dispositivo</span>
 		</div>
 
