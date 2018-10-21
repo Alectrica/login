@@ -2621,6 +2621,7 @@
       </template>
 
       <div class="my2">
+	<!--
         <button 
 	  hidden
 	  [hidden] = "presupuesto.Iniciado == 1 ? false : true"
@@ -2636,6 +2637,7 @@
           hidden
           [hidden] = "presupuesto.Iniciado == 1 ? false : true">   -- o --    
         </span> 
+	-->
         <button amp-access="NOT loggedIn" 
 	  on="tap:amp-access.login-sign-up,AMP.setState({registro_usuario: {iniciado: 1}})"
 	  amp-access-hide
