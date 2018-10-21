@@ -2200,14 +2200,13 @@
 		  </ul>
 		  </amp-selector>
 		</div>
-
-	      <p class="price-description">
-		<span > Circuito: </span>
-		<span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
-		<span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
-	      </p>
-	    </div>
-           <!-- fin de Galería de Productos -->
+            </div>
+	    <p class="price-description">
+	      <span > Circuito que recibirá el electrodoméstico: </span>
+	      <span [text]="product.circuitos[product.selectedPotencia]">I: Iluminación</span>
+	      <span [text]="product[product.selectedColor].potencias[product.selectedPotencia]">200 W</span>
+	    </p>
+	 <!-- fin de Galería de Productos -->
 
 	  <div class="items-center flex my1 ml1">
 	    <input type="submit"
