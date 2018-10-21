@@ -2420,7 +2420,7 @@
                 method="POST"
                 action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
                 target="_top"
-                on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh"
+		on="submit-success:AMP.setState({inicial: { invisible: true}, presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh"
                 class="flex flex-wrap m1">
 
 		 <input type="hidden"
@@ -2434,7 +2434,7 @@
 
 		<div class="my2">
 		    <button amp-access="loggedIn" 
-		      on= "AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } }),tap:cart-list-dueno.refresh,carrusel-list.refresh"
+		      on= "tap:AMP.setState({ dueno: {invisible: false}, inicial: { invisible: true } }),cart-list-dueno.refresh,carrusel-list.refresh"
 		      amp-access-hide
 		      tabindex="0"
 		      type = "submit"
