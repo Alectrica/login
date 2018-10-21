@@ -2416,7 +2416,7 @@
 	   -->
 	   {{#presupuesto_remoto}}
              <form id="sync"
-	       [hidden] = "inicial.invisible"
+	       [hidden] = "presupuesto.iniciado > 0"
                 method="POST"
                 action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/syncFromRemote.json"
                 target="_top"
