@@ -2385,7 +2385,9 @@
       </section>
 
 
-      <section amp-access="loggedIn and presupuesto_remoto">
+      <section amp-access="loggedIn"
+	[hidden] = " NOT presupuesto.remoto"
+	>
        <!--
 	<div class="my2">
 	    <button amp-access="loggedIn" 
