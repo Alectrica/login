@@ -1987,13 +1987,13 @@
                 on = "submit-success:carrusel-list.refresh,cart-list.refresh;submit-error:carrusel-list.refresh,cart-list.refresh,carrusel-list.show,boton-login.show"
 
 	      -->
-	    <div>
 	      <form id="order"
 		method="POST"
 		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
 		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh,cart-list.refresh"
 		class="flex flex-wrap m1">
+	      <div>
 		<div class="items-center flex">
 		  <label for="color">Grupo:</label>
 		  <amp-selector name="color"
