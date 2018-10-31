@@ -2299,20 +2299,20 @@
 		alt="{{cantidad}}"
 		src="{{img}}">
 
-                <form method   = "POST"
-		    z-index = 2001
-		    class = close-gallery-button
-                    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
-                    target    = "_top"
-                    on = "submit-success:carrusel-list.refresh">
-                   <input name = "clientId" 
-                       type = "hidden" 
-                       value = "CLIENT_ID(uid)" 
-                       data-amp-replace = "CLIENT_ID">
-                   <button  type = "submit" > x </button>
-
-                </form>
-
+		<div
+		  class   = close-gallery-button
+		  z-index = 2001 >
+		  <form method   = "POST"
+		      action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+		      target    = "_top"
+		      on = "submit-success:carrusel-list.refresh">
+		     <input name = "clientId" 
+			 type = "hidden" 
+			 value = "CLIENT_ID(uid)" 
+			 data-amp-replace = "CLIENT_ID">
+		     <button  type = "submit" > x </button>
+		  </form>
+		</div>
               </amp-img>
 
 
