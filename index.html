@@ -2300,7 +2300,7 @@
 		src="{{img}}">
 	      </amp-img>
 
-
+              <span>
                 <form method   = "POST"
                     action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
                     target    = "_top"
@@ -2312,12 +2312,14 @@
                    <button  type = "submit" > x </button>
 
                 </form>
-
+               </span>
 
 
 	      <div
 		id = "caption"
 		hidden>
+		{{nombre}}. Potencia: {{potencia}} W. Circuito: {{circuito}}.
+		<!---
 		<form method   = "POST"
 		    class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
@@ -2330,6 +2332,8 @@
 		   <button  type = "submit" > x </button>
 
 		</form>
+		-->
+
 	      </div>
             {{/items}}
 	    <!--
