@@ -2300,11 +2300,27 @@
 		src="{{img}}">
 	      </amp-img>
 
+
+                <form method   = "POST"
+                    class = "close-gallery-button"
+                    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
+                    target    = "_top"
+                    on = "submit-success:carrusel-list.refresh">
+                   <input name = "clientId" 
+                       type = "hidden" 
+                       value = "CLIENT_ID(uid)" 
+                       data-amp-replace = "CLIENT_ID">
+                   <button  type = "submit" > x </button>
+
+                </form>
+
+
+
 	      <div
 		id = "caption"
 		hidden>
 		{{nombre}}. Potencia: {{potencia}} W. Circuito: {{circuito}}.
-
+                <!--
 		<form method   = "POST"
 		    class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
@@ -2317,8 +2333,10 @@
 		   <button  type = "submit" > x </button>
 
 		</form>
+		-->
 	      </div>
             {{/items}}
+	    <!--
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
@@ -2331,7 +2349,6 @@
               </button>
             </form>
           <hr/>
-	  <!--
 	  <button
 	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueno.refresh"> Refrescar
 	  </button>
