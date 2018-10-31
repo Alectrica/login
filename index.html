@@ -2290,7 +2290,7 @@
             </a>
 -->
 	      <amp-img width="70.31"
-	      on="tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
+	        on   = "tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
 		role = "button"
 		tabindex = 0
 		height="46.8"
@@ -2298,10 +2298,9 @@
 		aria-describedby = "caption"
 		alt="{{cantidad}}"
 		src="{{img}}">
-	      </amp-img>
 
-              <span>
                 <form method   = "POST"
+		    class = close-gallery-button
                     action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
                     target    = "_top"
                     on = "submit-success:carrusel-list.refresh">
@@ -2312,7 +2311,8 @@
                    <button  type = "submit" > x </button>
 
                 </form>
-               </span>
+
+              </amp-img>
 
 
 	      <div
