@@ -549,10 +549,10 @@
     }
 
     .lightbox {
-      width: 40%;
-      height: 40%;
+      width: 100%;
+      height: 100%;
       display: flex;
-      align-items: right;
+      align-items: center;
     }
 
     amp-selector [option][selected] {
@@ -566,7 +566,7 @@
     .close-gallery-button {
       z-index: 1;
       position: absolute;
-      left: 0;
+      right: 0;
     }
 
 
@@ -1706,8 +1706,7 @@
 			</div>
 		     </div>
                   -->
-                    <div class = "close-gallery-button" >
-		      <!--
+                    <div class = "right close-gallery-button" >
 
 		      <button class="ampstart-btn caps m2"
 			on="tap:gallery-lightbox.close"
@@ -1715,8 +1714,7 @@
 			tabindex="0">
 			Cerrar
 		      </button>
- 
-                      -->
+
 		      <form method   = "POST"
 			action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			  target    = "_top"
