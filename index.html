@@ -1706,9 +1706,7 @@
 			</div>
 		     </div>
                   -->
-                    <div class = "right close-gallery-button"
-		     z-index = 1001
-		      >
+                    <div class = "right close-gallery-button" >
 
 		      <button class="ampstart-btn caps m2"
 			on="tap:gallery-lightbox.close"
@@ -2307,7 +2305,6 @@
 		hidden>
 		{{nombre}}. Potencia: {{potencia}} W. Circuito: {{circuito}}.
 
-		<!--
 		<form method   = "POST"
 		    class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
@@ -2320,9 +2317,9 @@
 		   <button  type = "submit" > x </button>
 
 		</form>
-		-->
 	      </div>
             {{/items}}
+<!--
             <form method   = "POST"
               action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
               target    = "_top"
@@ -2335,7 +2332,6 @@
               </button>
             </form>
           <hr/>
-	  <!--
 	  <button
 	    on = "tap:carrusel-list.refresh,cart-list.refresh,cart-list-dueno.refresh"> Refrescar
 	  </button>
