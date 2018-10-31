@@ -2289,7 +2289,6 @@
 	      href="#">
             </a>
 -->
-            <div width="76">
 	      <amp-img width="70.31"
 	        on   = "tap:gallery-lightbox,AMP.setState({ id:  {{id}} } )"
 		role = "button"
@@ -2302,7 +2301,6 @@
               </amp-img>
 
 	      <form method   = "POST"
-		  class = "close-gallery-button"
 		  action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		  target    = "_top"
 		  on = "submit-success:carrusel-list.refresh">
@@ -2313,7 +2311,6 @@
 		 <button  type = "submit" > x </button>
 	      </form>
 
-	    </div>
 
 
 	      <div
