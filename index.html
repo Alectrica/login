@@ -2592,7 +2592,7 @@
 
 
 	<amp-list
-	  template    = "cart-list-template"
+	  template    = "ocupacion-list-template"
 	  credentials = "include"
 	  width       = "auto"
 	  height      = "180"
@@ -2600,9 +2600,21 @@
 	  single-item
 	  layout      = "fixed-height"
 	  src         = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?clientId=CLIENT_ID(uid)&_=RANDOM"
-	  id          = "circuitos-list">
+	  id          = "ocupacion-list">
 	  <div overflow = "" class = "list-overflow">VER MÁS</div>
 	</amp-list>
+
+	<template type = "amp-mustache"
+	  id = "ocupacion-list-template">
+	  {{#items}}
+	    {{nombre}}
+	    {{potencia}}
+	    {{circuito}}
+	  {{/items}}
+	</template>
+
+
+
 
         <amp-list 
           template="cart-list-template"
@@ -2617,6 +2629,7 @@
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
       </section>	
+
 
       <template type="amp-mustache"
 	id = "cart-list-template">
