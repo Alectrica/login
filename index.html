@@ -2606,13 +2606,24 @@
 	    id = "ocupacion-list-template">
             <div class = "max-width-4 mx-auto" >
 	      <div class = "clearfix p2">
-	        <h2 class="m1">Ocupación de Circuitos</h2>
-		{{#items}}
-		    <h3
-		      class="m1 xs-hide" >
-		       {{tipo_circuito.letras}}-{{nombre}}
-		    </h3>
+		<h2
+		  class = "xs-hide" >
+		  Ocupación de los circuitos
+		</h2>
 
+		<h3
+		  class = "sm-hide md-hide lg-hide p2">
+                  Ocupación de los circuitos
+		</h3>
+		{{#items}}
+		  <div class = "xs-hide flex justify-between">
+                    
+                    
+
+
+		    <h2>
+		       {{tipo_circuito.letras}}-{{nombre}}
+		    </h2>
 		    <div>
 			<progress 
 			  value = "{{corriente_servicio}}" 
