@@ -2581,9 +2581,10 @@
           <hr/>
       </template>
 
+
+
       <section amp-access="loggedIn" 
         id= "resumen" 
-        class= "checkout-section"
         amp-access-hide = "" >
 
 
@@ -2610,13 +2611,12 @@
 	    </progress>
 	    {{tipo_circuito.nombre}}
 	    {{tipo_circuito.letras}}
-	    {{tipo_circuito.capacidad}}
 	  {{/items}}
 	</template>
 
 
 
-
+        <!-- Funciona bien,pero lo eliminé para ofrecer mayor simplicidad al cliente
         <amp-list 
           template="cart-list-template"
 	  credentials="include"
@@ -2629,6 +2629,7 @@
 	  id="cart-list">
           <div overflow = "" class = "list-overflow">VER MÁS</div>
         </amp-list>
+	-->
       </section>	
 
 
