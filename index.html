@@ -2609,12 +2609,11 @@
 	      {{#items}}
 	        <div 
 		  class = "xs-hide flex justify-between border">
-                  <h1 
-		    class = "border">
+                  <h1>
                      {{nombre}}
 	          </h1>
 		  <div
-		    class = "xs-hide border">
+		    class = "xs-hide">
 		      <progress 
 			value = "{{corriente_servicio}}" 
 			max = "{{tipo_circuito.capacidad}}">
@@ -2623,6 +2622,8 @@
 		</div>
 
 		<br/>
+                <div 
+                   class = "sm-hide md-hide lg-hide"
 		<progress 
 		  value = "{{corriente_servicio}}" 
 		  max = "{{tipo_circuito.capacidad}}">
