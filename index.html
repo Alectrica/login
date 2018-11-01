@@ -1718,7 +1718,7 @@
 		      <form method   = "POST"
 			action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/deleteElectrodomestico.json"
 			  target    = "_top"
-			  on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+			  on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
 			 <input name = "clientId" 
 			     type = "hidden" 
 			     value = "CLIENT_ID(uid)" 
@@ -1994,7 +1994,7 @@
 		method="POST"
 		action-xhr="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/addToCircuito.json"
 		target="_top"
-		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh,cart-list.refresh"
+		on="submit-success:AMP.setState({ presupuesto: { Iniciado: (presupuesto.Iniciado + 1)}}),carrusel-list.refresh, cart-list-dueno.refresh,cart-list.refresh,ocupacion-list.refresh"
 		class="flex flex-wrap m1">
 
               <div>
@@ -2301,7 +2301,7 @@
 		   class = "close-gallery-button"
 		    action-xhr = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/{{id}}/dropFromCircuito.json"
 		    target    = "_top"
-		    on = "submit-success:carrusel-list.refresh,cart-list.refresh">
+		    on = "submit-success:carrusel-list.refresh,cart-list.refresh,ocupacion-list.refresh">
 		   <input name = "clientId" 
 		       type = "hidden" 
 		       value = "CLIENT_ID(uid)" 
@@ -2605,7 +2605,7 @@
 	  {{#items}}
             <br/>
 	    <progress 
-	      value = "{{carga_total}}" 
+	      value = "{{corriente_servicio}}" 
 	      max = "{{tipo_circuito.capacidad">
 	    </progress>
 	    {{tipo_circuito.nombre}}
