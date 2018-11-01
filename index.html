@@ -771,8 +771,7 @@
       z-index: 1
     }
 
-    sm-progress {
-      color: red;
+    ocupacion.progress {
       width: 25em;
       height: 2em;
     }
@@ -2630,9 +2629,9 @@
 		    <h3>
 		       {{tipo_circuito.letras}}-{{nombre}}
 		    </h3>
-		    <div>
+		    <div
+		      class = "ocupacion">
 			<progress 
-			  class = "sm-progress"
 			  value = "{{corriente_servicio}}" 
 			  max = "{{tipo_circuito.capacidad}}">
 			</progress>
