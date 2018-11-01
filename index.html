@@ -771,7 +771,7 @@
       z-index: 1
     }
 
-    ocupacion.progress {
+    progress.ocupacion {
       width: 25em;
       height: 2em;
     }
@@ -2629,9 +2629,9 @@
 		    <h3>
 		       {{tipo_circuito.letras}}-{{nombre}}
 		    </h3>
-		    <div
-		      class = "ocupacion">
+		    <div>
 			<progress 
+			  class = "ocupacion"
 			  value = "{{corriente_servicio}}" 
 			  max = "{{tipo_circuito.capacidad}}">
 			</progress>
