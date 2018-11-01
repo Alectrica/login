@@ -2605,16 +2605,22 @@
 
 	  <template type = "amp-mustache"
 	    id = "ocupacion-list-template">
-	    {{#items}}
-	      <br/>
-	      <progress 
-		value = "{{corriente_servicio}}" 
-		max = "{{tipo_circuito.capacidad}}">
-	      </progress>
-	      <small>
-		{{tipo_circuito.letras}}-{{nombre}}
-	      </small>
-	    {{/items}}
+	    <div 
+	      class = "my2">
+	      {{#items}}
+		<br/>
+		<progress 
+		  value = "{{corriente_servicio}}" 
+		  max = "{{tipo_circuito.capacidad}}">
+		</progress>
+		<small>
+		  {{tipo_circuito.letras}}-{{nombre}}
+		</small>
+	      {{/items}}
+	      {{^items}}
+	        No se han ingresado electrodomésticos, intente con el botón AGREGAR
+	      {{/items}}
+	    </div>
 	  </template>
         <div>
 
