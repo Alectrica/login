@@ -2587,34 +2587,36 @@
         id= "resumen" 
         amp-access-hide = "" >
 
+	<div
+	  class = "my2">
 
-	<amp-list
-	  template    = "ocupacion-list-template"
-	  credentials = "include"
-	  width       = "auto"
-	  height      = "180"
-	  items       = "."
-	  single-item
-	  layout      = "fixed-height"
-	  src         = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?clientId=CLIENT_ID(uid)&_=RANDOM"
-	  id          = "ocupacion-list">
-	  <div overflow = "" class = "list-overflow">VER MÁS</div>
-	</amp-list>
+	  <amp-list
+	    template    = "ocupacion-list-template"
+	    credentials = "include"
+	    width       = "auto"
+	    height      = "180"
+	    items       = "."
+	    single-item
+	    layout      = "fixed-height"
+	    src         = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/ocupacion.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	    id          = "ocupacion-list">
+	    <div overflow = "" class = "list-overflow">VER MÁS</div>
+	  </amp-list>
 
-	<template type = "amp-mustache"
-	  id = "ocupacion-list-template">
-	  {{#items}}
-            <br/>
-	    <progress 
-	      value = "{{corriente_servicio}}" 
-	      max = "{{tipo_circuito.capacidad}}">
-	    </progress>
-	    <small>
-	      {{nombre}}-{{tipo_circuito.letras}}
-            </small>
-	  {{/items}}
-	</template>
-
+	  <template type = "amp-mustache"
+	    id = "ocupacion-list-template">
+	    {{#items}}
+	      <br/>
+	      <progress 
+		value = "{{corriente_servicio}}" 
+		max = "{{tipo_circuito.capacidad}}">
+	      </progress>
+	      <small>
+		{{tipo_circuito.letras}}-{{nombre}}
+	      </small>
+	    {{/items}}
+	  </template>
+        <div>
 
 
         <!-- Funciona bien,pero lo eliminé para ofrecer mayor simplicidad al cliente
