@@ -2589,6 +2589,21 @@
         id= "resumen" 
         class= "checkout-section"
         amp-access-hide = "" >
+
+
+	<amp-list
+	  template    = "cart-list-template"
+	  credentials = "include"
+	  width       = "auto"
+	  height      = "180"
+	  items       = "."
+	  single-item
+	  layout      = "fixed-heigt"
+	  src         = "https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/index.json?clientId=CLIENT_ID(uid)&_=RANDOM"
+	  id          = "circuitos-list">
+	  <div overflow = "" class = "list-overflow">VER MÁS</div>
+	</amp-list>
+
         <amp-list 
           template="cart-list-template"
 	  credentials="include"
