@@ -2605,11 +2605,12 @@
 	  {{#items}}
             <br/>
 	    <progress 
-	      value = "{{potencia}}" 
-	      max = "1000">
+	      value = "{{carga_total}}" 
+	      max = "{{tipo_circuito.capacidad">
 	    </progress>
 	    {{tipo_circuito.nombre}}
 	    {{tipo_circuito.letras}}
+	    {{tipo_circuito.capacidad}}
 	  {{/items}}
 	</template>
 
