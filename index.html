@@ -2607,13 +2607,11 @@
 	    <div 
 	      class = "my2">
 	      {{#items}}
-	        <div 
-		  class = "xs-hide flex justify-between border">
+	        <div class = "xs-hide flex justify-between border">
                   <h1>
                      {{nombre}}
 	          </h1>
-		  <div
-		    class = "xs-hide">
+		  <div class = "xs-hide">
 		      <progress 
 			value = "{{corriente_servicio}}" 
 			max = "{{tipo_circuito.capacidad}}">
@@ -2622,12 +2620,15 @@
 		</div>
 
 		<br/>
-                <div 
-                   class = "flex justify-center sm-hide md-hide lg-hide border">
+
+                <div class = "flex justify-between sm-hide md-hide lg-hide border">
 		  <progress 
 		    value = "{{corriente_servicio}}" 
 		    max = "{{tipo_circuito.capacidad}}">
 		  </progress>
+                 </div>>
+
+                 <div class = "border">
 		  <small>
 		    {{tipo_circuito.letras}}-{{nombre}}
 		  </small>
