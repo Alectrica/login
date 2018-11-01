@@ -2623,14 +2623,15 @@
 
 		<br/>
                 <div 
-                   class = "sm-hide md-hide lg-hide"
-		<progress 
-		  value = "{{corriente_servicio}}" 
-		  max = "{{tipo_circuito.capacidad}}">
-		</progress>
-		<small>
-		  {{tipo_circuito.letras}}-{{nombre}}
-		</small>
+                   class = "sm-hide md-hide lg-hide">
+		  <progress 
+		    value = "{{corriente_servicio}}" 
+		    max = "{{tipo_circuito.capacidad}}">
+		  </progress>
+		  <small>
+		    {{tipo_circuito.letras}}-{{nombre}}
+		  </small>
+                </div>
 	      {{/items}}
 	      {{^items}}
 	        No se han ingresado electrodomésticos, intente con el botón AGREGAR
