@@ -2604,40 +2604,41 @@
 
 	  <template type = "amp-mustache"
 	    id = "ocupacion-list-template">
-	    <div 
-	      class = "clearfix">
-	      {{#items}}
-	        <div class = "xs-hide flex justify-between border">
-                  <h1>
-                     {{nombre}}
-	          </h1>
-		  <div class = "xs-hide">
-		      <progress 
-			value = "{{corriente_servicio}}" 
-			max = "{{tipo_circuito.capacidad}}">
-		      </progress>
+            <div class = "max-width-4 mx-auto" >
+	      <div class = "clearfix">
+		{{#items}}
+		  <div class = "xs-hide flex justify-between border">
+		    <h1>
+		       {{nombre}}
+		    </h1>
+		    <div class = "xs-hide">
+			<progress 
+			  value = "{{corriente_servicio}}" 
+			  max = "{{tipo_circuito.capacidad}}">
+			</progress>
+		    </div>
 		  </div>
-		</div>
 
-		<br/>
+		  <br/>
 
-                <div class = "flex justify-between sm-hide md-hide lg-hide">
-		  <progress 
-		    value = "{{corriente_servicio}}" 
-		    max = "{{tipo_circuito.capacidad}}">
-		  </progress>
+		  <div class = "flex justify-between sm-hide md-hide lg-hide">
+		    <progress 
+		      value = "{{corriente_servicio}}" 
+		      max = "{{tipo_circuito.capacidad}}">
+		    </progress>
 
-		   <div>
-		    <small>
-		      {{tipo_circuito.letras}}-{{nombre}}
-		    </small>
-	          </div>
-                </div>
-	      {{/items}}
-	      {{^items}}
-	        No se han ingresado electrodomésticos, intente con el botón AGREGAR
-	      {{/items}}
-	    </div>
+		     <div>
+		      <small>
+			{{tipo_circuito.letras}}-{{nombre}}
+		      </small>
+		    </div>
+		  </div>
+		{{/items}}
+		{{^items}}
+		  No se han ingresado electrodomésticos, intente con el botón AGREGAR
+		{{/items}}
+	      </div>
+            </div>
 	  </template>
 
 
