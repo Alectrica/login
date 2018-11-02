@@ -3214,7 +3214,7 @@
 	</section>
         <!-- -->
         <button [class]="currentStep != 11 ?  'step-title' : 'step-title step-active'" hidden [disabled]='!rolSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 11})'>
-          <i [class]="horaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='.'></i>Fin del Pedido
+          <i [class]="rolSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='.'></i>Fin del Pedido
         </button>
         <!-- -->
 
