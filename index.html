@@ -2405,16 +2405,6 @@
 
 	</amp-selector>
         -->
-  <amp-bodymovin-animation
-    layout="responsive"
-    width="1920" height="1080"
-    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json"
-    loop="5">
-  </amp-bodymovin-animation>
-
-
-
-
 
       <section amp-access="NOT loggedIn"
 	amp-access-hide >
@@ -2815,8 +2805,19 @@
       <div class='stepper vertical'
 	>
 	<h3 class = "m1">
-	  O solicite la visita de un Instalador Autorizado SEC
+	  O solicite la Visita a Domicilio de un Instalador Autorizado SEC
 	</h3>
+
+
+  <amp-bodymovin-animation
+    layout="responsive"
+    width="1920" height="1080"
+    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json"
+    loop="5">
+  </amp-bodymovin-animation>
+
+
+
 	<button [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
 	  class='step-title step-active' 
 	  on='tap:AMP.pushState({ currentStep: 0})'>
