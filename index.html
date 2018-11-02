@@ -2637,7 +2637,7 @@
 			</progress>
 			<amp-bodymovin-animation
 			  layout="fixed"
-			  width="19" height="10"
+			  width="200" height="10"
 			  src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
 			</amp-bodymovin-animation>
 		    </div>
@@ -2646,6 +2646,12 @@
 		  <br/>
 
 		  <div class = "flex justify-between sm-hide md-hide lg-hide">
+                        <amp-bodymovin-animation
+                          layout="fixed"
+                          width="200" height="10"
+                          src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
+                        </amp-bodymovin-animation>
+
 		    <progress 
 		      value = "{{corriente_servicio}}" 
 		      max = "{{tipo_circuito.capacidad}}">
