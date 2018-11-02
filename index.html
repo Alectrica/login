@@ -3095,9 +3095,6 @@
 	    </amp-selector>
 	  </div>
 	</section>
-	<button [disabled]='!horaSelected' [hidden]='!horaSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 6})' type='submit'>
-	continuar
-	</button>
 
 	<!-- -->
 	<button [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
@@ -3213,6 +3210,8 @@
 	    </button>
 	    </div>
 	</section>
+        <button [class]="currentStep != 11 ?  'step-title' : 'step-title step-active'" [hidden]="currentStep > 11" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 11})'>Listo!
+
       </div>
       <!--googleon: all-->
 
