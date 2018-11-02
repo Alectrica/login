@@ -2635,6 +2635,8 @@
 			  value = "{{corriente_servicio}}" 
 			  max = "{{tipo_circuito.capacidad}}">
 			</progress>
+                     </div>
+                     <div class = "atencion">
 			<amp-bodymovin-animation
 			  layout="responsive"
 			  width="1920" height="1080"
@@ -2803,14 +2805,6 @@
 	<h3 class = "m1">
 	  O solicite la Visita a Domicilio de un Instalador Autorizado SEC
 	</h3>
-
-
-  <amp-bodymovin-animation
-    layout="responsive"
-    width="1920" height="1080"
-    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
-  </amp-bodymovin-animation>
-
 
 	<button [class]="currentStep > 0 ? 'step-title' : 'step-title step-active'" 
 	  class='step-title step-active' 
