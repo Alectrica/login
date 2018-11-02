@@ -104,6 +104,7 @@
     <meta name="amp-experiment-token" content="HfmyLgNLmblRg3Alqy164Vywr">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
+    <script async custom-element="amp-bodymovin-animation" src="https://cdn.ampproject.org/v0/amp-bodymovin-animation-0.1.js"></script>
     <script async custom-element="amp-access"   src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
@@ -2645,6 +2646,14 @@
 		      value = "{{corriente_servicio}}" 
 		      max = "{{tipo_circuito.capacidad}}">
 		    </progress>
+
+  <amp-bodymovin-animation
+    layout="responsive"
+    width="1920" height="1080"
+    src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json"
+    loop="5">
+  </amp-bodymovin-animation>
+
 
 		     <div>
 		      <small>
