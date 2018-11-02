@@ -2630,34 +2630,38 @@
 		       {{tipo_circuito.letras}}-{{nombre}}
 		    </h3>
 		    <div>
+
+                        <amp-bodymovin-animation
+                          [hidden] = "{{seguro}}"
+                          layout="fixed"
+                          width="15" height="15"
+                          src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
+                        </amp-bodymovin-animation>
 			<progress 
 			  class = "ocupacion"
 			  value = "{{corriente_servicio}}" 
 			  max = "{{tipo_circuito.capacidad}}">
 			</progress>
-			<amp-bodymovin-animation
-                          [hidden] = "{{seguro}}"
-			  layout="fixed"
-			  width="15" height="15"
-			  src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
-			</amp-bodymovin-animation>
 		    </div>
 		  </div>
 
 		  <br/>
 
 		  <div class = "flex justify-between sm-hide md-hide lg-hide">
-		    <amp-bodymovin-animation
-                      [hidden] = "{{seguro}}"
-		      layout="fixed"
-		      width="15" height="15"
-		      src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
-		    </amp-bodymovin-animation>
 
 		    <progress 
 		      value = "{{corriente_servicio}}" 
 		      max = "{{tipo_circuito.capacidad}}">
 		    </progress>
+
+
+                    <amp-bodymovin-animation
+                      [hidden] = "{{seguro}}"
+                      layout="fixed"
+                      width="10" height="10"
+                      src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
+                    </amp-bodymovin-animation>
+
 		     <div>
 		      <small>
 		        {{nombre_abreviado}}
