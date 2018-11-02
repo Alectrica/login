@@ -3205,11 +3205,18 @@
 		</template>
 	      </div>
 	    </form>
+            <!---
 	    <button [disabled]='!rolSelected' [hidden]='!rolSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>
 	    continuar
 	    </button>
+            -->
 	    </div>
 	</section>
+        <!-- -->
+        <button [class]="currentStep != 11 ?  'step-title' : 'step-title step-active'" [disabled]='!rolSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 11})'>
+          <i [class]="horaSelected ? 'step-complete' : 'step-incomplete'" class='step-incomplete' data-step-nr='.'></i>Fin del Pedido
+        </button>
+        <!-- -->
 
         <!-- -->
         <button [class]="currentStep != 11 ?  'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio == 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 11})'>
