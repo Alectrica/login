@@ -3095,6 +3095,13 @@
 	      <div option='tarde'>En la tarde</div>
 	    </amp-selector>
 	  </div>
+
+	  <button [disabled]='!horaSelected' [hidden]='!horaSelected' disabled hidden on='tap:AMP.pushState({currentStep: currentStep + 1})' type='submit'>
+	  continuar
+	  </button>
+
+
+
 	</section>
 	<!-- -->
 	<button [class]="currentStep != 6 ? 'step-title' : 'step-title step-active'" [disabled]='!horaSelected' [hidden]="atencion.selectedServicio != 'certificación'" class='step-title' disabled='' on='tap:AMP.pushState({ currentStep: 6})'>
