@@ -2731,11 +2731,11 @@
 
 	  {{/items}} 
 
-	  {{#potencia_total}}
+	  {{#potencia_total_industrial}}
 
 	  <div class= "item summary">
 	     <div class="name">
-	       <strong> Potencia Total:</strong>
+	       <strong> Potencia Total Cliente Industrial:</strong>
 	     </div>
 	     <div class="price">
 	       <strong>{{.}}</strong>
@@ -2744,7 +2744,27 @@
 	     </div>
 	  </div>
 
-	  {{/potencia_total}}
+	  {{/potencia_total_industrial}}
+
+
+
+          {{#potencia_total_residencial}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong> Potencia Total Cliente Residencial:</strong>
+             </div>
+             <div class="price">
+               <strong>{{.}}</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+
+          {{/potencia_total_residencial}}
+
+
+
           <!---
 	  <div class="item summary">
 	    <div class="name"></div>
