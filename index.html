@@ -370,14 +370,15 @@
       margin-bottom: 16px;
       padding: 0 16px;
     }
-    .empalme-selector .product-gallery > ul {
+    .product-gallery > ul {
       margin: 0;
       padding: 0;
       float: left;
       line-height: 0;
-    }
-    .product-gallery > ul {
       list-style: none;
+    }
+    ul.disk {
+     list-style: disk;
     }
     .product-gallery > ul > li {
       cursor: pointer;
@@ -2834,7 +2835,7 @@
              <div class="name">
                <strong>Empalme Sugerido:</strong>
 		<div class="empalme-selector">
-		  <ul>
+		  <ul class= "disco">
 		    <li>
 		      <amp-img on="tap:AMP.setState({empalme: {medio: 'soterrado'}})"
 			src="/img/edificio.png"
