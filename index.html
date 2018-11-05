@@ -1757,8 +1757,7 @@
               <amp-state id="empalme">
                 <script type="application/json">
                   {
-                    "soterrado": 0,
-                    "aereo"    : 1
+                    "medio": "aereo"
                   }
                 </script>
               </amp-state>
@@ -2852,23 +2851,23 @@
 		<div class="product-gallery">
 		  <ul>
 		    <li>
-		      <amp-img on="tap:AMP.setState({empalme: {soterrado: 1}})"
+		      <amp-img on="tap:AMP.setState({empalme: {medio: soterrado}})"
 			src="/img/hornillo_60_40.png"
 			width="60"
 			height="40"
 			class=""
-			[class]="empalme.soterrado == 1 ? 'selected' : '' "
+			[class]="empalme.medio == 'soterrado' ? 'selected' : '' "
 			tabindex="0"
 			role="button">
 		      </amp-img>
 		    </li>
                     <li>
-                      <amp-img on="tap:AMP.setState({empalme: {aereo: 1}})"
+                      <amp-img on="tap:AMP.setState({empalme: {medio: aereo}})"
                         src="/img/hornillo_60_40.png"
                         width="60"
                         height="40"
                         class="selected"
-                        [class]="empalme.aereo == 1 ? 'selected' : '' "
+                        [class]="empalme.medio == 'aereo' ? 'selected' : '' "
                         tabindex="0"
                         role="button">
                       </amp-img>
