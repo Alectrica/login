@@ -2774,7 +2774,7 @@
 
           <div class= "item summary">
              <div class="name">
-               <strong>Carga Equivalente:</strong>
+               <strong>Corriente de Servicio Total:</strong>
                <small>Solo para viviendas</small>
              </div>
              <div class="price">
@@ -2785,6 +2785,42 @@
           </div>
 
 	  {{/is_total}}
+
+
+          {{#potencia_instalada}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong>Potencia Instalada:</strong>
+               <small>Solo para viviendas</small>
+             </div>
+             <div class="price">
+               <strong>{{potencia_instalada}} W</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+
+          {{/potencia_instalada}}
+
+
+          {{#fp_minimo}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong>Factor de Potencia Mínimo:</strong>
+               <small>Solo para viviendas</small>
+             </div>
+             <div class="price">
+               <strong>{{fp_minimo}} W</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+
+          {{/fp_minimo}}
+
+
 
 
 
