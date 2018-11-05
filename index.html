@@ -2880,17 +2880,27 @@
              </div>
 	     <div class = "clearfix flex items-strecht border"
               [hidden] = "empalme.medio == 'aereo'" >
-	       <h1>
-		 {{empalme_sugerido.tipo_de_empalme}}
-	       </h1>
 	       <div>
-		 <small>{{empalme_sugerido.potencia_nominal}} kW</small>
-		 <small>{{empalme_sugerido.interruptor}} A </small>
-		 <small class = "xs-hide">{{empalme_sugerido.medio}} </small>
-		 <small class = "xs-hide">{{empalme_sugerido.no_fases}} </small>
-		 <small class = "xs-hide">Medición {{empalme_sugerido.tipo_de_medicion}}</small>
+                 Soterrado
+		 <small>{{empalme_soterrado_sugerido.potencia_nominal}} kW</small>
+		 <small>{{empalme_soterrado_sugerido.interruptor}} A </small>
+		 <small class = "xs-hide">{{empalme_soterrado_sugerido.medio}} </small>
+		 <small class = "xs-hide">{{empalme_soterrado.sugerido.no_fases}} </small>
+		 <small class = "xs-hide">Medición {{empalme_soterrado.sugerido.tipo_de_medicion}}</small>
 	       </div>
 	     </div>
+
+            <div class = "clearfix flex items-strecht border"
+              [hidden] = "empalme.medio == 'soterrado'" >
+               <div>
+                 Aereo
+                 <small>{{empalme_aereo_sugerido.potencia_nominal}} kW</small>
+                 <small>{{empalme_aereo_sugerido.interruptor}} A </small>
+                 <small class = "xs-hide">{{empalme_aereo_sugerido.medio}} </small>
+                 <small class = "xs-hide">{{empalme_aereo.sugerido.no_fases}} </small>
+                 <small class = "xs-hide">Medición {{empalme_aereo.sugerido.tipo_de_medicion}}</small>
+               </div>
+             </div>
 	    </div>
           </div>
 
