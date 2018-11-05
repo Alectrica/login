@@ -2840,19 +2840,30 @@
 		  </div>
 		</amp-lightbox>
 
-		<div class="product-gallery">
+		<div class="empalme-medio">
 		  <ul>
 		    <li>
-		      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
-			src="/img/alectrico_60_40.png"
+		      <amp-img on="tap:AMP.setState({empalme: {soterrado: 1}})"
+			src="/img/hornillo_60_40.png"
 			width="60"
 			height="40"
 			class="selected"
-			[class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+			[class]="empalme.soterrado == 1 ? 'selected' : '' "
 			tabindex="0"
 			role="button">
 		      </amp-img>
 		    </li>
+                    <li>
+                      <amp-img on="tap:AMP.setState({empalme: {aereo: 1}})"
+                        src="/img/hornillo_60_40.png"
+                        width="60"
+                        height="40"
+                        class=""
+                        [class]="empalme.aereo == 1 ? 'selected' : '' "
+                        tabindex="0"
+                        role="button">
+                      </amp-img>
+                    </li>
                   </ul>
                 </div>
              </div>
