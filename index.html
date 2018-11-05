@@ -2827,7 +2827,7 @@
 	  {{/fp_minimo}}
 	  -->
 
-	{{#empalme_sugerido}}
+	{{#empalme_soterrado_sugerido}}
           <div class= "item summary">
              <div class="name">
                <strong>Empalme Sugerido:</strong>
@@ -2888,22 +2888,10 @@
 		 <small class = "xs-hide">Medición {{empalme_soterrado.sugerido.tipo_de_medicion}}</small>
 	       </div>
 	     </div>
-
-            <div class = "clearfix flex items-strecht border"
-	      hidden
-              [hidden] = "empalme.medio == 'soterrado'" >
-               <div>
-                 <small>{{empalme_aereo_sugerido.potencia_nominal}} kW</small>
-                 <small>{{empalme_aereo_sugerido.interruptor}} A </small>
-                 <small class = "xs-hide">{{empalme_aereo_sugerido.medio}} </small>
-                 <small class = "xs-hide">{{empalme_aereo.sugerido.no_fases}} </small>
-                 <small class = "xs-hide">Medición {{empalme_aereo.sugerido.tipo_de_medicion}}</small>
-               </div>
-             </div>
 	    </div>
           </div>
 
-          {{/empalme_sugerido}}
+          {{/empalme_soterrado_sugerido}}
 
 
 
