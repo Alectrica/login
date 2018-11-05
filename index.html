@@ -2876,9 +2876,10 @@
                 </div>
              </div>
 	     <div class = "clearfix flex items-strecht border"
-              [hidden] = "empalme.medio.aereo" >
+              [hidden] = "{{empalme.medio}} == 'aereo'" >
 	       <h1>
 		 {{empalme_sugerido.tipo_de_empalme}}
+                 {{empalme.medio}}
 	       </h1>
 	       <div>
 		 <small>{{empalme_sugerido.potencia_nominal}} kW</small>
