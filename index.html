@@ -2758,6 +2758,8 @@
           <div class= "item summary">
              <div class="name">
                <strong> Potencia Total del Empalme:</strong>
+               <small>Solo es válido para viviendas</small>
+               <small>No se usa para locales comerciales ni industriales</small>
              </div>
              <div class="price">
                <strong>{{.}} W</strong>
@@ -2767,6 +2769,23 @@
           </div>
 
           {{/potencia_total_domiciliaria}}
+
+          {{#empalme_sugerido}}
+
+          <div class= "item summary">
+             <div class="name">
+               <strong> Empalme Sugerido:</strong>
+               <small>Solo para viviendas</small>
+             </div>
+             <div class="price">
+               <strong>{{.}} W</strong>
+             </div>
+             <div class="quantity">
+             </div>
+          </div>
+
+          {{/empalme_sugerido}}
+
 
 
 
