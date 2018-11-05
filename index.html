@@ -2785,7 +2785,7 @@
           <div class= "item summary">
              <div class="name">
                <strong>Corriente de Servicio:</strong>
-               <small>Calculado para Casa-Habitación</small>
+               <small>Para Casa-Habitación</small>
              </div>
              <div class="price">
                <strong>{{is_total}} A</strong>
@@ -2802,7 +2802,7 @@
           <div class= "item summary">
              <div class="name">
                <strong>Potencia Instalada:</strong>
-               <small>Para Cada-Habitación</small>
+               <small>Para Casa-Habitación</small>
              </div>
              <div class="price">
                <strong>{{potencia_instalada}} W</strong>
@@ -2862,7 +2862,7 @@
                 </div>
              </div>
 
-	     <div class = " flex items-strecht border"
+	     <div class = " flex items-strecht"
               [hidden] = "empalme.medio == 'aereo'" >
 	      <h1>{{empalme_soterrado_sugerido.tipo_de_empalme}}</h1>
 	       <div>
@@ -2874,7 +2874,7 @@
 
 	       </div>
 	     </div>
-             <div class = " flex items-strecht border"
+             <div class = " flex items-strecht"
               [hidden] = "empalme.medio == 'soterrado'" >
 	      <h1>{{empalme_aereo_sugerido.tipo_de_empalme}}</h1>
                <div>
