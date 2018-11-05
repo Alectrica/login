@@ -2770,7 +2770,7 @@
 
           {{/potencia_total_domiciliaria}}
 
-          {{#carga_equivalente}}
+          {{#is_total}}
 
           <div class= "item summary">
              <div class="name">
@@ -2778,13 +2778,13 @@
                <small>Solo para viviendas</small>
              </div>
              <div class="price">
-               <strong>{{carga_equivalente.get_p}} W</strong>
+               <strong>{{is_total}} A</strong>
              </div>
              <div class="quantity">
              </div>
           </div>
 
-	  {{/carga_equivalente}}
+	  {{/is_total}}
 
 
 
