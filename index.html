@@ -2773,8 +2773,8 @@
 
           <div class= "item summary">
              <div class="name">
-               <strong>Corriente de Servicio Total:</strong>
-               <small>Solo para viviendas</small>
+               <strong>Corriente de Servicio:</strong>
+               <small>Calculado para Casa-Habitación</small>
              </div>
              <div class="price">
                <strong>{{is_total}} A</strong>
@@ -2791,7 +2791,7 @@
           <div class= "item summary">
              <div class="name">
                <strong>Potencia Instalada:</strong>
-               <small>Solo para viviendas</small>
+               <small>Para Cada-Habitación</small>
              </div>
              <div class="price">
                <strong>{{potencia_instalada}} W</strong>
@@ -2823,7 +2823,41 @@
           <div class= "item summary">
              <div class="name">
                <strong>Empalme Sugerido:</strong>
-	     </div>
+	       <amp-lightbox id="casa-lightbox" 
+		  layout="nodisplay">
+		  <div class="amp-youtube-container">
+		    <div class="video">
+		      <a on="tap:watch-video-lightbox.close" 
+			role="button" 
+			tabindex="0">
+			Cerrar
+		      </a>
+		      <amp-youtube width="480"
+			height="270" 
+			data-videoid="z-9Fv0pjL7c">
+		      </amp-youtube>
+		    </div>
+		  </div>
+		</amp-lightbox>
+
+		<div class="product-gallery">
+		  <ul 
+		    hidden
+		    [hidden]="product.selectedColor != 'blue'">
+		    <li>
+		      <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
+			src="/img/alectrico_60_40.png"
+			width="60"
+			height="40"
+			class="selected"
+			[class]="product.selectedSlideForBlue == 0 ? 'selected' : '' "
+			tabindex="0"
+			role="button">
+		      </amp-img>
+		    </li>
+                  </ul>
+                </div>
+             </div>
 	     <div class = "clearfix flex items-strecht border">
 	       <h1>
 		 {{empalme_sugerido.tipo_de_empalme}}
