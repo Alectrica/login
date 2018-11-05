@@ -1754,6 +1754,15 @@
                 </script>
 	      </amp-state> 
 
+              <amp-state id="empalme">
+                <script type="application/json">
+                  {
+                    "soterrado": 0,
+                    "aereo"    : 1
+                  }
+                </script>
+              </amp-state>
+
 	      <amp-state id="product">
 		<script type="application/json">
 		  {
@@ -2847,7 +2856,7 @@
 			src="/img/hornillo_60_40.png"
 			width="60"
 			height="40"
-			class="selected"
+			class=""
 			[class]="empalme.soterrado == 1 ? 'selected' : '' "
 			tabindex="0"
 			role="button">
@@ -2858,7 +2867,7 @@
                         src="/img/hornillo_60_40.png"
                         width="60"
                         height="40"
-                        class=""
+                        class="selected"
                         [class]="empalme.aereo == 1 ? 'selected' : '' "
                         tabindex="0"
                         role="button">
