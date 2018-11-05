@@ -2638,6 +2638,7 @@
                           width="15" height="15"
                           src="https://shop-staging.alectrico.cl/api/v1/electrico/circuitos/atencion.json" >
                         </amp-bodymovin-animation>
+
 			<strong>{{tipo_circuito.capacidad}} Amperes </strong>
 			<progress 
 			  class = "ocupacion"
@@ -2820,29 +2821,24 @@
 	  -->
 
 	{{#empalme_sugerido}}
-	  <div class = "clearfix p2">
-	    <div class= "item summary">
-	       <div class="name">
-		 <strong>Empalme Sugerido:</strong>
-		 {{empalme_sugerido.tipo_de_empalme}}
-		 <small>{{empalme_sugerido.potencia_nominal}} kW</small>
-		 
-	       </div>
-	       <div class="price">
-		 <small>{{empalme_sugerido.interruptor}} A </small>
-		 <small>{{empalme_sugerido.medio}} </small>
-	       </div>
-	       <div class="quantity">
-		 <small>{{empalme_sugerido.no_fases}} </small>
-		 <small>Medición {{empalme_sugerido.tipo_de_medicion}}</small>
-	       </div>
-	    </div>
-	  </div>
-        {{/empalme_sugerido}}
+          <div class= "item summary">
+             <div class="clearfix p2">
+               <strong>Empalme Sugerido:</strong>
+               {{empalme_sugerido.tipo_de_empalme}}
+               <small>{{empalme_sugerido.potencia_nominal}} kW</small>
+               
+             </div>
+             <div class="flex justify-between">
+               <small>{{empalme_sugerido.interruptor}} A </small>
+               <small>{{empalme_sugerido.medio}} </small>
+             </div>
+             <div class="p2">
+               <small>{{empalme_sugerido.no_fases}} </small>
+               <small>Medición {{empalme_sugerido.tipo_de_medicion}}</small>
+             </div>
+          </div>
 
-	{{^empalme_sugerido}}
-	 No fue encontrado un empalme apropiado.
-	{{/empalme_sugerido}}
+          {{/empalme_sugerido}}
 
 
 
